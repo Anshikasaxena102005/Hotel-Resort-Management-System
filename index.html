@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Auraveil Resort &amp; Spa — Where Luxury Finds Its Meaning</title>
+  <meta name="description" content="Auraveil Resort & Spa offers an unmatched luxury escape with bespoke suites, private villas, Michelin-inspired dining, and a world-class spa amid breathtaking tropical surroundings." />
+  <meta name="keywords" content="luxury resort, five star hotel, spa retreat, private villa, tropical getaway, fine dining, Auraveil" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Auraveil Resort & Spa — Where Luxury Finds Its Meaning" />
+  <meta property="og:description" content="Discover the art of unhurried luxury at Auraveil Resort & Spa." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/hero-fallback.jpg" />
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  
+  <header class="navbar navbar--transparent" id="navbar" role="banner">
+    <div class="container">
+      <nav class="navbar__inner" aria-label="Primary navigation">
+
+        <!-- Logo -->
+        <a href="index.html" class="navbar__logo" aria-label="Auraveil Resort & Spa — Home">
+          <span class="navbar__logo-name">Auraveil</span>
+          <span class="navbar__logo-tagline">Resort &amp; Spa</span>
+        </a>
+
+        <!-- Mobile toggle -->
+        <button
+          class="navbar__toggle"
+          id="nav-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Nav links -->
+        <ul class="navbar__nav" id="nav-menu" role="list">
+          <li><a href="index.html"       class="navbar__link" aria-current="page">Home</a></li>
+          <li><a href="rooms.html"       class="navbar__link">Rooms</a></li>
+          <li><a href="facilities.html"  class="navbar__link">Facilities</a></li>
+          <li><a href="services.html"    class="navbar__link">Services</a></li>
+          <li><a href="contact.html"     class="navbar__link">Contact</a></li>
+          <li><a href="booking.html"     class="navbar__link">Booking</a></li>
+          <li class="navbar__cta">
+            <a href="booking.html" class="btn btn--primary" id="nav-book-btn">Book Your Stay</a>
+          </li>
+        </ul>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <!--HERO SECTION-->
+  <section class="hero" id="hero" aria-label="Hero — Auraveil Resort & Spa">
+
+    <!--
+      VIDEO ELEMENT — place assets/hero-video.mp4 to activate.
+      Falls back to the image below if video is absent or unsupported.
+    -->
+    <video
+      class="hero__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="assets/images/hero-fallback.jpg"
+      aria-hidden="true"
+    >
+     <source src="assets/images/videos/hero.mp4" type="video/mp4" />
+      <!-- No <track> needed — video is decorative (aria-hidden) -->
+    </video>
+
+    <!-- Fallback image (shown when video cannot play) -->
+    <img
+      class="hero__fallback-img"
+      src="assets/images/hero-fallback.jpg"
+      alt="Grand exterior of Auraveil Resort &amp; Spa at golden dusk, reflection pool in the foreground"
+      aria-hidden="true"
+      loading="eager"
+    />
+
+    <!-- Dark gradient overlay -->
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <!-- Hero content -->
+    <div class="hero__content">
+      <p class="hero__eyebrow">Est. 1998 · Private Tropical Sanctuary</p>
+
+      <h1 class="hero__title">
+        Where Luxury<br /><em>Finds Its Meaning</em>
+      </h1>
+
+      <p class="hero__description">
+        Immerse yourself in a world of unhurried elegance — bespoke suites, curated experiences, and timeless service woven into every moment of your stay.
+      </p>
+
+      <div class="hero__cta-group">
+        <a href="rooms.html"   class="btn btn--primary"        id="hero-explore-btn">Explore Rooms</a>
+        <a href="booking.html" class="btn btn--outline-light"  id="hero-book-btn">Book Your Stay</a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__divider" aria-hidden="true">
+      <div class="hero__divider-line"></div>
+      <span class="hero__scroll-label">Scroll</span>
+    </div>
+
+  </section>
+
+
+  <!--SECTION 1 — ABOUT / INTRODUCTION -->
+  <section class="section about" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about__grid">
+
+        <!-- Image column -->
+        <div class="about__image-wrap reveal">
+          <img
+            class="about__image"
+            src="assets/images/hero-fallback.jpg"
+            alt="Illuminated grand facade of Auraveil Resort &amp; Spa at dusk with reflection pool"
+            loading="lazy"
+            width="600"
+            height="580"
+          />
+          <div class="about__image-accent" aria-hidden="true"></div>
+        </div>
+
+        <!-- Content column -->
+        <div class="about__content reveal reveal--delay-1">
+          <span class="label">Our Story</span>
+          <h2 class="section-heading" id="about-heading">
+            A Sanctuary Crafted<br />With Intention
+          </h2>
+          <div class="heading-rule" aria-hidden="true"></div>
+
+          <p class="section-subtext" style="margin-top:1.5rem;">
+            Nestled along a secluded coastline, Auraveil was born from the belief that genuine luxury is not merely opulence — it is the harmony of extraordinary surroundings, deeply personal service, and moments that become memories.
+          </p>
+          <p class="section-subtext" style="margin-top:1rem;">
+            From the first breath of salt-tinged air to the last lingering evening by the reflection pool, every detail at Auraveil is composed with quiet care and precise artistry.
+          </p>
+
+          <div class="about__stats" aria-label="Resort highlights">
+            <div class="about__stat">
+              <div class="about__stat-value">127</div>
+              <div class="about__stat-label">Suites &amp; Villas</div>
+            </div>
+            <div class="about__stat">
+              <div class="about__stat-value">26+</div>
+              <div class="about__stat-label">Years of Excellence</div>
+            </div>
+            <div class="about__stat">
+              <div class="about__stat-value">4</div>
+              <div class="about__stat-label">Signature Restaurants</div>
+            </div>
+          </div>
+
+          <a href="facilities.html" class="btn btn--outline" style="margin-top:2rem;" id="about-discover-btn">Discover Our World</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--SECTION 2 — WHY CHOOSE US (Feature Cards)-->
+  <section class="section features" id="why-us" aria-labelledby="features-heading">
+    <div class="container">
+
+      <div class="features__header">
+        <span class="label">The Auraveil Difference</span>
+        <h2 class="section-heading section-heading--light" id="features-heading">
+          Crafted for the Discerning
+        </h2>
+        <div class="heading-rule" aria-hidden="true" style="background:var(--color-gold);"></div>
+      </div>
+
+      <div class="features__grid" role="list">
+
+        <!-- Card 1 -->
+        <article class="feature-card reveal" role="listitem">
+          <!-- Icon: Compass / Location -->
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="21" cy="21" r="19" stroke="#d4b97a" stroke-width="1.2"/>
+              <path d="M21 10 L24 21 L21 32 L18 21 Z" stroke="#d4b97a" stroke-width="1.2" fill="none"/>
+              <path d="M10 21 L21 18 L32 21 L21 24 Z" stroke="#d4b97a" stroke-width="1.2" fill="none"/>
+              <circle cx="21" cy="21" r="2" fill="#d4b97a"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Prime Coastal Location</h3>
+          <p class="feature-card__text">
+            Perched above a pristine private bay, Auraveil commands sweeping views of a protected marine reserve — the kind of setting that no architect can replicate.
+          </p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="feature-card reveal reveal--delay-1" role="listitem">
+          <!-- Icon: Star / Service -->
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 5 L24.5 15.5 H36 L26.8 22.2 L30 33 L21 26.5 L12 33 L15.2 22.2 L6 15.5 H17.5 Z" stroke="#d4b97a" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Butler-Led Service</h3>
+          <p class="feature-card__text">
+            Each suite is attended by a dedicated personal butler trained to anticipate your preferences before you have expressed them — invisible, attentive, always near.
+          </p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="feature-card reveal reveal--delay-2" role="listitem">
+          <!-- Icon: Leaf / Wellness -->
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 37 C21 37 7 28 7 17 C7 10.4 13.3 5 21 5 C28.7 5 35 10.4 35 17 C35 28 21 37 21 37 Z" stroke="#d4b97a" stroke-width="1.2" fill="none"/>
+              <line x1="21" y1="37" x2="21" y2="17" stroke="#d4b97a" stroke-width="1" stroke-dasharray="2 2"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Award-Winning Spa</h3>
+          <p class="feature-card__text">
+            Our Veda Spa, set within a lush garden pavilion, offers over 60 treatments drawing on ancient Ayurvedic traditions and contemporary wellness science.
+          </p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="feature-card reveal reveal--delay-3" role="listitem">
+          <!-- Icon: Fork-knife / Dining -->
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="15" y1="8" x2="15" y2="34" stroke="#d4b97a" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M12 8 L12 18 Q15 22 18 18 L18 8" stroke="#d4b97a" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="27" y1="8" x2="27" y2="34" stroke="#d4b97a" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M24 8 Q27 14 30 8" stroke="#d4b97a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Michelin-Guided Cuisine</h3>
+          <p class="feature-card__text">
+            Four distinctive restaurants — from candlelit coastal tasting menus to open-air tropical breakfasts — all curated by our celebrated Executive Chef.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--SECTION 3 — FEATURED ROOMS-->
+  <section class="section rooms" id="rooms" aria-labelledby="rooms-heading">
+    <div class="container">
+
+      <div class="rooms__header">
+        <span class="label">Accommodations</span>
+        <h2 class="section-heading" id="rooms-heading">Our Finest Rooms &amp; Suites</h2>
+        <div class="heading-rule" aria-hidden="true"></div>
+        <p class="section-subtext" style="margin-inline:auto; text-align:center; margin-top:1.25rem;">
+          Each of our 127 rooms and private villas has been individually conceived — no two experiences are identical.
+        </p>
+      </div>
+
+      <div class="grid-3" role="list">
+
+        <!-- Room Card 1 — Deluxe Suite -->
+        <article class="card reveal" role="listitem">
+          <div class="card__image-wrap">
+            <img
+              src="assets/images/room-deluxe-suite.jpg"
+              alt="Deluxe Garden Suite — king bed with ivory linen, marble floors, and tropical garden view"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </div>
+          <div class="card__body">
+            <span class="card__label">Garden Level</span>
+            <h3 class="card__title">Deluxe Garden Suite</h3>
+            <p class="card__text">
+              Marble floors, a king canopy bed, and private terrace opening onto manicured gardens — the ideal canvas for a gentle tropical escape.
+            </p>
+            <div class="card__meta">
+              <div class="card__price">
+                ₹ 28,500 <span>/ night</span>
+              </div>
+              <a href="rooms.html" class="btn btn--ghost-gold" id="room-deluxe-btn" style="padding: 0.6rem 1.4rem; font-size: 0.6rem;">View Room</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Room Card 2 — Penthouse -->
+        <article class="card reveal reveal--delay-1" role="listitem">
+          <div class="card__image-wrap">
+            <img
+              src="assets/images/room-penthouse.jpg"
+              alt="Penthouse Suite — panoramic floor-to-ceiling windows with ocean sunset view"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </div>
+          <div class="card__body">
+            <span class="card__label">Top Floor · Exclusive</span>
+            <h3 class="card__title">Penthouse Collection</h3>
+            <p class="card__text">
+              Our crown jewel. 320° panoramic ocean views, a private plunge pool, and personal chef service — a world apart from the world below.
+            </p>
+            <div class="card__meta">
+              <div class="card__price">
+                ₹ 95,000 <span>/ night</span>
+              </div>
+              <a href="rooms.html" class="btn btn--ghost-gold" id="room-penthouse-btn" style="padding: 0.6rem 1.4rem; font-size: 0.6rem;">View Room</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Room Card 3 — Garden Villa -->
+        <article class="card reveal reveal--delay-2" role="listitem">
+          <div class="card__image-wrap">
+            <img
+              src="assets/images/room-garden-villa.jpg"
+              alt="Garden Villa — open-air stone bathtub surrounded by tropical flowers, canopy bed with lantern lighting"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </div>
+          <div class="card__body">
+            <span class="card__label">Private Villa</span>
+            <h3 class="card__title">Tropical Garden Villa</h3>
+            <p class="card__text">
+              A secluded haven with open-air stone bathing pavilion, hand-carved canopy bed, and a fragrant walled garden — your private corner of paradise.
+            </p>
+            <div class="card__meta">
+              <div class="card__price">
+                ₹ 58,000 <span>/ night</span>
+              </div>
+              <a href="rooms.html" class="btn btn--ghost-gold" id="room-villa-btn" style="padding: 0.6rem 1.4rem; font-size: 0.6rem;">View Room</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="rooms__cta">
+        <a href="rooms.html" class="btn btn--outline" id="all-rooms-btn">View All Accommodations</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!--SECTION 4 — FACILITIES PREVIEW-->
+  <section class="section facilities" id="facilities" aria-labelledby="facilities-heading">
+    <div class="container">
+
+      <div class="facilities__header">
+        <span class="label">Resort Experiences</span>
+        <h2 class="section-heading" id="facilities-heading">Beyond Four Walls</h2>
+        <div class="heading-rule" aria-hidden="true"></div>
+      </div>
+
+      <!-- 2-column masonry-style grid -->
+      <div class="facility-grid">
+
+        <!-- Pool — large left column -->
+        <article class="facility-item facility-item--large reveal" aria-labelledby="fac-pool-title">
+          <img
+            class="facility-item__img"
+            src="assets/images/facility-pool.jpg"
+            alt="Auraveil infinity pool stretching to meet the tropical ocean at golden hour sunset"
+            loading="lazy"
+            width="600"
+            height="640"
+          />
+          <div class="facility-item__overlay" aria-hidden="true"></div>
+          <div class="facility-item__caption">
+            <span class="facility-item__label">Aquatic Retreat</span>
+            <h3 class="facility-item__title" id="fac-pool-title">Infinity Pool &amp; Sundeck</h3>
+            <a href="facilities.html#pool" class="facility-item__link" id="fac-pool-link">Explore →</a>
+          </div>
+        </article>
+
+        <!-- Right column — Spa + Dining stacked -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+          <!-- Spa -->
+          <article class="facility-item reveal reveal--delay-1" aria-labelledby="fac-spa-title">
+            <img
+              class="facility-item__img"
+              src="assets/images/facility-spa.jpg"
+              alt="Auraveil Veda Spa treatment pavilion surrounded by bamboo and candlelight"
+              loading="lazy"
+              width="600"
+              height="300"
+            />
+            <div class="facility-item__overlay" aria-hidden="true"></div>
+            <div class="facility-item__caption">
+              <span class="facility-item__label">Wellness</span>
+              <h3 class="facility-item__title" id="fac-spa-title">Veda Spa &amp; Wellness</h3>
+              <a href="facilities.html#spa" class="facility-item__link" id="fac-spa-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Dining — CSS gradient fallback -->
+          <article class="facility-item reveal reveal--delay-2" aria-labelledby="fac-dining-title">
+            <div
+              class="facility-item__bg"
+              style="background: linear-gradient(135deg, hsl(30, 22%, 15%) 0%, hsl(35, 28%, 22%) 50%, hsl(38, 32%, 28%) 100%);"
+              role="img"
+              aria-label="Auraveil fine dining restaurant interior"
+            ></div>
+            <div class="facility-item__overlay" aria-hidden="true"></div>
+            <div class="facility-item__caption">
+              <span class="facility-item__label">Culinary Arts</span>
+              <h3 class="facility-item__title" id="fac-dining-title">
+                Signature Dining<br />
+                <em style="font-style:italic; font-family: var(--font-serif); font-size:1rem; color:rgba(248,244,239,0.6); font-weight:300;">Four distinct restaurants</em>
+              </h3>
+              <a href="facilities.html#dining" class="facility-item__link" id="fac-dining-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Events — CSS gradient fallback -->
+          <article class="facility-item reveal reveal--delay-3" aria-labelledby="fac-events-title">
+            <div
+              class="facility-item__bg"
+              style="background: linear-gradient(135deg, hsl(220, 20%, 14%) 0%, hsl(230, 22%, 20%) 50%, hsl(235, 18%, 26%) 100%);"
+              role="img"
+              aria-label="Auraveil Grand Ballroom event space"
+            ></div>
+            <div class="facility-item__overlay" aria-hidden="true"></div>
+            <div class="facility-item__caption">
+              <span class="facility-item__label">Celebrations &amp; Events</span>
+              <h3 class="facility-item__title" id="fac-events-title">Grand Ballroom &amp; Lawns</h3>
+              <a href="facilities.html#events" class="facility-item__link" id="fac-events-link">Explore →</a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--SECTION 5 — LUXURY LIFESTYLE-->
+  <section class="section lifestyle" id="lifestyle" aria-labelledby="lifestyle-heading">
+    <div class="lifestyle__bg" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="lifestyle__inner">
+
+        <!-- Text content -->
+        <div class="lifestyle__content reveal">
+          <span class="label">The Auraveil Life</span>
+          <h2 class="section-heading section-heading--light" id="lifestyle-heading">
+            A Different Kind<br /><em>of Extraordinary</em>
+          </h2>
+          <div class="heading-rule" aria-hidden="true"></div>
+
+          <p class="lifestyle__body">
+            At Auraveil, time slows and senses sharpen. Whether you are watching the sunrise from a private terrace or surrendering to an Ayurvedic ritual at twilight, every hour is shaped around the art of being fully present.
+          </p>
+
+          <ul class="lifestyle__features" aria-label="Resort lifestyle features">
+            <li class="lifestyle__feature">Bespoke concierge available around the clock</li>
+            <li class="lifestyle__feature">Private beach with exclusive butler service</li>
+            <li class="lifestyle__feature">Curated cultural excursions and nature trails</li>
+            <li class="lifestyle__feature">In-villa dining and private chef upon request</li>
+            <li class="lifestyle__feature">Helipad transfers for seamless arrivals</li>
+          </ul>
+
+          <a href="services.html" class="btn btn--ghost-gold" style="margin-top:2rem;" id="lifestyle-services-btn">Explore Our Services</a>
+        </div>
+
+        <!-- Visual panel -->
+        <div class="lifestyle__visual reveal reveal--delay-1" aria-hidden="true">
+          <!-- Tall left image -->
+          <div class="lifestyle__visual-img lifestyle__visual-img--tall">
+            <img
+              src="assets/images/room-deluxe-suite.jpg"
+              alt="Serene luxury suite interior at Auraveil with tropical garden view"
+              loading="lazy"
+              width="280"
+              height="420"
+            />
+          </div>
+          <!-- Stacked right images -->
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div class="lifestyle__visual-img">
+              <img
+                src="assets/images/facility-pool.jpg"
+                alt="Auraveil infinity pool at sunrise"
+                loading="lazy"
+                width="280"
+                height="200"
+              />
+            </div>
+            <div class="lifestyle__visual-img">
+              <img
+                src="assets/images/facility-spa.jpg"
+                alt="Candlelit spa treatment pavilion at Auraveil"
+                loading="lazy"
+                width="280"
+                height="200"
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--SECTION 6 — SPECIAL ESCAPES / SEASONAL-->
+  <section class="section escapes" id="escapes" aria-labelledby="escapes-heading">
+    <div class="container">
+
+      <div class="escapes__header">
+        <span class="label">Curated Packages</span>
+        <h2 class="section-heading" id="escapes-heading">Special Escapes</h2>
+        <div class="heading-rule" aria-hidden="true"></div>
+        <p class="section-subtext" style="margin-inline:auto; text-align:center; margin-top:1.25rem;">
+          Thoughtfully composed retreats for every chapter of life — romance, renewal, or adventure.
+        </p>
+      </div>
+
+      <div class="escape-cards" role="list">
+
+        <!-- Card 1 — Romantic -->
+        <article class="escape-card escape-card--romantic reveal" role="listitem" aria-labelledby="escape-romantic-title">
+          <div class="escape-card__bg" aria-hidden="true">
+            <!-- Using room-garden-villa as romantic backdrop -->
+            <img
+              src="assets/images/room-garden-villa.jpg"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"
+            />
+          </div>
+          <div class="escape-card__overlay" aria-hidden="true"></div>
+          <div class="escape-card__body">
+            <span class="escape-card__tag">Romance</span>
+            <h3 class="escape-card__title" id="escape-romantic-title">Eternal Twilight<br />Escape</h3>
+            <p class="escape-card__desc">
+              Private beach dinners, couples spa journeys, and a suite adorned with tropical blooms — for a love that deserves an extraordinary stage.
+            </p>
+            <a href="booking.html?package=romance" class="btn btn--primary" id="escape-romantic-btn" style="font-size:0.6rem; padding:0.7rem 1.6rem;">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- Card 2 — Wellness -->
+        <article class="escape-card escape-card--wellness reveal reveal--delay-1" role="listitem" aria-labelledby="escape-wellness-title">
+          <div class="escape-card__bg" aria-hidden="true">
+            <img
+              src="assets/images/facility-spa.jpg"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"
+            />
+          </div>
+          <div class="escape-card__overlay" aria-hidden="true"></div>
+          <div class="escape-card__body">
+            <span class="escape-card__tag">Wellness</span>
+            <h3 class="escape-card__title" id="escape-wellness-title">The Renewal<br />Retreat</h3>
+            <p class="escape-card__desc">
+              A seven-day immersive programme — daily yoga at sunrise, Panchakarma therapies, and farm-to-table nourishment to reset body and spirit.
+            </p>
+            <a href="booking.html?package=wellness" class="btn btn--primary" id="escape-wellness-btn" style="font-size:0.6rem; padding:0.7rem 1.6rem;">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- Card 3 — Adventure -->
+        <article class="escape-card escape-card--adventure reveal reveal--delay-2" role="listitem" aria-labelledby="escape-adventure-title">
+          <div class="escape-card__bg" aria-hidden="true">
+            <img
+              src="assets/images/facility-pool.jpg"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"
+            />
+          </div>
+          <div class="escape-card__overlay" aria-hidden="true"></div>
+          <div class="escape-card__body">
+            <span class="escape-card__tag">Discovery</span>
+            <h3 class="escape-card__title" id="escape-adventure-title">Island Explorer<br />Edition</h3>
+            <p class="escape-card__desc">
+              Guided reef snorkelling, private kayak safaris, jungle canopy walks, and sunset cocktails above the treeline — for those who seek wonder.
+            </p>
+            <a href="booking.html?package=adventure" class="btn btn--primary" id="escape-adventure-btn" style="font-size:0.6rem; padding:0.7rem 1.6rem;">Enquire Now</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--SECTION 7 — PREMIUM CTA-->
+  <section class="cta-section" id="cta" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-section__inner">
+        <span class="label" style="display:block; margin-bottom:0.5rem;">Begin Your Journey</span>
+        <h2 class="cta-section__title" id="cta-heading">
+          Your Perfect Stay<br /><em>Awaits You</em>
+        </h2>
+        <p class="cta-section__body">
+          Whether you are planning a honeymoon, a family retreat, a corporate gathering, or simply a few days of pure solitude — Auraveil is ready to receive you.
+        </p>
+        <div class="cta-section__ctas">
+          <a href="booking.html" class="btn btn--primary"       id="cta-book-btn">Reserve Your Suite</a>
+          <a href="contact.html" class="btn btn--outline-light" id="cta-contact-btn">Speak to Our Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--FOOTER -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer__top">
+
+        <!-- Brand column -->
+        <div class="footer__brand">
+          <span class="footer__brand-name">Auraveil</span>
+          <span class="footer__brand-tagline">Resort &amp; Spa</span>
+          <p class="footer__brand-desc">
+            Where unhurried luxury meets the wild beauty of nature. Every detail composed with intention, every moment offered with grace.
+          </p>
+
+          <!-- Social links -->
+          <nav class="footer__socials" aria-label="Social media links">
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on Instagram" id="social-instagram">
+              <!-- Instagram icon -->
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on Facebook" id="social-facebook">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on Twitter / X" id="social-twitter">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on YouTube" id="social-youtube">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="currentColor" fill="none"/>
+              </svg>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Quick links -->
+        <nav aria-label="Quick links">
+          <h3 class="footer__col-title">Navigate</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html"      class="footer__link" id="footer-home">Home</a></li>
+            <li><a href="rooms.html"      class="footer__link" id="footer-rooms">Rooms &amp; Suites</a></li>
+            <li><a href="facilities.html" class="footer__link" id="footer-facilities">Facilities</a></li>
+            <li><a href="services.html"   class="footer__link" id="footer-services">Services</a></li>
+            <li><a href="contact.html"    class="footer__link" id="footer-contact">Contact</a></li>
+            <li><a href="booking.html"    class="footer__link" id="footer-booking">Reservations</a></li>
+          </ul>
+        </nav>
+
+        <!-- Experiences -->
+        <nav aria-label="Experiences">
+          <h3 class="footer__col-title">Experiences</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="facilities.html#spa"     class="footer__link" id="footer-spa">Veda Spa</a></li>
+            <li><a href="facilities.html#pool"    class="footer__link" id="footer-pool">Infinity Pool</a></li>
+            <li><a href="facilities.html#dining"  class="footer__link" id="footer-dining">Fine Dining</a></li>
+            <li><a href="facilities.html#events"  class="footer__link" id="footer-events">Events</a></li>
+            <li><a href="services.html#excursions" class="footer__link" id="footer-excursions">Excursions</a></li>
+            <li><a href="services.html#weddings"  class="footer__link" id="footer-weddings">Weddings</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contact -->
+        <address style="font-style: normal;">
+          <h3 class="footer__col-title">Find Us</h3>
+          <p class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            Auraveil Resort &amp; Spa<br />
+            Coastal Heritage Road,<br />
+            Goa — 403 001, India
+          </p>
+          <p class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            <a href="tel:+91-832-300-0000" class="footer__link" id="footer-phone">+91 832 300 0000</a>
+          </p>
+          <p class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            <a href="mailto:reservations@auraveil.com" class="footer__link" id="footer-email">reservations@auraveil.com</a>
+          </p>
+          <p class="footer__contact-item" style="margin-top: 0.5rem;">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            Reservations open 24 hours
+          </p>
+        </address>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <p>&copy; 2024 Auraveil Resort &amp; Spa. All rights reserved.</p>
+        <nav class="footer__legal" aria-label="Legal links">
+          <a href="#" id="footer-privacy">Privacy Policy</a>
+          <a href="#" id="footer-terms">Terms of Service</a>
+          <a href="#" id="footer-cookies">Cookie Policy</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!--
+  MINIMAL JAVASCRIPT — Navbar state + scroll reveal + mobile menu
+  (No frameworks, no external libraries)
+  -->
+  <script>
+    /* ---- 1. Navbar scroll state ---- */
+    (function () {
+      var navbar = document.getElementById('navbar');
+      var SCROLL_THRESHOLD = 60;
+
+      function updateNavbar() {
+        if (window.scrollY > SCROLL_THRESHOLD) {
+          navbar.classList.remove('navbar--transparent');
+          navbar.classList.add('navbar--solid');
+        } else {
+          navbar.classList.remove('navbar--solid');
+          navbar.classList.add('navbar--transparent');
+        }
+      }
+
+      window.addEventListener('scroll', updateNavbar, { passive: true });
+      updateNavbar(); // run on load
+    }());
+
+    /* ---- 2. Mobile navigation toggle ---- */
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var menu   = document.getElementById('nav-menu');
+
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', function () {
+        var isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+
+      /* Close menu when a link is clicked */
+      menu.querySelectorAll('.navbar__link, .btn').forEach(function (link) {
+        link.addEventListener('click', function () {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    }());
+
+    /* ---- 3. Scroll-reveal (IntersectionObserver) ---- */
+    (function () {
+      if (!('IntersectionObserver' in window)) {
+        /* Fallback — show everything immediately if observer not supported */
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        observer.observe(el);
+      });
+    }());
+  </script>
+
+</body>
+</html>
