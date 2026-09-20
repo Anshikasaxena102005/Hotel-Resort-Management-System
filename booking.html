@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reserve your stay at Auraveil Resort &amp; Spa. Discover our luxury rooms, executive suites, and private oceanfront sanctuaries with bespoke concierge service.">
+  <title>Reserve Your Stay | Auraveil Resort &amp; Spa</title>
+
+  <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans (Sans-Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Booking & Enquiry Module Dedicated Stylesheet -->
+  <link rel="stylesheet" href="css/booking.css">
+</head>
+<body class="booking-page-body">
+
+  <!-- Site Header / Navigation -->
+  <header class="site-header" role="banner">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="Auraveil Resort &amp; Spa Homepage">
+        <span class="brand-name">Auraveil</span>
+        <span class="brand-subline">RESORT &amp; SPA</span>
+      </a>
+
+      <!-- Right Navigation Group (Links + BOOK A STAY Button) -->
+      <div class="nav-right-group">
+        <nav role="navigation" aria-label="Main Navigation">
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="rooms.html" class="nav-link">Rooms &amp; Suites</a></li>
+            <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="booking.html" class="nav-link active" aria-current="page">Booking &amp; Enquiry</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a href="booking.html" class="nav-btn-book">BOOK A STAY</a>
+
+        <!-- Mobile Navigation Toggle -->
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs Bar -->
+  <aside class="page-breadcrumbs-bar" aria-label="Breadcrumb Navigation">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="crumb-separator" aria-hidden="true">&#9670;</span>
+        <a href="rooms.html">Accommodations</a>
+        <span class="crumb-separator" aria-hidden="true">&#9670;</span>
+        <span aria-current="page">Reserve Your Stay</span>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- 1. BOOKING HERO SECTION (Cinematic Video Hero) -->
+  <header class="booking-hero-section" aria-label="Reserve Your Stay at Auraveil">
+
+    <!-- Background Video Container -->
+    <div class="hero-video-wrapper" aria-hidden="true">
+      <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=2400&q=85"
+      >
+        <!-- Place your local resort video file at assets/videos/resort-hero.mp4 -->
+        <source src="assets/videos/resort-hero.mp4" type="video/mp4">
+        <source src="hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay" aria-hidden="true"></div>
+    </div>
+
+    <!-- Hero Foreground Content -->
+    <div class="container hero-container">
+      <div class="booking-hero-content">
+        <span class="hero-resort-brand hero-anim-brand">AURAVEIL RESORT &amp; SPA</span>
+        <span class="hero-eyebrow-tag hero-anim-eyebrow">PRIVATE RESERVATIONS</span>
+        <h1 class="hero-main-title hero-anim-title">RESERVE YOUR STAY</h1>
+        <p class="hero-lead-text hero-anim-lead">
+          Immerse yourself in understated coastal luxury and bespoke hospitality at Auraveil Resort &amp; Spa. Explore our collection of private rooms and suites below, and check availability for your preferred dates.
+        </p>
+
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll-cue-wrap hero-anim-cue">
+          <a href="#availabilitySection" class="hero-scroll-cue" aria-label="Scroll down to check availability">
+            <span class="scroll-cue-text">SCROLL TO EXPLORE</span>
+            <svg class="scroll-cue-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. CHECK AVAILABILITY SECTION -->
+  <section class="availability-bar-section reveal-on-scroll" id="availabilitySection" aria-label="Check Availability">
+    <div class="container">
+      <form class="availability-bar" id="availabilityForm" novalidate>
+
+        <!-- Field 1: Check-in Date -->
+        <div class="avail-field-group">
+          <label for="availCheckIn" class="avail-field-label">CHECK-IN</label>
+          <div class="avail-input-wrap">
+            <input
+              type="date"
+              id="availCheckIn"
+              name="availCheckIn"
+              class="avail-date-input"
+              aria-label="Check-in Date"
+            >
+          </div>
+        </div>
+
+        <div class="avail-divider" aria-hidden="true"></div>
+
+        <!-- Field 2: Check-out Date -->
+        <div class="avail-field-group">
+          <label for="availCheckOut" class="avail-field-label">CHECK-OUT</label>
+          <div class="avail-input-wrap">
+            <input
+              type="date"
+              id="availCheckOut"
+              name="availCheckOut"
+              class="avail-date-input"
+              aria-label="Check-out Date"
+            >
+          </div>
+        </div>
+
+        <div class="avail-divider" aria-hidden="true"></div>
+
+        <!-- Field 3: Number of Guests -->
+        <div class="avail-field-group">
+          <label for="availGuests" class="avail-field-label">GUESTS</label>
+          <div class="avail-input-wrap">
+            <select id="availGuests" name="availGuests" class="avail-select" aria-label="Number of Guests">
+              <option value="1">1 Adult</option>
+              <option value="2" selected>2 Adults</option>
+              <option value="3">3 Adults</option>
+              <option value="4">4 Adults</option>
+              <option value="5">5+ Adults</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="avail-divider" aria-hidden="true"></div>
+
+        <!-- Field 4: Number of Rooms -->
+        <div class="avail-field-group">
+          <label for="availRooms" class="avail-field-label">ROOMS</label>
+          <div class="avail-input-wrap">
+            <select id="availRooms" name="availRooms" class="avail-select" aria-label="Number of Rooms">
+              <option value="1" selected>1 Room</option>
+              <option value="2">2 Rooms</option>
+              <option value="3">3 Rooms</option>
+              <option value="4">4+ Rooms</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Check Availability Button -->
+        <div class="avail-action-group">
+          <button type="submit" class="btn-check-availability" id="checkAvailBtn">
+            <span>CHECK AVAILABILITY</span>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Availability Feedback Banner -->
+      <div class="availability-status-banner" id="availStatusBanner" role="status" aria-live="polite">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span id="availStatusText">All 5 luxury sanctuaries are currently available. Select a room below to proceed with your reservation.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. OUR ROOMS SECTION -->
+  <main class="rooms-showcase-section reveal-on-scroll" id="roomsSection" aria-labelledby="roomsHeading">
+    <div class="container">
+
+      <div class="section-title-wrap reveal-on-scroll">
+        <span class="section-tag-small">ACCOMMODATIONS</span>
+        <h2 class="section-heading-serif" id="roomsHeading">OUR ROOMS</h2>
+        <p class="section-intro-text">
+          Conceived as private coastal sanctuaries, each room and suite at Auraveil is curated with bespoke comforts, natural marble, organic textures, and breathtaking ocean or parkland vistas.
+        </p>
+      </div>
+
+      <!-- Rooms Grid -->
+      <div class="rooms-display-grid" id="roomsGrid">
+
+        <!-- Room Card 1: Deluxe Room -->
+        <article class="room-card card-reveal" data-room-id="deluxe-room" data-max-guests="2" data-rate="320" aria-labelledby="room1Title">
+          <div class="room-image-container">
+            <img
+              src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80"
+              alt="Deluxe Room with warm contemporary comfort, marble bath, and private garden patio"
+              class="room-card-image"
+              loading="lazy"
+            >
+            <span class="room-category-badge">Sanctuary</span>
+          </div>
+          <div class="room-card-content">
+            <h3 class="room-title" id="room1Title">Deluxe Room</h3>
+            <div class="room-specs-list">
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Max 2 Guests
+              </span>
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+                King or Twin
+              </span>
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                Resort Courtyard &amp; Garden
+              </span>
+            </div>
+            <p class="room-narrative">An intimate sanctuary offering warm contemporary comfort, marble bath, and private garden patio.</p>
+            <div class="room-card-action-bar">
+              <div class="room-price-display">
+                <span class="rate-amount">$320</span>
+                <span class="rate-unit">/ NIGHT</span>
+              </div>
+              <button type="button" class="btn-select-room" data-room="Deluxe Room" aria-label="Select Deluxe Room">
+                SELECT ROOM
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Room Card 2: Premium Room -->
+        <article class="room-card card-reveal" data-room-id="premium-room" data-max-guests="3" data-rate="480" aria-labelledby="room2Title">
+          <div class="room-image-container">
+            <img
+              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+              alt="Premium Room featuring oceanfront glass doors and private balcony overlooking Azure Bay"
+              class="room-card-image"
+              loading="lazy"
+            >
+            <span class="room-category-badge">Oceanfront</span>
+          </div>
+          <div class="room-card-content">
+            <h3 class="room-title" id="room2Title">Premium Room</h3>
+            <div class="room-specs-list">
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Max 3 Guests
+              </span>
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+                King Bed
+              </span>
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                Panoramic Azure Bay
+              </span>
+            </div>
+            <p class="room-narrative">Expansive living spaces with floor-to-ceiling glass doors opening onto an oceanfront balcony.</p>
+            <div class="room-card-action-bar">
+              <div class="room-price-display">
+                <span class="rate-amount">$480</span>
+                <span class="rate-unit">/ NIGHT</span>
+              </div>
+              <button type="button" class="btn-select-room" data-room="Premium Room" aria-label="Select Premium Room">
+                SELECT ROOM
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Room Card 3: Executive Suite -->
+        <article class="room-card card-reveal" data-room-id="executive-suite" data-max-guests="4" data-rate="720" aria-labelledby="room3Title">
+          <div class="room-image-container">
+            <img
+              src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80"
+              alt="Executive Suite with dedicated lounge parlor, soaking jacuzzi tub, and bespoke butler service"
+              class="room-card-image"
+              loading="lazy"
+            >
+            <span class="room-category-badge">Executive</span>
+          </div>
+          <div class="room-card-content">
+            <h3 class="room-title" id="room3Title">Executive Suite</h3>
+            <div class="room-specs-list">
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Max 4 Guests
+              </span>
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+                Master King + Daybed
+              </span>
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                Coastline &amp; Horizon
+              </span>
+            </div>
+            <p class="room-narrative">Dedicated executive lounge access, separate parlor, deep soaking jacuzzi tub, and bespoke butler service.</p>
+            <div class="room-card-action-bar">
+              <div class="room-price-display">
+                <span class="rate-amount">$720</span>
+                <span class="rate-unit">/ NIGHT</span>
+              </div>
+              <button type="button" class="btn-select-room" data-room="Executive Suite" aria-label="Select Executive Suite">
+                SELECT ROOM
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Room Card 4: Luxury Suite -->
+        <article class="room-card card-reveal" data-room-id="luxury-suite" data-max-guests="4" data-rate="950" aria-labelledby="room4Title">
+          <div class="room-image-container">
+            <img
+              src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80"
+              alt="Luxury Penthouse Suite with private infinity plunge pool and sunset dining terrace"
+              class="room-card-image"
+              loading="lazy"
+            >
+            <span class="room-category-badge">Signature Penthouse</span>
+          </div>
+          <div class="room-card-content">
+            <h3 class="room-title" id="room4Title">Luxury Suite</h3>
+            <div class="room-specs-list">
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Max 4 Guests
+              </span>
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+                Grand California King
+              </span>
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                Private Oceanfront Penthouse
+              </span>
+            </div>
+            <p class="room-narrative">Our signature residence featuring private infinity plunge pool, dining terrace, and evening canapés.</p>
+            <div class="room-card-action-bar">
+              <div class="room-price-display">
+                <span class="rate-amount">$950</span>
+                <span class="rate-unit">/ NIGHT</span>
+              </div>
+              <button type="button" class="btn-select-room" data-room="Luxury Suite" aria-label="Select Luxury Suite">
+                SELECT ROOM
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Room Card 5: Family Room -->
+        <article class="room-card card-reveal" data-room-id="family-room" data-max-guests="5" data-rate="560" aria-labelledby="room5Title">
+          <div class="room-image-container">
+            <img
+              src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80"
+              alt="Spacious interconnected Family Room thoughtfully appointed for family ease and multi-generational comfort"
+              class="room-card-image"
+              loading="lazy"
+            >
+            <span class="room-category-badge">Family Residence</span>
+          </div>
+          <div class="room-card-content">
+            <h3 class="room-title" id="room5Title">Family Room</h3>
+            <div class="room-specs-list">
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Max 5 Guests
+              </span>
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+                Two Queens + Connecting
+              </span>
+              <span class="room-spec-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                Lush Tropical Parkland
+              </span>
+            </div>
+            <p class="room-narrative">Spacious interconnected suites thoughtfully appointed for family ease and multi-generational comfort.</p>
+            <div class="room-card-action-bar">
+              <div class="room-price-display">
+                <span class="rate-amount">$560</span>
+                <span class="rate-unit">/ NIGHT</span>
+              </div>
+              <button type="button" class="btn-select-room" data-room="Family Room" aria-label="Select Family Room">
+                SELECT ROOM
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- 4. RESERVATION CONSULTATION & ENQUIRY SECTION -->
+  <section class="reservation-consultation-section reveal-on-scroll" id="reservationFormSection" aria-labelledby="consultationHeading">
+    <div class="container">
+      <div class="reservation-card-wrapper">
+
+        <header class="consultation-header">
+          <span class="consultation-tag">RESERVATION CONSULTATION</span>
+          <h2 class="consultation-title" id="consultationHeading">COMPLETE YOUR ENQUIRY</h2>
+          <div class="selected-room-indicator" id="selectedRoomIndicator">
+            <span class="indicator-label">Selected Sanctuary:</span>
+            <strong class="indicator-value" id="selectedRoomDisplay">Deluxe Room ($320/night)</strong>
+          </div>
+        </header>
+
+        <!-- Preselected Experience Banner -->
+        <div class="selected-experience-banner" id="selectedExperienceBanner" role="region" aria-label="Preselected Experience">
+          <div class="selected-exp-text">
+            <span class="selected-exp-label">Requested Experience Add-on:</span>
+            <span class="selected-exp-name" id="selectedExpName">—</span>
+          </div>
+          <button type="button" class="btn-change-exp" id="btnChangeExp" aria-label="Remove preselected experience">Remove</button>
+        </div>
+
+        <!-- Complete Booking Form -->
+        <form class="booking-consultation-form" id="bookingForm" novalidate>
+
+          <!-- 01 — YOUR DETAILS -->
+          <fieldset class="form-section-fieldset">
+            <legend class="fieldset-title">01 — YOUR DETAILS</legend>
+            <div class="form-row-duo">
+              <div class="form-input-group">
+                <label for="fullName" class="field-label">
+                  Full Name <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  class="form-control"
+                  placeholder="e.g. Eleanor Vance"
+                  required
+                  autocomplete="name"
+                  aria-required="true"
+                >
+              </div>
+              <div class="form-input-group">
+                <label for="email" class="field-label">
+                  Email Address <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="e.g. eleanor@residence.com"
+                  required
+                  autocomplete="email"
+                  aria-required="true"
+                >
+              </div>
+            </div>
+            <div class="form-row-single">
+              <div class="form-input-group">
+                <label for="phone" class="field-label">
+                  Phone Number <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-control"
+                  placeholder="e.g. +1 (555) 234-5678"
+                  required
+                  autocomplete="tel"
+                  aria-required="true"
+                >
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 02 — YOUR STAY -->
+          <fieldset class="form-section-fieldset">
+            <legend class="fieldset-title">02 — YOUR STAY</legend>
+            <div class="form-row-duo">
+              <div class="form-input-group">
+                <label for="checkIn" class="field-label">
+                  Check-in Date <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input type="date" id="checkIn" name="checkIn" class="form-control" required aria-required="true">
+              </div>
+              <div class="form-input-group">
+                <label for="checkOut" class="field-label">
+                  Check-out Date <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input type="date" id="checkOut" name="checkOut" class="form-control" required aria-required="true">
+              </div>
+            </div>
+            <div class="form-row-duo">
+              <div class="form-input-group">
+                <label for="roomType" class="field-label">
+                  Sanctuary / Room Type <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <select id="roomType" name="roomType" class="form-select-control" required aria-required="true">
+                  <option value="" disabled>Select Room or Suite...</option>
+                  <option value="Deluxe Room" selected>Deluxe Room (Starting at $320/night)</option>
+                  <option value="Premium Room">Premium Room (Starting at $480/night)</option>
+                  <option value="Executive Suite">Executive Suite (Starting at $720/night)</option>
+                  <option value="Luxury Suite">Luxury Suite (Starting at $950/night)</option>
+                  <option value="Family Room">Family Room (Starting at $560/night)</option>
+                </select>
+              </div>
+              <div class="form-input-group">
+                <label for="guests" class="field-label">
+                  Number of Guests <span class="required-mark" aria-hidden="true">*</span>
+                  <span class="field-hint">Max 10</span>
+                </label>
+                <input
+                  type="number"
+                  id="guests"
+                  name="guests"
+                  class="form-control"
+                  min="1"
+                  max="10"
+                  value="2"
+                  required
+                  aria-required="true"
+                >
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 03 — YOUR EXPERIENCE -->
+          <fieldset class="form-section-fieldset">
+            <legend class="fieldset-title">03 — YOUR EXPERIENCE</legend>
+            <div class="form-row-single">
+              <div class="form-input-group">
+                <label for="selectedService" class="field-label">
+                  Curated Experience Add-on
+                  <span class="field-hint">Optional</span>
+                </label>
+                <select id="selectedService" name="selectedService" class="form-select-control">
+                  <option value="">None / Room Sanctuary Only</option>
+                  <option value="spa">Auraveil Spa &amp; Holistic Wellness</option>
+                  <option value="dining">Private Chef &amp; Coastal Gastronomy</option>
+                  <option value="chauffeur">Chauffeur &amp; Airport Fleet</option>
+                  <option value="butler">24/7 Dedicated Butler Service</option>
+                  <option value="yacht">Private Yacht &amp; Marine Charters</option>
+                  <option value="events">Curated Celebrations &amp; Galas</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 04 — SPECIAL REQUESTS -->
+          <fieldset class="form-section-fieldset">
+            <legend class="fieldset-title">04 — SPECIAL REQUESTS</legend>
+            <div class="form-row-single">
+              <div class="form-input-group">
+                <label for="message" class="field-label">
+                  Personalized Preferences &amp; Arrival Itinerary
+                  <span class="field-hint">Optional</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-textarea-control"
+                  rows="4"
+                  placeholder="Share airport transfer arrival timings, dietary preferences, special occasion arrangements, or suite floor preferences..."
+                ></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Form Action Buttons -->
+          <div class="form-actions-bar">
+            <button type="submit" class="btn-charcoal" id="submitBtn">
+              <span>REQUEST RESERVATION</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            <button type="button" class="btn-clear" id="clearFormBtn">CLEAR FORM</button>
+          </div>
+
+          <!-- Demo Notice -->
+          <p class="form-demo-notice">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span>Demonstration enquiry interface &bull; No live payment or external booking database required.</span>
+          </p>
+
+        </form>
+
+        <!-- Confirmation Card (shown on submit) -->
+        <article class="confirmation-card" id="confirmationCard" role="status" aria-live="polite">
+          <div class="confirmation-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="confirmation-title">Reservation Enquiry Received</h3>
+          <p class="confirmation-message">
+            Thank you. Our reservations concierge team at Auraveil Resort &amp; Spa has received your details and will review suite availability for your dates to confirm your bespoke booking.
+          </p>
+          <div class="confirmation-summary">
+            <div class="summary-row">
+              <span class="summary-label">Guest Name:</span>
+              <span class="summary-value" id="summaryGuest">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Sanctuary Type:</span>
+              <span class="summary-value" id="summaryRoom">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Requested Dates:</span>
+              <span class="summary-value" id="summaryDates">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Party Size:</span>
+              <span class="summary-value" id="summaryGuests">—</span>
+            </div>
+            <div class="summary-row" id="summaryExperienceRow" style="display: none;">
+              <span class="summary-label">Experience:</span>
+              <span class="summary-value" id="summaryExperience">—</span>
+            </div>
+          </div>
+          <button type="button" class="btn-secondary" id="newEnquiryBtn">
+            Submit Another Enquiry
+          </button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. INCLUDED PRIVILEGES STRIP -->
+  <aside class="privileges-strip reveal-on-scroll" aria-label="Guest Inclusions">
+    <div class="container">
+      <div class="privileges-grid">
+        <div class="privilege-box">
+          <span class="privilege-tag">TIMINGS</span>
+          <h4>Stay Schedule</h4>
+          <p>Check-in 3:00 PM onwards &bull; Check-out until 11:00 AM</p>
+        </div>
+        <div class="privilege-box">
+          <span class="privilege-tag">RECEPTION</span>
+          <h4>VIP Inclusions</h4>
+          <p>Cold-pressed botanical refreshments &amp; complimentary valet parking</p>
+        </div>
+        <div class="privilege-box">
+          <span class="privilege-tag">CONNECTIVITY</span>
+          <h4>Sanctuary Amenities</h4>
+          <p>High-speed fiber Wi-Fi throughout all suites and private cabanas</p>
+        </div>
+        <div class="privilege-box">
+          <span class="privilege-tag">CONCIERGE</span>
+          <h4>Direct Concierge</h4>
+          <p>24/7 Itinerary support: <strong>concierge@auraveilresort.com</strong></p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="Auraveil Resort &amp; Spa Homepage">
+            <span class="brand-name">Auraveil</span>
+            <span class="brand-subline">RESORT &amp; SPA</span>
+          </a>
+          <p class="footer-tagline">Contemporary coastal architecture, private villas, and bespoke quiet luxury.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+            <li><a href="facilities.html">Facilities</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking.html">Booking &amp; Enquiry</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom-row">
+        <p>&copy; 2026 Auraveil Resort &amp; Spa. All rights reserved.</p>
+        <p>Project Module: <strong>Booking &amp; Enquiry</strong> | Lead: Anushka Bansal (Group 03 - 3CB)</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Module Script -->
+  <script src="js/booking.js"></script>
+</body>
+</html>

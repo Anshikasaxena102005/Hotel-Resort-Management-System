@@ -1,0 +1,708 @@
+/* ==========================================================================
+   AURAVEIL RESORT & SPA — BESPOKE SERVICES MODULE
+   Aesthetic: Contemporary Ultra-Luxury Private Resort & Architectural Editorial
+   Palette: Warm Alabaster (#FBF9F5), Charcoal (#141414), Muted Bronze (#B8976C)
+   ========================================================================== */
+
+/* --- Design Tokens & CSS Variables --- */
+:root {
+  --bg-base: #FBF9F5;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F2EEE7;
+  --bg-dark: #121211;
+  
+  --text-main: #141414;
+  --text-muted: #5C5852;
+  --text-light: #8A857D;
+  --text-inverse: #FFFFFF;
+  
+  --accent-bronze: #B8976C;
+  --accent-bronze-light: #D4B892;
+  --accent-bronze-dark: #9A774C;
+  --accent-bronze-soft: rgba(184, 151, 108, 0.12);
+  
+  --border-hairline: rgba(20, 20, 20, 0.10);
+  --border-subtle: #E6E1D8;
+  --border-focus: #B8976C;
+  
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --transition-editorial: all 0.36s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  --radius-minimal: 2px;
+  --radius-subtle: 4px;
+}
+
+/* --- Global Reset & Foundation --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body.editorial-theme {
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* --- Editorial Layout Container --- */
+.container-editorial {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+/* ==========================================================================
+   SITE HEADER & NAVBAR (Exact Reference Video Proportions)
+   Layout: Logo Left, Navigation Links & "BOOK A STAY" Button Right
+   Solid #FFFFFF Background, Crisp Hairline Border, Sticky Top
+   ========================================================================== */
+.site-header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #EBE7DE;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 28px;
+  padding-right: 28px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand Wordmark Logo: Exactly "Auraveil" (A uppercase, uraveil lowercase) */
+.brand-logo {
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.brand-logo:hover {
+  opacity: 0.88;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.52rem;
+  font-weight: 400;
+  letter-spacing: 0.035em;
+  color: #1C1C1C;
+  line-height: 1.05;
+  display: block;
+}
+
+.brand-subline {
+  font-family: var(--font-sans);
+  font-size: 8.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  color: #BA9250;
+  margin-top: 3px;
+  font-weight: 600;
+  display: block;
+}
+
+/* Right Navigation Group (Links + BOOK A STAY Button) */
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1C1C1C;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #BA9250;
+}
+
+.nav-link.active {
+  color: #BA9250;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #BA9250;
+}
+
+/* "BOOK A STAY" Button (Exact Reference Styling) */
+.nav-btn-book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 24px;
+  background-color: #BA9250;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.nav-btn-book:hover {
+  background-color: #A37D3D;
+  color: #FFFFFF;
+}
+
+/* Mobile Nav Toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #1C1C1C;
+  margin: 5px 0;
+  transition: all 0.25s ease;
+}
+
+/* ==========================================================================
+   CINEMATIC EDITORIAL HERO (Magazine Cover Proportions)
+   ========================================================================== */
+.editorial-hero {
+  position: relative;
+  width: 100%;
+  height: 88vh;
+  min-height: 600px;
+  max-height: 920px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background-color: var(--bg-dark);
+}
+
+.hero-media-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-media-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  filter: brightness(0.92);
+  transform: scale(1.01);
+  transition: var(--transition-slow);
+}
+
+.editorial-hero:hover .hero-media-image {
+  transform: scale(1.03);
+}
+
+.hero-overlay-scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 18, 17, 0.2) 0%,
+    rgba(18, 18, 17, 0.45) 55%,
+    rgba(18, 18, 17, 0.82) 100%
+  );
+}
+
+.hero-editorial-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: 72px;
+}
+
+.hero-caption-block {
+  max-width: 820px;
+  color: var(--text-inverse);
+}
+
+.editorial-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent-bronze-light);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.hero-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+.hero-subtext {
+  font-size: 1.04rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 620px;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.hero-scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.scroll-cue-text {
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.scroll-cue-line {
+  display: inline-block;
+  width: 44px;
+  height: 1px;
+  background-color: var(--accent-bronze);
+}
+
+/* ==========================================================================
+   EDITORIAL SPREADS: SIX ALTERNATING MAGAZINE SECTIONS
+   ========================================================================== */
+.services-editorial-stream {
+  padding: 120px 0 140px;
+  background-color: var(--bg-base);
+}
+
+.editorial-service-spread {
+  margin-bottom: 140px;
+}
+
+.editorial-service-spread:last-of-type {
+  margin-bottom: 90px;
+}
+
+.service-spread-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 76px;
+  align-items: center;
+}
+
+/* Reverse layout for alternating spreads */
+.editorial-service-spread.reverse-layout .service-spread-grid {
+  grid-template-columns: 1fr 1.15fr;
+}
+
+/* Image Column */
+.service-media-column {
+  width: 100%;
+}
+
+.editorial-image-frame {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-minimal);
+}
+
+.service-feature-image {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition-slow);
+}
+
+.editorial-image-frame:hover .service-feature-image {
+  transform: scale(1.03);
+}
+
+.image-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-top: none;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Narrative Column */
+.service-narrative-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-category-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-bronze);
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.service-spread-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.4vw, 3rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.18;
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+.service-spread-desc {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* Feature Bullet Lines */
+.service-features-editorial {
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+  padding: 20px 0;
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feature-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+
+.feature-idx {
+  color: var(--accent-bronze);
+  font-weight: bold;
+}
+
+/* Action CTA Link */
+.service-cta-wrap {
+  display: flex;
+}
+
+.editorial-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid var(--accent-bronze);
+  padding-bottom: 6px;
+  transition: var(--transition-editorial);
+}
+
+.editorial-action-link:hover {
+  color: var(--accent-bronze);
+  gap: 18px;
+}
+
+.editorial-action-link svg {
+  transition: transform 0.25s ease;
+}
+
+.editorial-action-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   BESPOKE ITINERARY CALLOUT BANNER
+   ========================================================================== */
+.editorial-custom-banner {
+  margin-top: 40px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-minimal);
+  padding: 80px 48px;
+  text-align: center;
+}
+
+.custom-banner-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.custom-banner-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.22;
+  color: var(--text-main);
+  margin-bottom: 18px;
+}
+
+.custom-banner-desc {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.btn-charcoal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 36px;
+  background-color: var(--text-main);
+  color: #FFFFFF;
+  border: 1px solid var(--text-main);
+  border-radius: var(--radius-minimal);
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-editorial);
+}
+
+.btn-charcoal:hover {
+  background-color: var(--accent-bronze);
+  border-color: var(--accent-bronze);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.btn-charcoal svg {
+  transition: transform 0.24s ease;
+}
+
+.btn-charcoal:hover svg {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   MINIMAL EDITORIAL FOOTER
+   ========================================================================== */
+.site-footer {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-hairline);
+  padding: 64px 0 36px;
+  margin-top: auto;
+}
+
+.footer-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-hairline);
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-brand .brand-logo {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer-tagline {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin-top: 12px;
+  max-width: 420px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  transition: var(--transition-editorial);
+}
+
+.footer-links a:hover {
+  color: var(--accent-bronze);
+}
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  .service-spread-grid,
+  .editorial-service-spread.reverse-layout .service-spread-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  /* On mobile/tablet, image always appears above narrative */
+  .editorial-service-spread.reverse-layout .service-media-column {
+    order: -1;
+  }
+
+  .service-feature-image {
+    height: 420px;
+  }
+
+  .services-editorial-stream {
+    padding: 80px 0 100px;
+  }
+
+  .editorial-service-spread {
+    margin-bottom: 90px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .nav-right-group {
+    gap: 16px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 24px 28px;
+    border-bottom: 1px solid #EBE7DE;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+  }
+
+  .nav-btn-book {
+    padding: 9px 18px;
+    font-size: 0.74rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .service-feature-image {
+    height: 320px;
+  }
+
+  .editorial-custom-banner {
+    padding: 48px 24px;
+  }
+
+  .footer-top-row {
+    flex-direction: column;
+  }
+}

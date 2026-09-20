@@ -1,0 +1,79 @@
+{
+  "resortName": "Auraveil Resort & Spa",
+  "currency": "USD",
+  "roomTypes": [
+    {
+      "id": "deluxe-room",
+      "name": "Deluxe Room",
+      "startingRate": 320,
+      "maxGuests": 2,
+      "bedType": "King or Twin",
+      "view": "Resort Courtyard & Garden",
+      "description": "An intimate sanctuary offering warm contemporary comfort, marble bath, and private garden patio."
+    },
+    {
+      "id": "premium-room",
+      "name": "Premium Room",
+      "startingRate": 480,
+      "maxGuests": 3,
+      "bedType": "King",
+      "view": "Panoramic Azure Bay",
+      "description": "Expansive living spaces with floor-to-ceiling glass doors opening onto an oceanfront balcony."
+    },
+    {
+      "id": "executive-suite",
+      "name": "Executive Suite",
+      "startingRate": 720,
+      "maxGuests": 4,
+      "bedType": "Master King + Daybed",
+      "view": "Coastline & Horizon",
+      "description": "Dedicated executive lounge access, separate parlor, deep soaking jacuzzi tub, and bespoke butler service."
+    },
+    {
+      "id": "luxury-suite",
+      "name": "Luxury Suite",
+      "startingRate": 950,
+      "maxGuests": 4,
+      "bedType": "Grand California King",
+      "view": "Private Oceanfront Penthouse",
+      "description": "Our signature residence featuring private infinity plunge pool, dining terrace, and evening canapés."
+    },
+    {
+      "id": "family-room",
+      "name": "Family Room",
+      "startingRate": 560,
+      "maxGuests": 5,
+      "bedType": "Two Queens + Connecting Room Option",
+      "view": "Lush Tropical Parkland",
+      "description": "Spacious interconnected suites thoughtfully appointed for family ease and multi-generational comfort."
+    }
+  ],
+  "bookings": [
+    {
+      "id": "ENQ-2026-001",
+      "name": "Demo Guest",
+      "email": "guest@example.com",
+      "phone": "9876543210",
+      "checkIn": "2026-10-10",
+      "checkOut": "2026-10-12",
+      "roomType": "Deluxe Room",
+      "guests": 2,
+      "message": "Demo booking enquiry",
+      "submittedAt": "2026-09-19T20:30:00Z",
+      "status": "Under Review"
+    },
+    {
+      "id": "ENQ-2026-002",
+      "name": "Lady Eleanor Vance",
+      "email": "eleanor.vance@example.com",
+      "phone": "+1 (555) 234-5678",
+      "checkIn": "2026-11-15",
+      "checkOut": "2026-11-20",
+      "roomType": "Luxury Suite",
+      "guests": 2,
+      "message": "Prefer high floor suite with ocean sunrise view and airport chauffeur service.",
+      "submittedAt": "2026-09-19T21:15:00Z",
+      "status": "Confirmed Enquiry"
+    }
+  ]
+}
