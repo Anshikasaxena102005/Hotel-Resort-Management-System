@@ -1,0 +1,92 @@
+{
+  "hotelName": "Aura Palace Resort & Spa",
+  "module": "Contact & FAQ Module",
+  "author": "Anushka Agrawal",
+  "version": "1.0",
+  "contactDetails": {
+    "address": {
+      "street": "4200 Grand Azure Boulevard",
+      "district": "Coastal Cove, Paradise Point",
+      "state": "Bay State",
+      "postalCode": "90210",
+      "country": "United States",
+      "coordinates": {
+        "latitude": 34.0259,
+        "longitude": -118.7798
+      }
+    },
+    "telephone": {
+      "mainReception": "+1 (800) 287-2935",
+      "vipConcierge": "+1 (800) 287-2936",
+      "international": "+1 (310) 555-0199",
+      "facsimile": "+1 (310) 555-0198"
+    },
+    "email": {
+      "general": "info@aurapalace.com",
+      "concierge": "concierge@aurapalace.com",
+      "reservations": "reservations@aurapalace.com",
+      "eventsAndWeddings": "events@aurapalace.com",
+      "pressAndMedia": "press@aurapalace.com"
+    },
+    "operatingHours": {
+      "frontDesk": "24 Hours Daily",
+      "conciergeDesk": "07:00 – 23:00 Daily",
+      "emergencyNightManager": "24 Hours On-Call"
+    },
+    "transportAccess": [
+      {
+        "type": "International Airport",
+        "distance": "18 miles (approx. 25 minutes)",
+        "service": "Private Mercedes Maybach or Cadillac Escalade transfer"
+      },
+      {
+        "type": "Private Helipad",
+        "code": "AUR1",
+        "service": "On-resort helipad landing with direct luggage dispatch to suite"
+      },
+      {
+        "type": "Private Marina & Yacht Docking",
+        "berths": "Up to 120ft yachts",
+        "service": "Deep-water slips with shore power & fresh provisioning"
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "id": "faq-01",
+      "category": "Arrival & Departure",
+      "question": "What are the standard check-in and check-out timings?",
+      "answer": "Standard check-in commences at 15:00, and check-out is at 12:00 (Noon). Early check-in and late check-out can be requested via the concierge and are subject to suite availability. Diamond and Royal Suite guests enjoy guaranteed flexible 16:00 late departure."
+    },
+    {
+      "id": "faq-02",
+      "category": "Dining Reservations",
+      "question": "Is advance reservation mandatory for The Obsidian Fine Dining?",
+      "answer": "Yes, due to limited seating and our curated 7-course seasonal menu, advance table bookings of at least 24 to 48 hours are highly recommended. Resort resident guests receive preferential reservation slots through the concierge desk."
+    },
+    {
+      "id": "faq-03",
+      "category": "Wellness & Spa",
+      "question": "How do I book spa treatments and thermal wellness sessions?",
+      "answer": "Aethelgard Spa appointments can be scheduled upon arrival or pre-booked using the inquiry form above. We recommend arriving 20 minutes prior to your treatment to enjoy the complimentary herbal infusion tea, eucalyptus steam room, and vitality hydrotherapy pools."
+    },
+    {
+      "id": "faq-04",
+      "category": "Transportation",
+      "question": "How far in advance should I request an airport chauffeur or helicopter transfer?",
+      "answer": "For luxury vehicle transfers (Mercedes Maybach / Rolls-Royce), we suggest notifying our transport concierge at least 12 hours prior to flight arrival with your airline flight number. Private helipad landings require 24 hours advance air-traffic clearance."
+    },
+    {
+      "id": "faq-05",
+      "category": "Policies & Cancellations",
+      "question": "What is the resort's cancellation and amendment policy?",
+      "answer": "Standard individual reservations may be cancelled or modified with zero penalty up to 48 hours prior to arrival date. For bespoke banquet events, Grand Ballroom bookings, or private yacht charters, please consult your assigned event coordinator for contract specific terms."
+    },
+    {
+      "id": "faq-06",
+      "category": "Dietary & Special Care",
+      "question": "Does the resort accommodate custom dietary restrictions and allergies?",
+      "answer": "Absolute precision is taken with dietary preferences. Our executive culinary team can tailor gluten-free, vegan, kosher, halal, or allergy-specific menus for both 24/7 in-suite dining and our fine dining restaurants. Simply specify your preferences in the contact form or during check-in."
+    }
+  ]
+}
