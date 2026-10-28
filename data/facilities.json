@@ -1,0 +1,103 @@
+{
+  "resortName": "Auraveil Resort & Spa",
+  "facilities": [
+    {
+      "id": "infinity-pool",
+      "name": "Infinity Pool & Sundeck",
+      "category": "Aquatic Sanctuary",
+      "shortDescription": "Multi-tiered freshwater pool merging with ocean horizon, featuring submerged sunbeds and private cabanas.",
+      "image": "assets/images/facility-pool.jpg",
+      "hours": "6:00 AM – 10:00 PM Daily",
+      "location": "Main Ocean Promenade",
+      "features": [
+        "Submerged granite relaxation sunbeds",
+        "Private poolside cabanas with attendant service",
+        "Temperature-regulated crystalline freshwater",
+        "Complimentary organic juices & chilled fruit skewers"
+      ]
+    },
+    {
+      "id": "veda-spa",
+      "name": "Veda Spa & Wellness Pavilion",
+      "category": "Holistic Wellness",
+      "shortDescription": "Ancient Ayurvedic traditions and modern hydrotherapy set within secluded tropical botanical gardens.",
+      "image": "assets/images/facility-spa.jpg",
+      "hours": "8:00 AM – 9:00 PM",
+      "location": "Botanical Garden East Wing",
+      "features": [
+        "5 Private open-air treatment pavilions",
+        "Himalayan pink salt sauna & herbal steam suite",
+        "Aromatherapy hydrotherapy vitality pools",
+        "Master-therapist curated holistic body rituals"
+      ]
+    },
+    {
+      "id": "signature-dining",
+      "name": "Michelin-Inspired Signature Dining",
+      "category": "Gastronomic Excellence",
+      "shortDescription": "Artisanal culinary journeys celebrating authentic coastal heritage and fresh hyper-local ingredients.",
+      "image": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1200&q=85",
+      "hours": "Breakfast 7:00–11:00 AM | Dinner 6:30–11:00 PM",
+      "location": "The Ocean Terrace Pavilion",
+      "features": [
+        "Open-air cliffside dining pavilion over the azure bay",
+        "600-label temperature-controlled vintage wine cellar",
+        "Seasonal farm-to-table multi-course degustation menus",
+        "Private candlelit beachfront dinners upon reservation"
+      ]
+    },
+    {
+      "id": "fitness-studio",
+      "name": "Fitness Studio & Movement Studio",
+      "category": "Vigor & Movement",
+      "shortDescription": "Floor-to-ceiling glass sanctuary equipped with Technogym ARTIS machines and sunrise yoga terrace.",
+      "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=85",
+      "hours": "24 Hours Daily (Keycard Access)",
+      "location": "Wellness Pavilion Lower Level",
+      "features": [
+        "Full Technogym biomechanical cardio and strength suite",
+        "Open-air sunrise yoga and meditation wooden deck",
+        "Resident movement coaches and personal fitness assessment",
+        "Complimentary chilled eucalyptus towels and electrolyte bar"
+      ]
+    },
+    {
+      "id": "private-beach",
+      "name": "Private White Sand Beach",
+      "category": "Coastal Seclusion",
+      "shortDescription": "Exclusive 500-meter pristine shoreline sheltered between dramatic natural cliffs with butler service.",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85",
+      "hours": "Sunrise to Sunset Daily",
+      "location": "Coastal Shorefront Access",
+      "features": [
+        "500 meters of secluded, protected powder-white beach",
+        "Handcrafted sunbeds, daybeds, and oversized shade umbrellas",
+        "Complimentary stand-up paddleboarding and snorkel gear",
+        "Sunset beach campfire and cocktail lounge"
+      ]
+    },
+    {
+      "id": "private-yacht",
+      "name": "Private Yacht & Maritime Charters",
+      "category": "Maritime Excursions",
+      "shortDescription": "Bespoke catamaran and motor yacht charters exploring hidden coastal coves and marine sanctuaries.",
+      "image": "https://images.unsplash.com/photo-1569263979104-865ab7cd8d17?auto=format&fit=crop&w=1200&q=85",
+      "hours": "Upon Request / Advance Booking",
+      "location": "Auraveil Marina Pier",
+      "features": [
+        "65-foot luxury twin-engine yacht with licensed captain & crew",
+        "Curated sunset champagne cruises with onboard chef",
+        "Dolphin watching and secluded island day excursions",
+        "Deep-sea fishing and private snorkeling gear provided"
+      ]
+    }
+  ],
+  "resortAmenities": [
+    { "title": "Ultra High-Speed Wi-Fi 6", "desc": "Seamless connectivity across all suites, gardens, and beach" },
+    { "title": "Valet & EV Supercharging", "desc": "24-hour valet parking with rapid EV charging stations" },
+    { "title": "Dedicated Butler Service", "desc": "Anticipatory personal service for suites and villas" },
+    { "title": "Airport Luxury Transfers", "desc": "Chauffeured Mercedes-Maybach and helipad transit" },
+    { "title": "24/7 Fine In-Room Dining", "desc": "Bespoke culinary delicacies delivered to your room anytime" },
+    { "title": "Tailored Concierge", "desc": "Private tours, flight arrangements, and custom excursions" }
+  ]
+}

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accommodations &amp; Suites — Auraveil Resort &amp; Spa</title>
+  <meta name="description" content="Explore our luxury rooms, suites, and private penthouses at Auraveil Resort & Spa." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/rooms.css" />
+</head>
+
+<body>
+  <!-- Header & Navigation -->
+  <header class="navbar navbar--solid" id="navbar" role="banner">
+    <div class="container">
+      <nav class="navbar__inner" aria-label="Primary navigation">
+        <a href="index.html" class="navbar__logo" aria-label="Auraveil Resort & Spa — Home">
+          <span class="navbar__logo-name">Auraveil</span>
+          <span class="navbar__logo-tagline">Resort &amp; Spa</span>
+        </a>
+
+        <button class="navbar__toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="navbar__nav" id="nav-menu" role="list">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="rooms.html" class="navbar__link" aria-current="page" style="color:var(--color-gold);">Rooms</a></li>
+          <li><a href="facilities.html" class="navbar__link">Facilities</a></li>
+          <li><a href="services.html" class="navbar__link">Services</a></li>
+          <li><a href="contact.html" class="navbar__link">Contact</a></li>
+          <li><a href="booking.html" class="navbar__link">Booking</a></li>
+          <li class="navbar__cta">
+            <a href="booking.html" class="btn btn--primary" id="nav-book-btn">Book Your Stay</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="page-hero" style="background-image: url('assets/images/hero-fallback.jpg');">
+    <div class="page-hero__content">
+      <p class="page-hero__eyebrow">Bespoke Accommodations</p>
+      <h1 class="page-hero__title">Sanctuaries of Refined Elegance</h1>
+      <p class="page-hero__description">
+        Each room and suite is meticulously designed to immerse you in serene coastal luxury, artisanal comfort, and bespoke personal service.
+      </p>
+    </div>
+  </section>
+
+  <!-- Rooms Listing Section -->
+  <section class="section" id="rooms-list">
+    <div class="container">
+      <!-- Filter Bar -->
+      <div class="filter-bar" role="tablist" aria-label="Filter Rooms">
+        <button class="filter-btn active" data-filter="all">All Sanctuaries</button>
+        <button class="filter-btn" data-filter="room">Rooms</button>
+        <button class="filter-btn" data-filter="suite">Suites &amp; Penthouses</button>
+      </div>
+
+      <!-- Rooms Grid -->
+      <div class="rooms-grid">
+        <!-- Deluxe Room -->
+        <article class="room-card" data-category="room">
+          <div class="room-card__img-wrap">
+            <img class="room-card__img" src="assets/images/room-deluxe-suite.jpg" alt="Deluxe Room with Garden View" onerror="this.src='https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85'" />
+            <span class="room-card__badge">Garden Sanctuary</span>
+            <div class="room-card__price-badge">
+              <span class="room-card__price-amount">$320</span>
+              <span class="room-card__price-unit">/ night</span>
+            </div>
+          </div>
+          <div class="room-card__body">
+            <h2 class="room-card__title">Deluxe Room</h2>
+            <div class="room-card__meta-bar">
+              <span class="room-card__meta-item">
+                <svg class="room-card__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Up to 2 Guests
+              </span>
+              <span class="room-card__meta-item">
+                <svg class="room-card__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+                King or Twin
+              </span>
+              <span class="room-card__meta-item">
+                <svg class="room-card__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM3 9h18M9 21V9"></path></svg>
+                Courtyard &amp; Garden
+              </span>
+            </div>
+            <p class="room-card__desc">
+              An intimate sanctuary offering warm contemporary comfort, marble bath, and private garden patio.
+            </p>
+            <div class="room-card__highlights">
+              <span class="highlight-pill">Private Garden Patio</span>
+              <span class="highlight-pill">Marble Bath</span>
+              <span class="highlight-pill">Nespresso Atelier</span>
+              <span class="highlight-pill">420 sq.ft.</span>
+            </div>
+            <div class="room-card__actions">
+              <a href="room-details.html?room=deluxe-room" class="btn btn--outline">View Details</a>
+              <a href="booking.html?room=deluxe-room" class="btn btn--primary">Book Room</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Premium Room -->
+        <article class="room-card" data-category="room">
+          <div class="room-card__img-wrap">
+            <img class="room-card__img" src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85" alt="Premium Room Oceanfront Balcony" onerror="this.src='assets/images/room-garden-villa.jpg'" />
+            <span class="room-card__badge">Azure Bay View</span>
+            <div class="room-card__price-badge">
+              <span class="room-card__price-amount">$480</span>
+              <span class="room-card__price-unit">/ night</span>
+            </div>
+          </div>
+          <div class="room-card__body">
+            <h2 class="room-card__title">Premium Room</h2>
+            <div class="room-card__meta-bar">
+              <span class="room-card__meta-item">
+                <svg class="room-card__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Up to 3 Guests
+              </span>
+              <span class="room-card__meta-item">
+                <svg class="room-card__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+                King Bed
+              </span>
+              <span class="room-card__meta-item">
+                <svg class="room-card__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM3 9h18M9 21V9"></path></svg>
+                Panoramic Azure Bay
+              </span>
+            </div>
+            <p class="room-card__desc">
+              Expansive living spaces with floor-to-ceiling glass doors opening onto an oceanfront balcony.
+            </p>
+            <div class="room-card__highlights">
+              <span class="highlight-pill">Oceanfront Balcony</span>
+              <span class="highlight-pill">Soaking Tub</span>
+              <span class="highlight-pill">Sunset Cocktails</span>
+              <span class="highlight-pill">580 sq.ft.</span>
+            </div>
+            <div class="room-card__actions">
+              <a href="room-details.html?room=premium-room" class="btn btn--outline">View Details</a>
+              <a href="booking.html?room=premium-room" class="btn btn--primary">Book Room</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Executive Suite -->
+        <article class="room-card" data-category="suite">
+          <div class="room-card__img-wrap">
+            <img class="room-card__img" src="assets/images/room-garden-villa.jpg" alt="Executive Suite Parlor & Jacuzzi" onerror="this.src='https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85'" />
+            <span class="room-card__badge">Butler Service Included</span>
+            <div class="room-card__price-badge">
+              <span class="room-card__price-amount">$720</span>
+              <span class="room-card__price-unit">/ night</span>
+            </div>
+          </div>
+          <div class="room-card__body">
+            <h2 class="room-card__title">Executive Suite</h2>
+            <div class="room-card__meta-bar">
+              <span class="room-card__meta-item">
+                <svg class="room-card__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Up to 4 Guests
+              </span>
+              <span class="room-card__meta-item">
+                <svg class="room-card__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+                Master King + Daybed
+              </span>
+              <span class="room-card__meta-item">
+                <svg class="room-card__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM3 9h18M9 21V9"></path></svg>
+                Coastline &amp; Horizon
+              </span>
+            </div>
+            <p class="room-card__desc">
+              Dedicated executive lounge access, separate parlor, deep soaking jacuzzi tub, and bespoke butler service.
+            </p>
+            <div class="room-card__highlights">
+              <span class="highlight-pill">Executive Lounge</span>
+              <span class="highlight-pill">Bespoke Butler</span>
+              <span class="highlight-pill">Jacuzzi Tub</span>
+              <span class="highlight-pill">850 sq.ft.</span>
+            </div>
+            <div class="room-card__actions">
+              <a href="room-details.html?room=executive-suite" class="btn btn--outline">View Details</a>
+              <a href="booking.html?room=executive-suite" class="btn btn--primary">Book Room</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Luxury Suite -->
+        <article class="room-card" data-category="suite">
+          <div class="room-card__img-wrap">
+            <img class="room-card__img" src="assets/images/room-penthouse.jpg" alt="Luxury Suite Penthouse with Infinity Plunge Pool" onerror="this.src='https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85'" />
+            <span class="room-card__badge">Signature Penthouse</span>
+            <div class="room-card__price-badge">
+              <span class="room-card__price-amount">$950</span>
+              <span class="room-card__price-unit">/ night</span>
+            </div>
+          </div>
+          <div class="room-card__body">
+            <h2 class="room-card__title">Luxury Suite</h2>
+            <div class="room-card__meta-bar">
+              <span class="room-card__meta-item">
+                <svg class="room-card__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Up to 4 Guests
+              </span>
+              <span class="room-card__meta-item">
+                <svg class="room-card__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+                Grand California King
+              </span>
+              <span class="room-card__meta-item">
+                <svg class="room-card__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM3 9h18M9 21V9"></path></svg>
+                Oceanfront Penthouse
+              </span>
+            </div>
+            <p class="room-card__desc">
+              Our signature residence featuring private infinity plunge pool, dining terrace, and evening canapés.
+            </p>
+            <div class="room-card__highlights">
+              <span class="highlight-pill">Private Plunge Pool</span>
+              <span class="highlight-pill">Dining Terrace</span>
+              <span class="highlight-pill">Private In-Suite Chef</span>
+              <span class="highlight-pill">1,350 sq.ft.</span>
+            </div>
+            <div class="room-card__actions">
+              <a href="room-details.html?room=luxury-suite" class="btn btn--outline">View Details</a>
+              <a href="booking.html?room=luxury-suite" class="btn btn--primary">Book Room</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inclusions Banner -->
+  <section class="section" style="background-color: var(--color-ivory-mid); padding: 4.5rem 0;">
+    <div class="container">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto 3rem;">
+        <span class="label">Every Stay Includes</span>
+        <h2 class="section-heading">Complimentary Resort Privileges</h2>
+        <div class="heading-rule" aria-hidden="true"></div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; text-align: center;">
+        <div style="background:var(--color-white); padding: 1.75rem; border-radius: var(--radius-sm); border:1px solid var(--color-ivory);">
+          <h3 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:0.4rem;">Gourmet Breakfast</h3>
+          <p style="font-size:0.85rem; color:var(--color-charcoal-soft);">Farm-to-table coastal breakfast buffet daily at The Ocean Terrace.</p>
+        </div>
+        <div style="background:var(--color-white); padding: 1.75rem; border-radius: var(--radius-sm); border:1px solid var(--color-ivory);">
+          <h3 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:0.4rem;">High-Speed Wi-Fi 6</h3>
+          <p style="font-size:0.85rem; color:var(--color-charcoal-soft);">Unlimited gigabit fiber connectivity throughout the entire resort.</p>
+        </div>
+        <div style="background:var(--color-white); padding: 1.75rem; border-radius: var(--radius-sm); border:1px solid var(--color-ivory);">
+          <h3 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:0.4rem;">Wellness Access</h3>
+          <p style="font-size:0.85rem; color:var(--color-charcoal-soft);">Complimentary infinity pool, fitness studio, and daily sunrise yoga.</p>
+        </div>
+        <div style="background:var(--color-white); padding: 1.75rem; border-radius: var(--radius-sm); border:1px solid var(--color-ivory);">
+          <h3 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:0.4rem;">Chauffeured Valet</h3>
+          <p style="font-size:0.85rem; color:var(--color-charcoal-soft);">Dedicated round-the-clock valet and rapid EV charging stations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <span class="footer__logo-name">Auraveil</span>
+            <span class="footer__logo-tagline">Resort &amp; Spa</span>
+          </a>
+          <p class="footer__tagline">
+            An intimate tropical sanctuary where unhurried elegance meets bespoke coastal luxury.
+          </p>
+        </div>
+
+        <nav class="footer__col" aria-label="Explore navigation">
+          <h3 class="footer__col-title">Accommodations</h3>
+          <ul class="footer__links">
+            <li><a href="rooms.html" class="footer__link">All Rooms &amp; Suites</a></li>
+            <li><a href="room-details.html?room=deluxe-room" class="footer__link">Deluxe Room</a></li>
+            <li><a href="room-details.html?room=premium-room" class="footer__link">Premium Room</a></li>
+            <li><a href="room-details.html?room=executive-suite" class="footer__link">Executive Suite</a></li>
+            <li><a href="room-details.html?room=luxury-suite" class="footer__link">Luxury Suite</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Facilities navigation">
+          <h3 class="footer__col-title">Experiences</h3>
+          <ul class="footer__links">
+            <li><a href="facilities.html#infinity-pool" class="footer__link">Infinity Pool</a></li>
+            <li><a href="facilities.html#veda-spa" class="footer__link">Veda Spa</a></li>
+            <li><a href="facilities.html#signature-dining" class="footer__link">Signature Dining</a></li>
+            <li><a href="facilities.html#fitness-studio" class="footer__link">Fitness Studio</a></li>
+            <li><a href="facilities.html#private-beach" class="footer__link">Private Beach</a></li>
+          </ul>
+        </nav>
+
+        <address style="font-style: normal;">
+          <h3 class="footer__col-title">Find Us</h3>
+          <p class="footer__contact-item">
+            Auraveil Resort &amp; Spa<br />
+            Coastal Heritage Road,<br />
+            Goa — 403 001, India
+          </p>
+          <p class="footer__contact-item">
+            <a href="tel:+918323000000" class="footer__link">+91 832 300 0000</a>
+          </p>
+          <p class="footer__contact-item">
+            <a href="mailto:reservations@auraveil.com" class="footer__link">reservations@auraveil.com</a>
+          </p>
+        </address>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2024 Auraveil Resort &amp; Spa. All rights reserved.</p>
+        <nav class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var menu = document.getElementById('nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', function () {
+          var isOpen = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
+
+      var filterBtns = document.querySelectorAll('.filter-btn');
+      var cards = document.querySelectorAll('.room-card');
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          var filter = btn.getAttribute('data-filter');
+          cards.forEach(function (card) {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    }());
+  </script>
+</body>
+</html>

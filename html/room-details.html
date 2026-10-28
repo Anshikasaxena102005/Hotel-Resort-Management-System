@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Room Details — Auraveil Resort &amp; Spa</title>
+  <meta name="description" content="View full specifications, luxury amenities, and reserve your stay at Auraveil Resort & Spa." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/rooms.css" />
+</head>
+
+<body>
+  <!-- Header & Navigation -->
+  <header class="navbar navbar--solid" id="navbar" role="banner">
+    <div class="container">
+      <nav class="navbar__inner" aria-label="Primary navigation">
+        <a href="../index.html" class="navbar__logo" aria-label="Auraveil Resort & Spa — Home">
+          <span class="navbar__logo-name">Auraveil</span>
+          <span class="navbar__logo-tagline">Resort &amp; Spa</span>
+        </a>
+
+        <button class="navbar__toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="navbar__nav" id="nav-menu" role="list">
+          <li><a href="../index.html" class="navbar__link">Home</a></li>
+          <li><a href="rooms.html" class="navbar__link" style="color:var(--color-gold);">Rooms</a></li>
+          <li><a href="facilities.html" class="navbar__link">Facilities</a></li>
+          <li><a href="../services.html" class="navbar__link">Services</a></li>
+          <li><a href="../contact.html" class="navbar__link">Contact</a></li>
+          <li><a href="../booking.html" class="navbar__link">Booking</a></li>
+          <li class="navbar__cta">
+            <a href="../booking.html" class="btn btn--primary" id="nav-book-btn">Book Your Stay</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Breadcrumb Bar -->
+  <div style="background-color: var(--color-ivory-mid); border-bottom: 1px solid var(--color-cream); padding: 1.25rem 0; margin-top: 80px;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <nav aria-label="Breadcrumb" style="font-size: 0.8rem; letter-spacing: 0.05em;">
+        <a href="../index.html" style="color: var(--color-charcoal-soft);">Home</a>
+        <span style="margin: 0 0.5rem; color: var(--color-cream);">/</span>
+        <a href="rooms.html" style="color: var(--color-charcoal-soft);">Accommodations</a>
+        <span style="margin: 0 0.5rem; color: var(--color-cream);">/</span>
+        <span id="breadcrumb-room-name" style="color: var(--color-gold); font-weight: 500;">Deluxe Room</span>
+      </nav>
+
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <button class="filter-btn active" onclick="loadRoom('deluxe-room')">Deluxe Room</button>
+        <button class="filter-btn" onclick="loadRoom('premium-room')">Premium Room</button>
+        <button class="filter-btn" onclick="loadRoom('executive-suite')">Executive Suite</button>
+        <button class="filter-btn" onclick="loadRoom('luxury-suite')">Luxury Suite</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Room Details Main Section -->
+  <main class="section">
+    <div class="container">
+      <div class="room-details-container">
+        
+        <!-- Left Column -->
+        <div class="room-details-main">
+          <div class="room-gallery-main">
+            <img id="main-image" src="../assets/images/room-deluxe-suite.jpg" alt="Room Interior" />
+          </div>
+
+          <div class="room-gallery-thumbs" id="gallery-thumbs"></div>
+
+          <div style="margin-bottom: 2rem;">
+            <span class="label" id="detail-category-badge">Garden Sanctuary</span>
+            <h1 class="section-heading" id="detail-room-name" style="margin-top: 0.25rem;">Deluxe Room</h1>
+            <div class="heading-rule" aria-hidden="true"></div>
+            <p class="section-subtext" id="detail-description" style="max-width: 100%; margin-top: 1.25rem; font-size: 1.05rem; line-height: 1.8;">
+              An intimate sanctuary offering warm contemporary comfort, marble bath, and private garden patio.
+            </p>
+          </div>
+
+          <!-- Specifications Grid -->
+          <div class="specs-grid">
+            <div class="spec-item">
+              <div class="spec-label">Room Size</div>
+              <div class="spec-value" id="detail-size">420 sq.ft.</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Bed Type</div>
+              <div class="spec-value" id="detail-bed">King or Twin</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Max Occupancy</div>
+              <div class="spec-value" id="detail-guests">2 Guests</div>
+            </div>
+            <div class="spec-item" style="margin-top: 1.25rem;">
+              <div class="spec-label">View</div>
+              <div class="spec-value" id="detail-view">Courtyard &amp; Garden</div>
+            </div>
+            <div class="spec-item" style="margin-top: 1.25rem;">
+              <div class="spec-label">Check-in Time</div>
+              <div class="spec-value">3:00 PM</div>
+            </div>
+            <div class="spec-item" style="margin-top: 1.25rem;">
+              <div class="spec-label">Check-out Time</div>
+              <div class="spec-value">12:00 PM</div>
+            </div>
+          </div>
+
+          <!-- Detailed Amenities Checklist -->
+          <div class="amenities-section">
+            <h2 class="section-heading" style="font-size: 1.8rem; margin-bottom: 1.5rem;">Sanctuary Amenities &amp; Privileges</h2>
+            
+            <div class="amenities-group">
+              <h3 class="amenities-group__title">Comfort &amp; Bedroom</h3>
+              <div class="amenities-list" id="amenities-rest"></div>
+            </div>
+
+            <div class="amenities-group">
+              <h3 class="amenities-group__title">Bathroom &amp; Wellness</h3>
+              <div class="amenities-list" id="amenities-bath"></div>
+            </div>
+
+            <div class="amenities-group">
+              <h3 class="amenities-group__title">Refreshments &amp; Gourmet Bar</h3>
+              <div class="amenities-list" id="amenities-dining"></div>
+            </div>
+
+            <div class="amenities-group">
+              <h3 class="amenities-group__title">Technology &amp; Entertainment</h3>
+              <div class="amenities-list" id="amenities-tech"></div>
+            </div>
+
+            <div class="amenities-group">
+              <h3 class="amenities-group__title">Personal Services</h3>
+              <div class="amenities-list" id="amenities-services"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Sticky Reservation Enquiry Card -->
+        <aside class="booking-card">
+          <div class="booking-card__price-header">
+            <div>
+              <span class="label">Starting From</span>
+              <div class="booking-card__price-num" id="sidebar-price">$320</div>
+            </div>
+            <span style="font-size: 0.85rem; color: var(--color-charcoal-soft); text-transform: uppercase; letter-spacing: 0.1em;">Per Night</span>
+          </div>
+
+          <form id="reservation-form" onsubmit="event.preventDefault(); goToBooking();">
+            <div class="booking-form-group">
+              <label class="booking-form-label" for="res-checkin">Check-in Date</label>
+              <input type="date" id="res-checkin" class="booking-form-control" required />
+            </div>
+
+            <div class="booking-form-group">
+              <label class="booking-form-label" for="res-checkout">Check-out Date</label>
+              <input type="date" id="res-checkout" class="booking-form-control" required />
+            </div>
+
+            <div class="booking-form-group">
+              <label class="booking-form-label" for="res-guests">Guests</label>
+              <select id="res-guests" class="booking-form-control">
+                <option value="1">1 Guest</option>
+                <option value="2" selected>2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+              </select>
+            </div>
+
+            <div class="booking-price-summary">
+              <div class="booking-summary-row">
+                <span id="rate-calculation">$320 × 2 Nights</span>
+                <span id="subtotal-amount">$640</span>
+              </div>
+              <div class="booking-summary-row">
+                <span>Resort Fee &amp; Taxes (12%)</span>
+                <span id="tax-amount">$76.80</span>
+              </div>
+              <div class="booking-summary-row booking-summary-row--total">
+                <span>Estimated Total</span>
+                <span id="total-amount">$716.80</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn--primary" style="width: 100%; text-align: center; padding: 1rem;">
+              Reserve This Sanctuary
+            </button>
+            <p style="text-align: center; font-size: 0.72rem; color: var(--color-charcoal-soft); margin-top: 0.75rem;">
+              No upfront charge. Demo reservation preview.
+            </p>
+          </form>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="../index.html" class="footer__logo">
+            <span class="footer__logo-name">Auraveil</span>
+            <span class="footer__logo-tagline">Resort &amp; Spa</span>
+          </a>
+          <p class="footer__tagline">
+            An intimate tropical sanctuary where unhurried elegance meets bespoke coastal luxury.
+          </p>
+        </div>
+
+        <nav class="footer__col">
+          <h3 class="footer__col-title">Accommodations</h3>
+          <ul class="footer__links">
+            <li><a href="rooms.html" class="footer__link">All Rooms &amp; Suites</a></li>
+            <li><a href="facilities.html" class="footer__link">Resort Facilities</a></li>
+            <li><a href="../booking.html" class="footer__link">Book a Stay</a></li>
+          </ul>
+        </nav>
+
+        <address style="font-style: normal;">
+          <h3 class="footer__col-title">Reservations</h3>
+          <p class="footer__contact-item">
+            Auraveil Resort &amp; Spa<br />
+            Coastal Heritage Road, Goa, India
+          </p>
+          <p class="footer__contact-item">
+            <a href="tel:+918323000000" class="footer__link">+91 832 300 0000</a>
+          </p>
+        </address>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2024 Auraveil Resort &amp; Spa. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var currentRoomId = "deluxe-room";
+    var currentRate = 320;
+
+    var roomDatabase = {
+      "deluxe-room": {
+        name: "Deluxe Room",
+        category: "Garden Sanctuary",
+        rate: 320,
+        guests: "Up to 2 Guests",
+        bed: "King or Twin",
+        view: "Resort Courtyard & Garden",
+        size: "420 sq.ft. / 39 m²",
+        description: "An intimate sanctuary offering warm contemporary comfort, marble bath, and private garden patio.",
+        mainImage: "../assets/images/room-deluxe-suite.jpg",
+        gallery: [
+          "../assets/images/room-deluxe-suite.jpg",
+          "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=85"
+        ],
+        amenities: {
+          rest: ["King or Twin Plush Pillowtop Beds", "600-thread-count Egyptian Linens", "Down & Hypoallergenic Pillows", "Blackout Linen Drapes"],
+          bath: ["Marble Walk-in Rain Shower", "Custom Botanical Bath Amenities", "Plush Terry Robes & Slippers", "Illuminated Vanity Mirror"],
+          dining: ["Nespresso Coffee Atelier", "Artisanal Tea Selection", "Curated Local Mini Bar", "Complimentary Spring Water"],
+          tech: ["55-inch Ultra HD Smart TV", "Bang & Olufsen Bluetooth Audio", "High-speed Fiber Wi-Fi", "Bedside USB-C Ports"],
+          services: ["Twice-daily Housekeeping", "Evening Turndown Ritual", "24-hour In-room Dining", "Private Safe & Steamer"]
+        }
+      },
+      "premium-room": {
+        name: "Premium Room",
+        category: "Panoramic Azure Bay",
+        rate: 480,
+        guests: "Up to 3 Guests",
+        bed: "King Bed",
+        view: "Panoramic Azure Bay",
+        size: "580 sq.ft. / 54 m²",
+        description: "Expansive living spaces with floor-to-ceiling glass doors opening onto an oceanfront balcony.",
+        mainImage: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85",
+        gallery: [
+          "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85",
+          "../assets/images/room-garden-villa.jpg",
+          "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85"
+        ],
+        amenities: {
+          rest: ["Custom King Bed with Sea View", "Fine Italian Linen Sheets", "Aromatherapy Pillow Menu", "Motorized Sun Shades"],
+          bath: ["Deep Freestanding Stone Tub", "Twin Vessel Sinks", "Rain & Waterfall Dual Shower", "Luxury Designer Toiletries"],
+          dining: ["Temperature-Controlled Wine Fridge", "Handmade Ceramic Espresso Bar", "Artisanal Cocktail Kit", "Daily Fresh Tropical Fruit"],
+          tech: ["65-inch 4K OLED Smart TV", "Sonos Sound Architecture", "Ultra-fast Fiber Connection", "Integrated Ambient Lighting Controls"],
+          services: ["Dedicated Floor Concierge", "Priority Spa & Dining Booking", "Daily Evening Canapés Service", "Shoeshine & Valet Pressing"]
+        }
+      },
+      "executive-suite": {
+        name: "Executive Suite",
+        category: "Coastline & Horizon",
+        rate: 720,
+        guests: "Up to 4 Guests",
+        bed: "Master King + Daybed",
+        view: "Coastline & Horizon",
+        size: "850 sq.ft. / 79 m²",
+        description: "Dedicated executive lounge access, separate parlor, deep soaking jacuzzi tub, and bespoke butler service.",
+        mainImage: "../assets/images/room-garden-villa.jpg",
+        gallery: [
+          "../assets/images/room-garden-villa.jpg",
+          "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
+          "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85",
+          "../assets/images/room-deluxe-suite.jpg"
+        ],
+        amenities: {
+          rest: ["Master King Suite + Daybed", "Goose Down Duvets & Silk Linens", "Walk-in Dressing Salon", "Soundproof Architectural Glazing"],
+          bath: ["Deep Soaking Jacuzzi Bath", "Private Steam Shower Enclosure", "Heated Marble Floors", "Diptqyue Luxury Fragrances"],
+          dining: ["Full Private Cocktail Atelier", "Separate Dining Room", "Sommelier-Selected Wine Refrigerator", "Complimentary Gourmet Basket"],
+          tech: ["Multi-Zone Audio System", "Dual 65-inch Smart TVs", "Smart Tablet Room Control", "Wireless Fast Charging Pads"],
+          services: ["24-Hour Bespoke Butler Service", "Unpacking & Wardrobe Management", "Fast-track Private Airport Transit", "Laundry & Valet Service"]
+        }
+      },
+      "luxury-suite": {
+        name: "Luxury Suite",
+        category: "Private Oceanfront Penthouse",
+        rate: 950,
+        guests: "Up to 4 Guests",
+        bed: "Grand California King",
+        view: "Private Oceanfront Penthouse",
+        size: "1,350 sq.ft. / 125 m²",
+        description: "Our signature residence featuring private infinity plunge pool, dining terrace, and evening canapés.",
+        mainImage: "../assets/images/room-penthouse.jpg",
+        gallery: [
+          "../assets/images/room-penthouse.jpg",
+          "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85",
+          "../assets/images/facility-pool.jpg",
+          "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85"
+        ],
+        amenities: {
+          rest: ["Grand California King Suite", "Private Outdoor Infinity Plunge Pool", "Expansive Sunken Sun Lounge", "800-thread Organic Egyptian Linen"],
+          bath: ["Panoramic Ocean-Edge Bathtub", "Open-air Rain Garden Pavilion", "Double Steam Sauna", "Bespoke Apothecary Collection"],
+          dining: ["Chef's Prep Kitchen & 8-seat Dining Terrace", "Welcome Dom Pérignon & Canapés", "Unlimited Private Mini Bar", "Daily Caviar & Sunset Tasting"],
+          tech: ["75-inch Master Display", "Sonos Architectural Hi-Fi System", "iPad Smart Sanctuary Automation", "Private High-Speed Satellite Link"],
+          services: ["Dedicated Personal Head Butler", "Private In-Suite Chef On Call", "Luxury Maybach / Helipad Transfer", "Complimentary Unlimited Laundry"]
+        }
+      }
+    };
+
+    function loadRoom(roomId) {
+      var data = roomDatabase[roomId];
+      if (!data) return;
+      currentRoomId = roomId;
+      currentRate = data.rate;
+
+      document.getElementById('breadcrumb-room-name').textContent = data.name;
+      document.getElementById('detail-room-name').textContent = data.name;
+      document.getElementById('detail-category-badge').textContent = data.category;
+      document.getElementById('detail-description').textContent = data.description;
+      document.getElementById('detail-size').textContent = data.size;
+      document.getElementById('detail-bed').textContent = data.bed;
+      document.getElementById('detail-guests').textContent = data.guests;
+      document.getElementById('detail-view').textContent = data.view;
+      document.getElementById('sidebar-price').textContent = '$' + data.rate;
+
+      var mainImg = document.getElementById('main-image');
+      mainImg.src = data.mainImage;
+
+      var thumbsContainer = document.getElementById('gallery-thumbs');
+      thumbsContainer.innerHTML = '';
+      data.gallery.forEach(function (url, index) {
+        var thumb = document.createElement('div');
+        thumb.className = 'room-thumb' + (index === 0 ? ' active' : '');
+        thumb.innerHTML = '<img src="' + url + '" alt="Thumbnail ' + (index + 1) + '" />';
+        thumb.onclick = function () {
+          mainImg.src = url;
+          document.querySelectorAll('.room-thumb').forEach(function (t) { t.classList.remove('active'); });
+          thumb.classList.add('active');
+        };
+        thumbsContainer.appendChild(thumb);
+      });
+
+      function renderList(targetId, items) {
+        var el = document.getElementById(targetId);
+        el.innerHTML = '';
+        items.forEach(function (item) {
+          var div = document.createElement('div');
+          div.className = 'amenities-list-item';
+          div.textContent = item;
+          el.appendChild(div);
+        });
+      }
+
+      renderList('amenities-rest', data.amenities.rest);
+      renderList('amenities-bath', data.amenities.bath);
+      renderList('amenities-dining', data.amenities.dining);
+      renderList('amenities-tech', data.amenities.tech);
+      renderList('amenities-services', data.amenities.services);
+
+      calculatePricing();
+    }
+
+    function calculatePricing() {
+      var checkin = document.getElementById('res-checkin').value;
+      var checkout = document.getElementById('res-checkout').value;
+      var nights = 2;
+
+      if (checkin && checkout) {
+        var d1 = new Date(checkin);
+        var d2 = new Date(checkout);
+        var diff = Math.ceil((d2 - d1) / (1000 * 60 * 60 * 24));
+        if (diff > 0) nights = diff;
+      }
+
+      var subtotal = currentRate * nights;
+      var tax = subtotal * 0.12;
+      var total = subtotal + tax;
+
+      document.getElementById('rate-calculation').textContent = '$' + currentRate + ' × ' + nights + ' Night' + (nights > 1 ? 's' : '');
+      document.getElementById('subtotal-amount').textContent = '$' + subtotal.toFixed(2);
+      document.getElementById('tax-amount').textContent = '$' + tax.toFixed(2);
+      document.getElementById('total-amount').textContent = '$' + total.toFixed(2);
+    }
+
+    function goToBooking() {
+      var checkin = document.getElementById('res-checkin').value;
+      var checkout = document.getElementById('res-checkout').value;
+      var guests = document.getElementById('res-guests').value;
+      var url = '../booking.html?room=' + encodeURIComponent(currentRoomId) +
+                '&checkin=' + encodeURIComponent(checkin) +
+                '&checkout=' + encodeURIComponent(checkout) +
+                '&guests=' + encodeURIComponent(guests);
+      window.location.href = url;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var today = new Date();
+      var tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 2);
+
+      var d1 = today.toISOString().split('T')[0];
+      var d2 = tomorrow.toISOString().split('T')[0];
+
+      document.getElementById('res-checkin').value = d1;
+      document.getElementById('res-checkout').value = d2;
+
+      document.getElementById('res-checkin').addEventListener('change', calculatePricing);
+      document.getElementById('res-checkout').addEventListener('change', calculatePricing);
+
+      var params = new URLSearchParams(window.location.search);
+      var roomParam = params.get('room') || 'deluxe-room';
+      loadRoom(roomParam);
+    });
+  </script>
+</body>
+</html>

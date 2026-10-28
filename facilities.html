@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resort Facilities &amp; Wellness — Auraveil Resort &amp; Spa</title>
+  <meta name="description" content="Discover world-class spa rituals, infinity pools, fine dining, private beach, and wellness at Auraveil Resort & Spa." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/facilities.css" />
+</head>
+
+<body>
+  <!-- Header & Navigation -->
+  <header class="navbar navbar--solid" id="navbar" role="banner">
+    <div class="container">
+      <nav class="navbar__inner" aria-label="Primary navigation">
+        <a href="index.html" class="navbar__logo" aria-label="Auraveil Resort & Spa — Home">
+          <span class="navbar__logo-name">Auraveil</span>
+          <span class="navbar__logo-tagline">Resort &amp; Spa</span>
+        </a>
+
+        <button class="navbar__toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="navbar__nav" id="nav-menu" role="list">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="rooms.html" class="navbar__link">Rooms</a></li>
+          <li><a href="facilities.html" class="navbar__link" aria-current="page" style="color:var(--color-gold);">Facilities</a></li>
+          <li><a href="services.html" class="navbar__link">Services</a></li>
+          <li><a href="contact.html" class="navbar__link">Contact</a></li>
+          <li><a href="booking.html" class="navbar__link">Booking</a></li>
+          <li class="navbar__cta">
+            <a href="booking.html" class="btn btn--primary" id="nav-book-btn">Book Your Stay</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero" style="background-image: url('assets/images/facility-pool.jpg');">
+    <div class="page-hero__content">
+      <p class="page-hero__eyebrow">World-Class Experiences</p>
+      <h1 class="page-hero__title">Sanctuary Beyond Four Walls</h1>
+      <p class="page-hero__description">
+        From restorative Ayurvedic journeys to private cliffside tastings and secluded white-sand shores, immerse in the finest expressions of leisure.
+      </p>
+    </div>
+  </section>
+
+  <!-- Facilities Showcase Section -->
+  <main class="section">
+    <div class="container">
+      <div class="facilities-list">
+
+        <!-- 1. Infinity Pool -->
+        <article class="facility-showcase" id="infinity-pool">
+          <div class="facility-showcase__media">
+            <img class="facility-showcase__img" src="assets/images/facility-pool.jpg" alt="Infinity Pool overlooking ocean horizon" onerror="this.src='https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85'" />
+            <span class="facility-showcase__tag">Aquatic Sanctuary</span>
+          </div>
+          <div class="facility-showcase__content">
+            <span class="label">Pure Horizon</span>
+            <h2 class="facility-showcase__heading">Infinity Pool &amp; Ocean Sundeck</h2>
+            <div class="heading-rule" aria-hidden="true"></div>
+            <p class="facility-showcase__desc">
+              Engineered to merge seamlessly with the sea and sky, our multi-tiered freshwater infinity pool offers submerged granite relaxation daybeds, ambient underwater acoustic sound, and dedicated poolside attendant service.
+            </p>
+            <div class="facility-meta-chips">
+              <span class="facility-meta-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                6:00 AM – 10:00 PM Daily
+              </span>
+              <span class="facility-meta-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Main Ocean Promenade
+              </span>
+            </div>
+            <div class="facility-features-list">
+              <span class="facility-feature-item">Submerged granite relaxation sunbeds</span>
+              <span class="facility-feature-item">Private cabanas with personalized attendant service</span>
+              <span class="facility-feature-item">Temperature-regulated crystalline freshwater</span>
+              <span class="facility-feature-item">Complimentary cold-pressed juices and artisan sorbets</span>
+            </div>
+            <a href="booking.html" class="btn btn--outline">Reserve Cabana</a>
+          </div>
+        </article>
+
+        <!-- 2. Veda Spa -->
+        <article class="facility-showcase facility-showcase--reversed" id="veda-spa">
+          <div class="facility-showcase__media">
+            <img class="facility-showcase__img" src="assets/images/facility-spa.jpg" alt="Veda Spa treatment pavilion" onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=85'" />
+            <span class="facility-showcase__tag">Holistic Wellness</span>
+          </div>
+          <div class="facility-showcase__content">
+            <span class="label">Restorative Healing</span>
+            <h2 class="facility-showcase__heading">Veda Spa &amp; Wellness Pavilion</h2>
+            <div class="heading-rule" aria-hidden="true"></div>
+            <p class="facility-showcase__desc">
+              Set within a secluded bamboo grove, Auraveil Spa embraces ancient Ayurvedic healing philosophies harmonized with contemporary hydrotherapy, custom botanical apothecary blends, and outdoor soaking stone baths.
+            </p>
+            <div class="facility-meta-chips">
+              <span class="facility-meta-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                8:00 AM – 9:00 PM Daily
+              </span>
+              <span class="facility-meta-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Botanical Garden East Wing
+              </span>
+            </div>
+            <div class="facility-features-list">
+              <span class="facility-feature-item">5 Private outdoor teak treatment pavilions</span>
+              <span class="facility-feature-item">Himalayan salt inhalation sauna &amp; herbal steam suite</span>
+              <span class="facility-feature-item">Aromatherapy hydrotherapy vitality pools</span>
+              <span class="facility-feature-item">Master therapist-guided personalized chakra rituals</span>
+            </div>
+            <a href="booking.html" class="btn btn--outline">Book Spa Ritual</a>
+          </div>
+        </article>
+
+        <!-- 3. Signature Dining -->
+        <article class="facility-showcase" id="signature-dining">
+          <div class="facility-showcase__media">
+            <img class="facility-showcase__img" src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1200&q=85" alt="Signature fine dining terrace" />
+            <span class="facility-showcase__tag">Gastronomic Excellence</span>
+          </div>
+          <div class="facility-showcase__content">
+            <span class="label">Artisanal Flavors</span>
+            <h2 class="facility-showcase__heading">Michelin-Inspired Signature Dining</h2>
+            <div class="heading-rule" aria-hidden="true"></div>
+            <p class="facility-showcase__desc">
+              Four distinctive culinary venues curated by celebrated chefs, highlighting line-caught coastal seafood, heirloom organic produce, and candlelit degustation menus paired with selections from our temperature-controlled wine cellar.
+            </p>
+            <div class="facility-meta-chips">
+              <span class="facility-meta-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Breakfast: 7–11 AM | Dinner: 6:30–11 PM
+              </span>
+              <span class="facility-meta-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                The Ocean Terrace Pavilion
+              </span>
+            </div>
+            <div class="facility-features-list">
+              <span class="facility-feature-item">Open-air cliffside pavilion overlooking the azure bay</span>
+              <span class="facility-feature-item">600-label sommelier-led vintage wine cellar</span>
+              <span class="facility-feature-item">Seasonal multi-course tasting menus</span>
+              <span class="facility-feature-item">Private candlelit sand-bank dining experiences</span>
+            </div>
+            <a href="booking.html" class="btn btn--outline">Reserve a Table</a>
+          </div>
+        </article>
+
+        <!-- 4. Fitness Studio -->
+        <article class="facility-showcase facility-showcase--reversed" id="fitness-studio">
+          <div class="facility-showcase__media">
+            <img class="facility-showcase__img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=85" alt="Technogym Fitness Studio" />
+            <span class="facility-showcase__tag">Vigor &amp; Movement</span>
+          </div>
+          <div class="facility-showcase__content">
+            <span class="label">Natural Vitality</span>
+            <h2 class="facility-showcase__heading">Fitness Studio &amp; Yoga Pavilion</h2>
+            <div class="heading-rule" aria-hidden="true"></div>
+            <p class="facility-showcase__desc">
+              Flooded with natural sunlight through floor-to-ceiling glass overlooking coastal flora, our fitness sanctuary offers Technogym ARTIS cardio and resistance equipment, open-air sunrise yoga decks, and certified movement coaches.
+            </p>
+            <div class="facility-meta-chips">
+              <span class="facility-meta-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                24 Hours Daily (Keycard Access)
+              </span>
+              <span class="facility-meta-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Wellness Pavilion Lower Level
+              </span>
+            </div>
+            <div class="facility-features-list">
+              <span class="facility-feature-item">Full Technogym biomechanical equipment suite</span>
+              <span class="facility-feature-item">Daily sunrise ocean-deck yoga &amp; guided meditation</span>
+              <span class="facility-feature-item">Private fitness coaching and posture assessments</span>
+              <span class="facility-feature-item">Complimentary chilled towels and electrolyte refreshment bar</span>
+            </div>
+            <a href="contact.html" class="btn btn--outline">Inquire Schedule</a>
+          </div>
+        </article>
+
+        <!-- 5. Private Beach -->
+        <article class="facility-showcase" id="private-beach">
+          <div class="facility-showcase__media">
+            <img class="facility-showcase__img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85" alt="Private White Sand Shoreline" />
+            <span class="facility-showcase__tag">Coastal Seclusion</span>
+          </div>
+          <div class="facility-showcase__content">
+            <span class="label">Exclusive Shoreline</span>
+            <h2 class="facility-showcase__heading">Private White Sand Beach</h2>
+            <div class="heading-rule" aria-hidden="true"></div>
+            <p class="facility-showcase__desc">
+              Step onto 500 meters of pristine, powdered white sand sheltered between dramatic natural cliffs. Enjoy handcrafted teak daybeds, gentle turquoise swimming waters, stand-up paddleboards, and unobtrusive beachside butler service.
+            </p>
+            <div class="facility-meta-chips">
+              <span class="facility-meta-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Sunrise to Sunset Daily
+              </span>
+              <span class="facility-meta-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Coastal Shorefront Access
+              </span>
+            </div>
+            <div class="facility-features-list">
+              <span class="facility-feature-item">500 meters of protected, exclusive golden shoreline</span>
+              <span class="facility-feature-item">Private daybeds, oversized umbrellas &amp; beach cabanas</span>
+              <span class="facility-feature-item">Complimentary stand-up paddleboards &amp; snorkeling gear</span>
+              <span class="facility-feature-item">Sunset beach campfire and cocktail lounge</span>
+            </div>
+            <a href="booking.html" class="btn btn--outline">Book Beachside Cabana</a>
+          </div>
+        </article>
+
+        <!-- 6. Private Yacht Charter -->
+        <article class="facility-showcase facility-showcase--reversed" id="private-yacht">
+          <div class="facility-showcase__media">
+            <img class="facility-showcase__img" src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d17?auto=format&fit=crop&w=1200&q=85" alt="Luxury Yacht Charter" />
+            <span class="facility-showcase__tag">Maritime Excursions</span>
+          </div>
+          <div class="facility-showcase__content">
+            <span class="label">Bespoke Voyages</span>
+            <h2 class="facility-showcase__heading">Private Yacht &amp; Maritime Charters</h2>
+            <div class="heading-rule" aria-hidden="true"></div>
+            <p class="facility-showcase__desc">
+              Embark on bespoke marine expeditions aboard our private 65-foot motor yacht. Discover secluded islands, snorkel in protected coral reefs, and savor sunset champagne toasts prepared by your onboard private chef.
+            </p>
+            <div class="facility-meta-chips">
+              <span class="facility-meta-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Advance Reservation
+              </span>
+              <span class="facility-meta-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Auraveil Marina Pier
+              </span>
+            </div>
+            <div class="facility-features-list">
+              <span class="facility-feature-item">65-foot luxury twin-engine yacht with licensed captain &amp; crew</span>
+              <span class="facility-feature-item">Curated sunset champagne cruises with private canapés</span>
+              <span class="facility-feature-item">Dolphin watching and secluded island day excursions</span>
+              <span class="facility-feature-item">Deep-sea fishing equipment and marine wildlife guides</span>
+            </div>
+            <a href="contact.html" class="btn btn--outline">Inquire Charter</a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Comprehensive Resort Amenities Grid -->
+      <section style="margin-top: 6rem;">
+        <div style="text-align: center; max-width: 720px; margin: 0 auto 3.5rem;">
+          <span class="label">Seamless Comfort</span>
+          <h2 class="section-heading">Resort Amenities &amp; Privileges</h2>
+          <div class="heading-rule" aria-hidden="true"></div>
+          <p class="section-subtext" style="margin: 1.25rem auto 0;">
+            Every dimension of your stay is anticipated with quiet care and exceptional attention to detail.
+          </p>
+        </div>
+
+        <div class="amenities-overview-grid">
+          <div class="amenity-card">
+            <div class="amenity-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+            </div>
+            <h3 class="amenity-card__title">High-Speed Wi-Fi 6</h3>
+            <p class="amenity-card__desc">Complimentary gigabit fiber connectivity available throughout suites, private villas, gardens, and beach.</p>
+          </div>
+
+          <div class="amenity-card">
+            <div class="amenity-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <h3 class="amenity-card__title">Valet &amp; EV Supercharging</h3>
+            <p class="amenity-card__desc">Complimentary 24-hour valet parking with rapid DC fast-charging stations for all electric vehicles.</p>
+          </div>
+
+          <div class="amenity-card">
+            <div class="amenity-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <h3 class="amenity-card__title">Dedicated Butler Service</h3>
+            <p class="amenity-card__desc">Discreet personal butlers dedicated to unpacking, itinerary planning, private dining, and guest requests.</p>
+          </div>
+
+          <div class="amenity-card">
+            <div class="amenity-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path></svg>
+            </div>
+            <h3 class="amenity-card__title">Chauffeured Transfers</h3>
+            <p class="amenity-card__desc">Seamless luxury vehicle airport transfers and private helipad landing privileges for effortless arrivals.</p>
+          </div>
+
+          <div class="amenity-card">
+            <div class="amenity-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+            </div>
+            <h3 class="amenity-card__title">24/7 In-Room Dining</h3>
+            <p class="amenity-card__desc">Artisanal delicacies, hot breakfast, fine wines, and midnight suppers delivered with white-glove precision.</p>
+          </div>
+
+          <div class="amenity-card">
+            <div class="amenity-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            </div>
+            <h3 class="amenity-card__title">Curated Concierge</h3>
+            <p class="amenity-card__desc">Bespoke local heritage tours, guided nature hikes, scuba excursions, and VIP reservations across the coast.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience CTA Banner -->
+      <div class="experience-cta">
+        <span class="label" style="color: var(--color-gold-light);">Your Escape Awaits</span>
+        <h2 class="experience-cta__title">Experience Auraveil Firsthand</h2>
+        <p class="experience-cta__text">
+          Allow our concierge and reservation specialists to curate your personalized tropical escape today.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="booking.html" class="btn btn--primary">Book Your Stay</a>
+          <a href="rooms.html" class="btn btn--outline-light">Explore Accommodations</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <span class="footer__logo-name">Auraveil</span>
+            <span class="footer__logo-tagline">Resort &amp; Spa</span>
+          </a>
+          <p class="footer__tagline">
+            An intimate tropical sanctuary where unhurried elegance meets bespoke coastal luxury.
+          </p>
+        </div>
+
+        <nav class="footer__col">
+          <h3 class="footer__col-title">Experiences</h3>
+          <ul class="footer__links">
+            <li><a href="#infinity-pool" class="footer__link">Infinity Pool</a></li>
+            <li><a href="#veda-spa" class="footer__link">Veda Spa</a></li>
+            <li><a href="#signature-dining" class="footer__link">Signature Dining</a></li>
+            <li><a href="#fitness-studio" class="footer__link">Fitness Studio</a></li>
+            <li><a href="#private-beach" class="footer__link">Private Beach</a></li>
+          </ul>
+        </nav>
+
+        <address style="font-style: normal;">
+          <h3 class="footer__col-title">Contact &amp; Location</h3>
+          <p class="footer__contact-item">
+            Auraveil Resort &amp; Spa<br />
+            Coastal Heritage Road, Goa, India
+          </p>
+          <p class="footer__contact-item">
+            <a href="tel:+918323000000" class="footer__link">+91 832 300 0000</a>
+          </p>
+        </address>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2024 Auraveil Resort &amp; Spa. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var menu = document.getElementById('nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', function () {
+          var isOpen = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
+    }());
+  </script>
+</body>
+</html>

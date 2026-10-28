@@ -1,0 +1,107 @@
+{
+  "resortName": "Auraveil Resort & Spa",
+  "currency": "USD",
+  "currencySymbol": "$",
+  "roomTypes": [
+    {
+      "id": "deluxe-room",
+      "name": "Deluxe Room",
+      "startingRate": 320,
+      "maxGuests": 2,
+      "bedType": "King or Twin",
+      "view": "Resort Courtyard & Garden",
+      "size": "420 sq.ft. / 39 m²",
+      "description": "An intimate sanctuary offering warm contemporary comfort, marble bath, and private garden patio.",
+      "image": "assets/images/room-deluxe-suite.jpg",
+      "fallbackImage": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
+      "highlights": [
+        "Private Garden Patio",
+        "Marble Walk-in Rain Shower",
+        "Nespresso Coffee Atelier",
+        "High-Speed Fiber Wi-Fi"
+      ],
+      "amenities": {
+        "rest": ["King or Twin Plush Beds", "600-thread-count Egyptian Cotton", "Blackout Curtains"],
+        "bath": ["Marble Rain Shower", "Botanical Bath Amenities", "Plush Terry Robes & Slippers"],
+        "dining": ["Nespresso Coffee Bar", "Curated Local Mini Bar", "Complimentary Spring Water"],
+        "tech": ["55-inch Ultra HD Smart TV", "Bespoke Bluetooth Audio", "Bedside USB Ports"],
+        "services": ["Twice-Daily Housekeeping", "Evening Turndown Service", "24-Hour In-Room Dining"]
+      }
+    },
+    {
+      "id": "premium-room",
+      "name": "Premium Room",
+      "startingRate": 480,
+      "maxGuests": 3,
+      "bedType": "King",
+      "view": "Panoramic Azure Bay",
+      "size": "580 sq.ft. / 54 m²",
+      "description": "Expansive living spaces with floor-to-ceiling glass doors opening onto an oceanfront balcony.",
+      "image": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85",
+      "fallbackImage": "assets/images/room-garden-villa.jpg",
+      "highlights": [
+        "Panoramic Ocean Balcony",
+        "Deep Soaking Freestanding Tub",
+        "Sunset Cocktail Service",
+        "65-inch OLED Display"
+      ],
+      "amenities": {
+        "rest": ["King Bed with Direct Ocean View", "Fine Italian Linen Sheets", "Aromatherapy Pillow Menu"],
+        "bath": ["Freestanding Stone Tub", "Twin Marble Vanities", "Dual Rainfall Showerheads"],
+        "dining": ["Artisanal Espresso Setup", "Wine & Champagne Cellar Bar", "Daily Fresh Tropical Fruit"],
+        "tech": ["65-inch 4K OLED Smart TV", "Bang & Olufsen Sound System", "High-Speed Wi-Fi 6"],
+        "services": ["Dedicated Floor Concierge", "Priority Spa & Dining Booking", "Daily Evening Canapes"]
+      }
+    },
+    {
+      "id": "executive-suite",
+      "name": "Executive Suite",
+      "startingRate": 720,
+      "maxGuests": 4,
+      "bedType": "Master King + Daybed",
+      "view": "Coastline & Horizon",
+      "size": "850 sq.ft. / 79 m²",
+      "description": "Dedicated executive lounge access, separate parlor, deep soaking jacuzzi tub, and bespoke butler service.",
+      "image": "assets/images/room-garden-villa.jpg",
+      "fallbackImage": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
+      "highlights": [
+        "Executive Lounge Access",
+        "Deep Soaking Jacuzzi Tub",
+        "Bespoke Butler Service",
+        "Separate Living Parlor"
+      ],
+      "amenities": {
+        "rest": ["Master King + Separate Daybed", "Goose Down Duvets & Silk Linens", "Walk-in Dressing Room"],
+        "bath": ["Deep Soaking Jacuzzi Tub", "Steam Shower Pavilion", "Luxury Designer Toiletries"],
+        "dining": ["Fully Stocked Bar Atelier", "Private Dining Salon", "Sommelier-Selected Wine Refrigerator"],
+        "tech": ["Multi-Room Audio System", "Dual 65-inch Smart TVs", "Smart Room Lighting & Climate Control"],
+        "services": ["Personal 24-Hour Butler", "Unpacking & Packing Service", "Private Fast-Track Airport Check-in"]
+      }
+    },
+    {
+      "id": "luxury-suite",
+      "name": "Luxury Suite",
+      "startingRate": 950,
+      "maxGuests": 4,
+      "bedType": "Grand California King",
+      "view": "Private Oceanfront Penthouse",
+      "size": "1,350 sq.ft. / 125 m²",
+      "description": "Our signature residence featuring private infinity plunge pool, dining terrace, and evening canapés.",
+      "image": "assets/images/room-penthouse.jpg",
+      "fallbackImage": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85",
+      "highlights": [
+        "Private Infinity Plunge Pool",
+        "Oceanfront Dining Terrace",
+        "Evening Canapés & Champagne",
+        "In-Suite Private Chef Service"
+      ],
+      "amenities": {
+        "rest": ["Grand California King Bed", "Custom Cashmere Throws & 800-thread Linens", "Private Sun Terrace"],
+        "bath": ["Cliff-Edge Glass Bathtub", "Private Outdoor Rain Pavilion", "Organic Apothecary Line"],
+        "dining": ["Chef's Prep Kitchen & Dining Table", "Complimentary Vintage Champagne on Arrival", "Daily Gourmet Afternoon Tea"],
+        "tech": ["75-inch Master Display", "Sonos Architectural Sound", "iPad Concierge Control System"],
+        "services": ["Dedicated Head Butler", "Private Luxury Car / Helipad Transfer", "Unlimited Laundry & Valet"]
+      }
+    }
+  ]
+}
