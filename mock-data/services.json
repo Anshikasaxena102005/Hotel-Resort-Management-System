@@ -1,0 +1,110 @@
+{
+  "hotelName": "Aura Palace Resort & Spa",
+  "module": "Services Module",
+  "author": "Anushka Agrawal",
+  "version": "1.0",
+  "services": [
+    {
+      "id": "srv-01",
+      "category": "Gastronomy & Spirits",
+      "title": "The Obsidian Fine Dining",
+      "badge": "Michelin-Inspired",
+      "description": "An epicurean sanctuary celebrating contemporary European and Pan-Asian fusion prepared by celebrated master chefs, accompanied by an award-winning vintage wine cellar.",
+      "operatingHours": "18:00 – 23:30 Daily",
+      "pricingNote": "À la carte & 7-Course Tasting ($185/person)",
+      "dressCode": "Elegant Evening Attire",
+      "advanceNotice": "24–48 Hours Recommended",
+      "features": [
+        "7-Course Seasonal Chef Tasting Menu",
+        "Private Sommelier & Grand Wine Cellar",
+        "Candlelit Oceanside Gazebo Seating"
+      ],
+      "image": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "srv-02",
+      "category": "In-Room Comfort",
+      "title": "24/7 In-Suite Dining",
+      "badge": "Round-the-Clock",
+      "description": "Gourmet cuisine served directly to your terrace or bedside. Whether it is an artisanal sunrise breakfast in bed or late-night bespoke cravings, our team delivers with elegance.",
+      "operatingHours": "24 Hours / 7 Days",
+      "pricingNote": "Included with Royal Suites / À la carte menu",
+      "dressCode": "In-Suite Comfort",
+      "advanceNotice": "Immediate / 30-min preparation",
+      "features": [
+        "Full Midnight Express Menu",
+        "Personal Butler Presentation",
+        "Custom Dietary & Organic Menus"
+      ],
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "srv-03",
+      "category": "Health & Serenity",
+      "title": "Aethelgard Spa & Wellness",
+      "badge": "Holistic Rejuvenation",
+      "description": "An oasis of calm incorporating ancient Ayurvedic therapies, Swedish deep-tissue rejuvenation, volcanic hot-stone rituals, herbal eucalyptus steam, and hydrotherapy pools.",
+      "operatingHours": "08:00 – 22:00 Daily",
+      "pricingNote": "Rituals from $140 – $360",
+      "dressCode": "Resort Robes & Spa Slippers Provided",
+      "advanceNotice": "Same Day or Pre-Arrival Booking",
+      "features": [
+        "Finnish Cedar Saunas & Ice Fountain",
+        "Organic Essential Oils & Herbal Scrubs",
+        "Private Couple Treatment Pavilions"
+      ],
+      "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "srv-04",
+      "category": "Events & Banquets",
+      "title": "Imperial Ballroom & Summit Hall",
+      "badge": "Capacity: 500+ Guests",
+      "description": "A palatial setting for corporate executive summits, international symposiums, dream weddings, and private galas with crystal chandeliers and cutting-edge 4K audiovisual setups.",
+      "operatingHours": "Customized to Event Schedule",
+      "pricingNote": "Custom Package Quotes on Inquiry",
+      "dressCode": "Event Specific / Black Tie / Formal",
+      "advanceNotice": "2–4 Weeks in Advance",
+      "features": [
+        "Acoustically Optimized High-Tech Stage",
+        "Dedicated Banquet Catering Team",
+        "Breakout Boardrooms & VIP Green Room"
+      ],
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "srv-05",
+      "category": "VIP Mobility",
+      "title": "VIP Chauffeur & Airport Transfer",
+      "badge": "Private Fleet",
+      "description": "Travel seamlessly with our premier executive fleet, including Mercedes Maybach, Rolls-Royce Phantom, and luxury SUVs. Tarmac meet-and-greet and luggage handling included.",
+      "operatingHours": "On-Demand 24/7",
+      "pricingNote": "Complimentary for Presidential Penthouse / $120 standard",
+      "dressCode": "Casual / Business",
+      "advanceNotice": "12 Hours Advance Notification",
+      "features": [
+        "Airport Terminal & Helipad Transfers",
+        "Uniformed Multilingual Chauffeurs",
+        "On-Board Wi-Fi, Refreshments & Privacy Glass"
+      ],
+      "image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "srv-06",
+      "category": "Recreation & Adventure",
+      "title": "Private Yacht & Coastal Excursions",
+      "badge": "Exclusive Ocean Excursions",
+      "description": "Chart the turquoise azure waters aboard our 75-foot private motor catamaran. Experience champagne sunset sails, deep-sea game fishing, and private island picnics.",
+      "operatingHours": "Morning & Sunset Charters Daily",
+      "pricingNote": "Half-Day / Full-Day Charters Available",
+      "dressCode": "Nautical Leisure & Sun Protection",
+      "advanceNotice": "24 Hours Advance Notice",
+      "features": [
+        "Private Captain & Steward Crew",
+        "Gourmet Canapés & Premium Bar",
+        "Snorkeling, Scuba & Jet-Ski Equipment"
+      ],
+      "image": "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=800&q=80"
+    }
+  ]
+}
