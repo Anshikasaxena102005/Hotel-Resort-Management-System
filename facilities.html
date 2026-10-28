@@ -57,10 +57,18 @@
   <!-- Facilities Showcase Section -->
   <main class="section">
     <div class="container">
+      <!-- Category Filter Tabs -->
+      <div class="filter-bar" role="tablist" aria-label="Filter Facilities" style="margin-bottom: 3.5rem;">
+        <button class="filter-btn active" data-filter="all">All Experiences</button>
+        <button class="filter-btn" data-filter="wellness">Wellness &amp; Spa</button>
+        <button class="filter-btn" data-filter="aquatic">Aquatic &amp; Coast</button>
+        <button class="filter-btn" data-filter="dining">Gastronomy</button>
+      </div>
+
       <div class="facilities-list">
 
         <!-- 1. Infinity Pool -->
-        <article class="facility-showcase" id="infinity-pool">
+        <article class="facility-showcase" id="infinity-pool" data-category="aquatic">
           <div class="facility-showcase__media">
             <img class="facility-showcase__img" src="assets/images/facility-pool.jpg" alt="Infinity Pool overlooking ocean horizon" onerror="this.src='https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85'" />
             <span class="facility-showcase__tag">Aquatic Sanctuary</span>
@@ -88,12 +96,12 @@
               <span class="facility-feature-item">Temperature-regulated crystalline freshwater</span>
               <span class="facility-feature-item">Complimentary cold-pressed juices and artisan sorbets</span>
             </div>
-            <a href="booking.html" class="btn btn--outline">Reserve Cabana</a>
+            <a href="booking.html" class="btn btn--outline">Reserve Cabana</a> <button type="button" class="btn btn--ghost-gold btn-quick-view" style="font-size: 0.65rem; padding: 0.65rem 1rem;">Quick View</button>
           </div>
         </article>
 
         <!-- 2. Veda Spa -->
-        <article class="facility-showcase facility-showcase--reversed" id="veda-spa">
+        <article class="facility-showcase facility-showcase--reversed" id="veda-spa" data-category="wellness">
           <div class="facility-showcase__media">
             <img class="facility-showcase__img" src="assets/images/facility-spa.jpg" alt="Veda Spa treatment pavilion" onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=85'" />
             <span class="facility-showcase__tag">Holistic Wellness</span>
@@ -121,12 +129,12 @@
               <span class="facility-feature-item">Aromatherapy hydrotherapy vitality pools</span>
               <span class="facility-feature-item">Master therapist-guided personalized chakra rituals</span>
             </div>
-            <a href="booking.html" class="btn btn--outline">Book Spa Ritual</a>
+            <a href="booking.html" class="btn btn--outline">Book Spa Ritual</a> <button type="button" class="btn btn--ghost-gold btn-quick-view" style="font-size: 0.65rem; padding: 0.65rem 1rem;">Quick View</button>
           </div>
         </article>
 
         <!-- 3. Signature Dining -->
-        <article class="facility-showcase" id="signature-dining">
+        <article class="facility-showcase" id="signature-dining" data-category="dining">
           <div class="facility-showcase__media">
             <img class="facility-showcase__img" src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1200&q=85" alt="Signature fine dining terrace" />
             <span class="facility-showcase__tag">Gastronomic Excellence</span>
@@ -154,12 +162,12 @@
               <span class="facility-feature-item">Seasonal multi-course tasting menus</span>
               <span class="facility-feature-item">Private candlelit sand-bank dining experiences</span>
             </div>
-            <a href="booking.html" class="btn btn--outline">Reserve a Table</a>
+            <a href="booking.html" class="btn btn--outline">Reserve a Table</a> <button type="button" class="btn btn--ghost-gold btn-quick-view" style="font-size: 0.65rem; padding: 0.65rem 1rem;">Quick View</button>
           </div>
         </article>
 
         <!-- 4. Fitness Studio -->
-        <article class="facility-showcase facility-showcase--reversed" id="fitness-studio">
+        <article class="facility-showcase facility-showcase--reversed" id="fitness-studio" data-category="wellness">
           <div class="facility-showcase__media">
             <img class="facility-showcase__img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=85" alt="Technogym Fitness Studio" />
             <span class="facility-showcase__tag">Vigor &amp; Movement</span>
@@ -187,12 +195,12 @@
               <span class="facility-feature-item">Private fitness coaching and posture assessments</span>
               <span class="facility-feature-item">Complimentary chilled towels and electrolyte refreshment bar</span>
             </div>
-            <a href="contact.html" class="btn btn--outline">Inquire Schedule</a>
+            <a href="contact.html" class="btn btn--outline">Inquire Schedule</a> <button type="button" class="btn btn--ghost-gold btn-quick-view" style="font-size: 0.65rem; padding: 0.65rem 1rem;">Quick View</button>
           </div>
         </article>
 
         <!-- 5. Private Beach -->
-        <article class="facility-showcase" id="private-beach">
+        <article class="facility-showcase" id="private-beach" data-category="aquatic">
           <div class="facility-showcase__media">
             <img class="facility-showcase__img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85" alt="Private White Sand Shoreline" />
             <span class="facility-showcase__tag">Coastal Seclusion</span>
@@ -220,12 +228,12 @@
               <span class="facility-feature-item">Complimentary stand-up paddleboards &amp; snorkeling gear</span>
               <span class="facility-feature-item">Sunset beach campfire and cocktail lounge</span>
             </div>
-            <a href="booking.html" class="btn btn--outline">Book Beachside Cabana</a>
+            <a href="booking.html" class="btn btn--outline">Book Beachside Cabana</a> <button type="button" class="btn btn--ghost-gold btn-quick-view" style="font-size: 0.65rem; padding: 0.65rem 1rem;">Quick View</button>
           </div>
         </article>
 
         <!-- 6. Private Yacht Charter -->
-        <article class="facility-showcase facility-showcase--reversed" id="private-yacht">
+        <article class="facility-showcase facility-showcase--reversed" id="private-yacht" data-category="aquatic">
           <div class="facility-showcase__media">
             <img class="facility-showcase__img" src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d17?auto=format&fit=crop&w=1200&q=85" alt="Luxury Yacht Charter" />
             <span class="facility-showcase__tag">Maritime Excursions</span>
@@ -253,7 +261,7 @@
               <span class="facility-feature-item">Dolphin watching and secluded island day excursions</span>
               <span class="facility-feature-item">Deep-sea fishing equipment and marine wildlife guides</span>
             </div>
-            <a href="contact.html" class="btn btn--outline">Inquire Charter</a>
+            <a href="contact.html" class="btn btn--outline">Inquire Charter</a> <button type="button" class="btn btn--ghost-gold btn-quick-view" style="font-size: 0.65rem; padding: 0.65rem 1rem;">Quick View</button>
           </div>
         </article>
 
@@ -380,18 +388,24 @@
     </div>
   </footer>
 
-  <!-- Mobile Menu Script -->
-  <script>
-    (function () {
-      var toggle = document.getElementById('nav-toggle');
-      var menu = document.getElementById('nav-menu');
-      if (toggle && menu) {
-        toggle.addEventListener('click', function () {
-          var isOpen = menu.classList.toggle('is-open');
-          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        });
-      }
-    }());
-  </script>
+    <!-- Quick View Modal -->
+  <div class="facility-modal-backdrop" id="facility-modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="facility-modal">
+      <button class="facility-modal__close" id="facility-modal-close" aria-label="Close modal">&times;</button>
+      <img class="facility-modal__img" id="modal-img" src="" alt="Facility Preview" />
+      <div class="facility-modal__body">
+        <span class="label" id="modal-tag">Experience</span>
+        <h3 class="section-heading" id="modal-title" style="font-size: 1.8rem; margin-top: 0.25rem;">Facility Name</h3>
+        <div class="heading-rule" aria-hidden="true" style="margin-bottom: 1.25rem;"></div>
+        <p class="section-subtext" id="modal-desc" style="max-width: 100%; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;"></p>
+        <div class="facility-meta-chips" id="modal-meta" style="margin-bottom: 1.25rem;"></div>
+        <div class="facility-features-list" id="modal-features" style="margin-bottom: 2rem;"></div>
+        <a href="booking.html" class="btn btn--primary" style="display: block; text-align: center; padding: 0.85rem;">Reserve or Inquire</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/facilities.js"></script>
 </body>
 </html>
