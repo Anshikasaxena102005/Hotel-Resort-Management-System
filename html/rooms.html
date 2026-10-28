@@ -57,17 +57,40 @@
   <!-- Rooms Listing Section -->
   <section class="section" id="rooms-list">
     <div class="container">
-      <!-- Filter Bar -->
-      <div class="filter-bar" role="tablist" aria-label="Filter Rooms">
-        <button class="filter-btn active" data-filter="all">All Sanctuaries</button>
-        <button class="filter-btn" data-filter="room">Rooms</button>
-        <button class="filter-btn" data-filter="suite">Suites &amp; Penthouses</button>
+      <!-- Filter & Search Toolbar -->
+      <div style="max-width: 900px; margin: 0 auto 3.5rem; display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
+        <div class="filter-bar" role="tablist" aria-label="Filter Rooms" style="margin-bottom: 0;">
+          <button class="filter-btn active" data-filter="all">All Sanctuaries</button>
+          <button class="filter-btn" data-filter="room">Rooms</button>
+          <button class="filter-btn" data-filter="suite">Suites &amp; Penthouses</button>
+        </div>
+
+        <div style="display: flex; gap: 1rem; width: 100%; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 240px;">
+            <input
+              type="text"
+              id="room-search-input"
+              placeholder="Search by keyword, view, or amenity..."
+              class="booking-form-control"
+              style="padding: 0.65rem 1rem; font-size: 0.85rem;"
+            />
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <select id="room-sort-select" class="booking-form-control" style="padding: 0.65rem 1rem; font-size: 0.85rem; width: auto;">
+              <option value="default">Sort by: Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+            <span id="room-count-badge" class="label" style="white-space: nowrap; font-size: 0.7rem;">Showing 4 of 4 Sanctuaries</span>
+          </div>
+        </div>
       </div>
 
       <!-- Rooms Grid -->
       <div class="rooms-grid">
         <!-- Deluxe Room -->
-        <article class="room-card" data-category="room">
+        <article class="room-card" data-category="room" data-price="320">
           <div class="room-card__img-wrap">
             <img class="room-card__img" src="../assets/images/room-deluxe-suite.jpg" alt="Deluxe Room with Garden View" onerror="this.src='https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85'" />
             <span class="room-card__badge">Garden Sanctuary</span>
@@ -109,7 +132,7 @@
         </article>
 
         <!-- Premium Room -->
-        <article class="room-card" data-category="room">
+        <article class="room-card" data-category="room" data-price="480">
           <div class="room-card__img-wrap">
             <img class="room-card__img" src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85" alt="Premium Room Oceanfront Balcony" onerror="this.src='../assets/images/room-garden-villa.jpg'" />
             <span class="room-card__badge">Azure Bay View</span>
@@ -151,7 +174,7 @@
         </article>
 
         <!-- Executive Suite -->
-        <article class="room-card" data-category="suite">
+        <article class="room-card" data-category="suite" data-price="720">
           <div class="room-card__img-wrap">
             <img class="room-card__img" src="../assets/images/room-garden-villa.jpg" alt="Executive Suite Parlor & Jacuzzi" onerror="this.src='https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85'" />
             <span class="room-card__badge">Butler Service Included</span>
@@ -193,7 +216,7 @@
         </article>
 
         <!-- Luxury Suite -->
-        <article class="room-card" data-category="suite">
+        <article class="room-card" data-category="suite" data-price="950">
           <div class="room-card__img-wrap">
             <img class="room-card__img" src="../assets/images/room-penthouse.jpg" alt="Luxury Suite Penthouse with Infinity Plunge Pool" onerror="this.src='https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85'" />
             <span class="room-card__badge">Signature Penthouse</span>
@@ -278,36 +301,6 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      var toggle = document.getElementById('nav-toggle');
-      var menu = document.getElementById('nav-menu');
-      if (toggle && menu) {
-        toggle.addEventListener('click', function () {
-          var isOpen = menu.classList.toggle('is-open');
-          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        });
-      }
-
-      var filterBtns = document.querySelectorAll('.filter-btn');
-      var cards = document.querySelectorAll('.room-card');
-
-      filterBtns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          filterBtns.forEach(function (b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-
-          var filter = btn.getAttribute('data-filter');
-          cards.forEach(function (card) {
-            if (filter === 'all' || card.getAttribute('data-category') === filter) {
-              card.style.display = 'flex';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-        });
-      });
-    }());
-  </script>
+  <script src="../js/rooms.js"></script>
 </body>
 </html>
