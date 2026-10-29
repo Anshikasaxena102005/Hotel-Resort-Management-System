@@ -1,40 +1,37 @@
 :root {
-  /* Official Team Colors */
-  --bg-main: #F7F4EE;              /* Warm Ivory Canvas */
-  --text-pure: #1C1C1C;            /* Charcoal for Titles */
-  --gold-primary: #B08A3E;         /* Muted Gold Accent */
-  --bg-secondary: #E9E4DA;         /* Soft Beige */
-  /* Supporting Harmony Tones */
-  --bg-surface: #ffffff;           /* Crisp White for Sections */
-  --bg-card: #ffffff;              /* Card Background */
-  --bg-card-hover: #faf8f3;        /* Soft Ivory on Hover */
-  --bg-input: #faf8f3;             /* Form Input Background */
-  --gold-dark: #91702E;            /* Deeper Muted Gold for Hover */
-  --gold-light: #d6b880;           /* Soft Light Gold */
-  --gold-subtle: #f3efe6;          /* Soft Beige/Gold Tint */
-  --text-main: #383838;            /* Charcoal Body Text */
-  --text-muted: #6e6e6e;           /* Muted Elegant Slate */
-  /* Borders & Dividers */
-  --border-subtle: #E9E4DA;        /* Soft Beige Divider */
-  --border-card: #e3dcd1;          /* Subtle Card Border */
+  
+  --bg-main: #F7F4EE;             
+  --text-pure: #1C1C1C;            
+  --bg-secondary: #E9E4DA;         
+  
+  --bg-surface: #ffffff;          
+  --bg-card: #ffffff;              
+  --bg-card-hover: #faf8f3;        
+  --bg-input: #faf8f3;             
+  --gold-dark: #91702E;            
+  --gold-light: #d6b880;           
+  --gold-subtle: #f3efe6;          
+  --text-main: #383838;           
+  --text-muted: #6e6e6e;           
+  
+  --border-subtle: #E9E4DA;        
+  --border-card: #e3dcd1;          
   --border-gold: #B08A3E;
-  /* Shadows (Minimal & Refined) */
+  
   --shadow-sm: 0 2px 10px rgba(28, 28, 28, 0.04);
   --shadow-md: 0 8px 24px rgba(28, 28, 28, 0.06);
   --shadow-card: 0 6px 20px rgba(28, 28, 28, 0.05);
-  /* Typography */
+  
   --font-heading: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-  /* Geometry & Radii */
+  
   --container-max: 1220px;
   --radius-sm: 0px;
   --radius-md: 2px;
   --radius-lg: 4px;
   --transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
-/* --------------------------------------------------------------------------
-   2. RESET & BASE STYLES
-   -------------------------------------------------------------------------- */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -165,9 +162,7 @@ button, input, select, textarea {
 .nav-link.active::after {
   display: none;
 }
-/* --------------------------------------------------------------------------
-   4. BUTTONS & BADGES (CRISP & LUXURY)
-   -------------------------------------------------------------------------- */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -229,9 +224,7 @@ button, input, select, textarea {
   text-transform: uppercase;
   border-radius: var(--radius-sm);
 }
-/* --------------------------------------------------------------------------
-   5. HERO BANNER (LOTS OF WHITESPACE)
-   -------------------------------------------------------------------------- */
+
 .page-hero {
   position: relative;
   padding: 100px 0 85px;
@@ -284,9 +277,7 @@ button, input, select, textarea {
   max-width: 700px;
   margin: 0 auto;
 }
-/* --------------------------------------------------------------------------
-   6. REPUTATION & STATS STRIP
-   -------------------------------------------------------------------------- */
+
 .stats-strip {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-subtle);
@@ -322,9 +313,7 @@ button, input, select, textarea {
   letter-spacing: 2px;
   font-weight: 600;
 }
-/* --------------------------------------------------------------------------
-   7. SERVICES GRID & RECTANGULAR CARDS
-   -------------------------------------------------------------------------- */
+
 .section-services {
   padding: 100px 0;
   background-color: var(--bg-main);
@@ -485,9 +474,7 @@ button, input, select, textarea {
   font-weight: 600;
   color: var(--gold-primary);
 }
-/* --------------------------------------------------------------------------
-   8. BESPOKE CONCIERGE BANNER
-   -------------------------------------------------------------------------- */
+
 .vip-cta-banner {
   margin: 60px 0 95px;
   background: var(--bg-secondary);
@@ -519,9 +506,7 @@ button, input, select, textarea {
   font-weight: 300;
   line-height: 1.8;
 }
-/* --------------------------------------------------------------------------
-   9. CONTACT PAGE
-   -------------------------------------------------------------------------- */
+
 .section-contact {
   padding: 90px 0;
   background-color: var(--bg-main);
