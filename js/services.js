@@ -136,9 +136,6 @@
       }
     });
 
-    card.addEventListener('focus', function () {
-      selectCard(card);
-    });
   });
 
 
