@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Facilities — Auraveil Resort &amp; Spa</title>
+  <meta name="description" content="Explore world-class facilities at Auraveil Resort &amp; Spa — an infinity pool, award-winning Veda Spa, four signature restaurants, and grand event spaces." />
+  <meta name="keywords" content="luxury resort facilities, infinity pool, spa, fine dining, event venue, Auraveil" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Facilities — Auraveil Resort &amp; Spa" />
+  <meta property="og:description" content="Discover our world-class facilities — pool, spa, dining, and events." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/facility-pool.jpg" />
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Shared stylesheet first, then page stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/facilities.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVBAR — identical markup from index.html
+       ============================================================ -->
+  <header class="navbar navbar--transparent" id="navbar" role="banner">
+    <div class="container">
+      <nav class="navbar__inner" aria-label="Primary navigation">
+
+        <!-- Logo -->
+        <a href="index.html" class="navbar__logo" aria-label="Auraveil Resort &amp; Spa — Home">
+          <span class="navbar__logo-name">Auraveil</span>
+          <span class="navbar__logo-tagline">Resort &amp; Spa</span>
+        </a>
+
+        <!-- Mobile toggle -->
+        <button
+          class="navbar__toggle"
+          id="nav-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Nav links -->
+        <ul class="navbar__nav" id="nav-menu" role="list">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="rooms.html" class="navbar__link">Rooms</a></li>
+          <li><a href="facilities.html" class="navbar__link" aria-current="page">Facilities</a></li>
+          <li><a href="booking.html" class="navbar__link">Booking</a></li>
+          <li class="navbar__cta">
+            <a href="booking.html" class="btn btn--primary" id="nav-book-btn">Book Your Stay</a>
+          </li>
+        </ul>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       A. HERO
+       ============================================================ -->
+  <section class="fac-hero" aria-label="Facilities hero — Auraveil Resort &amp; Spa">
+
+    <img
+      class="fac-hero__bg"
+      src="assets/images/facility-pool.jpg"
+      alt="Auraveil infinity pool at golden hour, stretching to meet the tropical ocean horizon"
+      loading="eager"
+      aria-hidden="true"
+    />
+
+    <div class="fac-hero__overlay" aria-hidden="true"></div>
+
+    <div class="fac-hero__content">
+      <p class="fac-hero__eyebrow">World-Class Amenities · Private Tropical Sanctuary</p>
+
+      <h1 class="fac-hero__title">
+        Discover Our<br /><em>Facilities</em>
+      </h1>
+
+      <p class="fac-hero__desc">
+        From the shimmering waters of our infinity pool to the ancient rituals of the Veda Spa — every facility at Auraveil is composed as a destination in itself.
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       STICKY SECTION NAV
+       ============================================================ -->
+  <nav class="fac-nav" aria-label="Jump to facility section">
+    <ul class="fac-nav__list" role="list">
+      <li><a href="#pool"   class="fac-nav__link" data-section="pool">Infinity Pool</a></li>
+      <li><a href="#spa"    class="fac-nav__link" data-section="spa">Veda Spa</a></li>
+      <li><a href="#dining" class="fac-nav__link" data-section="dining">Fine Dining</a></li>
+      <li><a href="#events" class="fac-nav__link" data-section="events">Events</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ============================================================
+       B. INTRODUCTION
+       ============================================================ -->
+  <section class="fac-intro" aria-labelledby="fac-intro-heading">
+    <div class="container">
+      <div class="fac-intro__inner">
+
+        <!-- Text -->
+        <div class="reveal">
+          <span class="label fac-intro__label">Resort Facilities</span>
+          <h2 class="section-heading" id="fac-intro-heading">
+            Beyond<br /><em>Four Walls</em>
+          </h2>
+          <div class="heading-rule" aria-hidden="true"></div>
+
+          <p class="fac-intro__body" style="margin-top:1.5rem;">
+            At Auraveil, the experience begins the moment you step beyond your suite. Our facilities are not amenities — they are destinations, each designed with the same intention and artistry that defines every corner of this resort.
+          </p>
+          <p class="fac-intro__body">
+            Whether surrendering to the healing waters of the Veda Spa, dining above the treeline at dusk, or gathering for life's most cherished celebrations in our grand event spaces — Auraveil offers a world of experiences that linger long after departure.
+          </p>
+        </div>
+
+        <!-- Stats -->
+        <div class="fac-intro__stats reveal reveal--delay-1" aria-label="Facility highlights">
+          <div class="fac-intro__stat">
+            <div class="fac-intro__stat-value">60+</div>
+            <div class="fac-intro__stat-label">Spa Treatments</div>
+          </div>
+          <div class="fac-intro__stat">
+            <div class="fac-intro__stat-value">4</div>
+            <div class="fac-intro__stat-label">Signature Restaurants</div>
+          </div>
+          <div class="fac-intro__stat">
+            <div class="fac-intro__stat-value">3</div>
+            <div class="fac-intro__stat-label">Event Venues</div>
+          </div>
+          <div class="fac-intro__stat">
+            <div class="fac-intro__stat-value">∞</div>
+            <div class="fac-intro__stat-label">Infinity Pool Views</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       C. INFINITY POOL   id="pool"
+       ============================================================ -->
+  <section class="fac-section fac-section--cream" id="pool" aria-labelledby="pool-heading">
+    <div class="container">
+      <div class="fac-split">
+
+        <!-- Image -->
+        <div class="fac-split__image-wrap reveal">
+          <img
+            class="fac-split__image"
+            src="assets/images/facility-pool.jpg"
+            alt="Auraveil infinity pool stretching to the horizon at golden hour, tropical ocean beyond"
+            loading="lazy"
+            width="600"
+            height="520"
+          />
+          <div class="fac-split__image-accent" aria-hidden="true"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="fac-split__content reveal reveal--delay-1">
+          <span class="label">Aquatic Retreat</span>
+          <h2 class="section-heading" id="pool-heading">
+            Infinity Pool<br />&amp; Sundeck
+          </h2>
+          <div class="heading-rule" aria-hidden="true"></div>
+
+          <p class="fac-split__body">
+            Suspended at the edge of a private bay, our infinity pool is one of the resort's defining icons. The water appears to dissolve into the horizon — a seamless meeting of turquoise and gold that shifts with the light from dawn to dusk.
+          </p>
+          <p class="fac-split__body" style="margin-top:0.9rem;">
+            Flanking the pool, the sundeck is furnished with hand-crafted teak loungers and private cabanas, each attended by a dedicated pool butler. Chilled towels, tropical refreshments, and the gentle sound of moving water — time unfolds here without urgency.
+          </p>
+
+          <ul class="fac-highlights" aria-label="Infinity pool highlights">
+            <li class="fac-highlight">60-metre infinity-edge design overlooking the bay</li>
+            <li class="fac-highlight">Private poolside cabanas with butler service</li>
+            <li class="fac-highlight">Heated to 30°C year-round for perfect immersion</li>
+            <li class="fac-highlight">Adjacent adults-only plunge pool and sun terrace</li>
+            <li class="fac-highlight">Poolside cocktail bar open from 10 am to sunset</li>
+          </ul>
+
+          <a href="booking.html" class="btn btn--primary fac-split__cta" id="pool-book-btn">Reserve Your Stay</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       D. VEDA SPA   id="spa"
+       ============================================================ -->
+  <section class="fac-section fac-section--ivory" id="spa" aria-labelledby="spa-heading">
+    <div class="container">
+      <div class="fac-split fac-split--reverse">
+
+        <!-- Content -->
+        <div class="fac-split__content reveal">
+          <span class="label">Wellness &amp; Healing</span>
+          <h2 class="section-heading" id="spa-heading">
+            Veda Spa<br />&amp; Wellness
+          </h2>
+          <div class="heading-rule" aria-hidden="true"></div>
+
+          <p class="fac-split__body">
+            Nestled within a lush garden pavilion scented with wild jasmine and sandalwood, the Veda Spa is a sanctuary within a sanctuary. Our philosophy draws equally from ancient Ayurvedic wisdom and contemporary wellness science to restore the balance of body, mind, and spirit.
+          </p>
+          <p class="fac-split__body" style="margin-top:0.9rem;">
+            Each of our sixty treatments is choreographed by master therapists who take time to understand your body's needs before the first touch. From Panchakarma cleansing rituals to signature hot-stone journeys, every session is a deeply personalised encounter.
+          </p>
+
+          <ul class="fac-highlights" aria-label="Veda Spa highlights">
+            <li class="fac-highlight">60+ treatments across Ayurveda, Swedish, and deep tissue</li>
+            <li class="fac-highlight">Private couples treatment rooms with garden views</li>
+            <li class="fac-highlight">Himalayan salt steam room and cold plunge therapy</li>
+            <li class="fac-highlight">Daily yoga and meditation at sunrise by the reflecting pool</li>
+            <li class="fac-highlight">Personalised wellness consultations with resident therapists</li>
+          </ul>
+
+          <a href="booking.html" class="btn btn--outline fac-split__cta" id="spa-book-btn">Enquire About Spa</a>
+        </div>
+
+        <!-- Image -->
+        <div class="fac-split__image-wrap reveal reveal--delay-1">
+          <img
+            class="fac-split__image"
+            src="assets/images/facility-spa.jpg"
+            alt="Auraveil Veda Spa treatment pavilion surrounded by bamboo, candlelight, and tropical foliage"
+            loading="lazy"
+            width="600"
+            height="520"
+          />
+          <div class="fac-split__image-accent" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       E. FINE DINING   id="dining"
+       ============================================================ -->
+  <section class="fac-section fac-dining" id="dining" aria-labelledby="dining-heading">
+    <div class="container">
+
+      <div class="fac-dining__header">
+        <span class="label">Culinary Arts</span>
+        <h2 class="section-heading section-heading--light" id="dining-heading">
+          Signature Dining
+        </h2>
+        <div class="heading-rule" aria-hidden="true" style="background:var(--color-gold);"></div>
+        <p class="section-subtext section-subtext--light" style="margin-inline:auto; text-align:center; margin-top:1.25rem;">
+          Four distinct restaurants, each a world of its own — curated by our celebrated Executive Chef and rooted in the finest seasonal produce.
+        </p>
+      </div>
+
+      <div class="fac-restaurant-grid" role="list">
+
+        <!-- Coastal Tasting Room -->
+        <article class="fac-restaurant-card reveal" role="listitem" aria-labelledby="rest-coastal-title">
+          <div class="fac-restaurant-card__bg grad-dining-1" role="img" aria-label="Candlelit coastal fine dining setting at Auraveil"></div>
+          <span class="fac-restaurant-card__tag">Fine Dining</span>
+          <h3 class="fac-restaurant-card__title" id="rest-coastal-title">The Coastal Tasting Room</h3>
+          <p class="fac-restaurant-card__text">
+            An intimate twelve-table restaurant perched above the private bay. Our chef presents an ever-evolving seven-course tasting menu that celebrates the finest seafood and coastal produce — accompanied by an exceptional cellar of natural wines.
+          </p>
+        </article>
+
+        <!-- The Orchard Table -->
+        <article class="fac-restaurant-card reveal reveal--delay-1" role="listitem" aria-labelledby="rest-orchard-title">
+          <div class="fac-restaurant-card__bg grad-dining-2" role="img" aria-label="Open-air tropical breakfast setting at Auraveil"></div>
+          <span class="fac-restaurant-card__tag">All-Day Dining</span>
+          <h3 class="fac-restaurant-card__title" id="rest-orchard-title">The Orchard Table</h3>
+          <p class="fac-restaurant-card__text">
+            An open-air garden restaurant where morning light filters through the canopy onto tables set with hand-fired ceramics. Farm-to-table breakfasts, leisurely lunches, and botanical cocktails served from a living herb terrace make this a resort favourite.
+          </p>
+        </article>
+
+        <!-- The Ember Bar & Grill -->
+        <article class="fac-restaurant-card reveal reveal--delay-2" role="listitem" aria-labelledby="rest-ember-title">
+          <div class="fac-restaurant-card__bg grad-dining-3" role="img" aria-label="Ember grill and cocktail bar at Auraveil"></div>
+          <span class="fac-restaurant-card__tag">Grill &amp; Bar</span>
+          <h3 class="fac-restaurant-card__title" id="rest-ember-title">Ember — Bar &amp; Grill</h3>
+          <p class="fac-restaurant-card__text">
+            Wood-fire cooking at its most refined. Our open grill restaurant specialises in sustainably sourced cuts, whole-roasted local fish, and artisanal flatbreads — served beneath the stars with hand-crafted cocktails drawn from our seasonal spirits collection.
+          </p>
+        </article>
+
+      </div>
+
+      <!-- Dining CTA -->
+      <div style="text-align:center; margin-top:3rem;">
+        <a href="booking.html" class="btn btn--ghost-gold" id="dining-book-btn">Reserve a Table</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       F. EVENTS & CELEBRATIONS   id="events"
+       ============================================================ -->
+  <section class="fac-section fac-events" id="events" aria-labelledby="events-heading">
+    <div class="container">
+      <div class="fac-events__inner">
+
+        <!-- Content -->
+        <div class="fac-events__content reveal">
+          <span class="label">Celebrations &amp; Events</span>
+          <h2 class="section-heading section-heading--light" id="events-heading">
+            Grand Ballroom<br />&amp; Private Lawns
+          </h2>
+          <div class="heading-rule" aria-hidden="true" style="background:var(--color-gold);"></div>
+
+          <p class="fac-events__body">
+            Auraveil has long been the chosen stage for life's most meaningful moments. Whether you envision an intimate garden ceremony beneath the stars or a grand celebration in our ornate ballroom, our events team will compose every detail to your vision with flawless precision.
+          </p>
+          <p class="fac-events__body" style="margin-top:0.9rem;">
+            Our event spaces are complemented by our in-house floral studio, bespoke cuisine menus, and a dedicated events director assigned exclusively to your occasion.
+          </p>
+
+          <div class="fac-event-features" role="list">
+
+            <div class="fac-event-feature reveal" role="listitem">
+              <h3 class="fac-event-feature__title">Grand Ballroom</h3>
+              <p class="fac-event-feature__text">Seats 320 guests. Chandeliers, sprung hardwood floor, and state-of-the-art AV.</p>
+            </div>
+
+            <div class="fac-event-feature reveal reveal--delay-1" role="listitem">
+              <h3 class="fac-event-feature__title">The Palm Lawns</h3>
+              <p class="fac-event-feature__text">Three acres of manicured lawns for open-air ceremonies and garden receptions.</p>
+            </div>
+
+            <div class="fac-event-feature reveal reveal--delay-2" role="listitem">
+              <h3 class="fac-event-feature__title">The Atelier Room</h3>
+              <p class="fac-event-feature__text">Intimate boardroom for 24. Natural light, gallery walls, private terrace.</p>
+            </div>
+
+            <div class="fac-event-feature reveal reveal--delay-3" role="listitem">
+              <h3 class="fac-event-feature__title">The Verandah</h3>
+              <p class="fac-event-feature__text">Oceanfront terrace for cocktail evenings and sunset dining gatherings of up to 60.</p>
+            </div>
+
+          </div>
+
+          <div style="margin-top:2.5rem;">
+            <a href="booking.html" class="btn btn--primary" id="events-book-btn">Plan Your Event</a>
+          </div>
+        </div>
+
+        <!-- Visual panels -->
+        <div class="fac-events__visual reveal reveal--delay-1" aria-hidden="true">
+          <div class="fac-events__visual-panel">
+            <div
+              class="fac-events__visual-bg grad-events-1"
+              role="img"
+              aria-label="Auraveil Grand Ballroom elegant interior"
+            ></div>
+            <span class="fac-events__visual-label">Grand Ballroom</span>
+          </div>
+          <div class="fac-events__visual-panel">
+            <div
+              class="fac-events__visual-bg grad-events-2"
+              role="img"
+              aria-label="Auraveil Palm Lawns at dusk for outdoor ceremonies"
+            ></div>
+            <span class="fac-events__visual-label">Palm Lawns</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       G. BOOKING CTA
+       ============================================================ -->
+  <section class="fac-cta" aria-labelledby="fac-cta-heading">
+    <div class="container">
+      <div class="fac-cta__inner">
+        <span class="label" style="display:block; margin-bottom:0.5rem;">Begin Your Journey</span>
+        <h2 class="fac-cta__title" id="fac-cta-heading">
+          Your Perfect Stay<br /><em>Awaits You</em>
+        </h2>
+        <p class="fac-cta__body">
+          Every facility at Auraveil is yours to savour. Reserve your suite today and let our team compose an experience tailored entirely around you.
+        </p>
+        <div class="fac-cta__buttons">
+          <a href="booking.html" class="btn btn--primary"       id="fac-cta-book-btn">Reserve Your Suite</a>
+          <a href="services.html" class="btn btn--outline-light" id="fac-cta-services-btn">Explore Our Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER — identical markup from index.html
+       ============================================================ -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer__top">
+
+        <!-- Brand column -->
+        <div class="footer__brand">
+          <span class="footer__brand-name">Auraveil</span>
+          <span class="footer__brand-tagline">Resort &amp; Spa</span>
+          <p class="footer__brand-desc">
+            Where unhurried luxury meets the wild beauty of nature. Every detail composed with intention, every moment offered with grace.
+          </p>
+
+          <!-- Social links -->
+          <nav class="footer__socials" aria-label="Social media links">
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on Instagram" id="social-instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on Facebook" id="social-facebook">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on Twitter / X" id="social-twitter">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on YouTube" id="social-youtube">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="currentColor" fill="none"/>
+              </svg>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Quick links -->
+        <nav aria-label="Quick links">
+          <h3 class="footer__col-title">Navigate</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html"      class="footer__link" id="footer-home">Home</a></li>
+            <li><a href="rooms.html"      class="footer__link" id="footer-rooms">Rooms &amp; Suites</a></li>
+            <li><a href="facilities.html" class="footer__link" id="footer-facilities">Facilities</a></li>
+            <li><a href="services.html"   class="footer__link" id="footer-services">Services</a></li>
+            <li><a href="contact.html"    class="footer__link" id="footer-contact">Contact</a></li>
+            <li><a href="booking.html"    class="footer__link" id="footer-booking">Reservations</a></li>
+          </ul>
+        </nav>
+
+        <!-- Experiences -->
+        <nav aria-label="Experiences">
+          <h3 class="footer__col-title">Experiences</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="facilities.html#spa"     class="footer__link" id="footer-spa">Veda Spa</a></li>
+            <li><a href="facilities.html#pool"    class="footer__link" id="footer-pool">Infinity Pool</a></li>
+            <li><a href="facilities.html#dining"  class="footer__link" id="footer-dining">Fine Dining</a></li>
+            <li><a href="facilities.html#events"  class="footer__link" id="footer-events">Events</a></li>
+            <li><a href="services.html#excursions" class="footer__link" id="footer-excursions">Excursions</a></li>
+            <li><a href="services.html#weddings"  class="footer__link" id="footer-weddings">Weddings</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contact -->
+        <address style="font-style: normal;">
+          <h3 class="footer__col-title">Find Us</h3>
+          <p class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            Auraveil Resort &amp; Spa<br />
+            Coastal Heritage Road,<br />
+            Goa — 403 001, India
+          </p>
+          <p class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            <a href="tel:+91-832-300-0000" class="footer__link" id="footer-phone">+91 832 300 0000</a>
+          </p>
+          <p class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            <a href="mailto:reservations@auraveil.com" class="footer__link" id="footer-email">reservations@auraveil.com</a>
+          </p>
+          <p class="footer__contact-item" style="margin-top: 0.5rem;">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            Reservations open 24 hours
+          </p>
+        </address>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <p>&copy; 2024 Auraveil Resort &amp; Spa. All rights reserved.</p>
+        <nav class="footer__legal" aria-label="Legal links">
+          <a href="#" id="footer-privacy">Privacy Policy</a>
+          <a href="#" id="footer-terms">Terms of Service</a>
+          <a href="#" id="footer-cookies">Cookie Policy</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- JavaScript — deferred -->
+  <script src="js/facilities.js" defer></script>
+
+</body>
+</html>

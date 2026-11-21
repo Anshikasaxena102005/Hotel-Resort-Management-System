@@ -1,0 +1,689 @@
+/*
+   AURAVEIL RESORT & SPA — Facilities Page Stylesheet
+   Branch: feature/facilities-services
+   Loaded after css/style.css — inherits all design tokens
+*/
+
+/* =============================================
+   1. PAGE HERO — FACILITIES
+   ============================================= */
+.fac-hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 520px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-charcoal);
+}
+
+.fac-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.fac-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 12, 11, 0.38) 0%,
+    rgba(13, 12, 11, 0.60) 50%,
+    rgba(13, 12, 11, 0.75) 100%
+  );
+  z-index: 1;
+}
+
+.fac-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-inline: 1.5rem;
+  max-width: 860px;
+  animation: heroEntrance 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.fac-hero__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s ease forwards;
+}
+
+.fac-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-ivory);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.65s ease forwards;
+}
+
+.fac-hero__title em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.fac-hero__desc {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 300;
+  color: rgba(248, 244, 239, 0.78);
+  max-width: 50ch;
+  margin-inline: auto;
+  line-height: 1.75;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.9s ease forwards;
+}
+
+/* =============================================
+   2. STICKY SECTION NAV (pill strip)
+   ============================================= */
+.fac-nav {
+  position: sticky;
+  top: 72px;        /* below fixed navbar */
+  z-index: 400;
+  background-color: rgba(248, 244, 239, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-cream);
+  padding: 0.65rem 0;
+}
+
+.fac-nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.fac-nav__link {
+  display: inline-block;
+  padding: 0.42rem 1.1rem;
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-soft);
+  text-decoration: none;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.fac-nav__link:hover,
+.fac-nav__link:focus-visible {
+  color: var(--color-gold-dark);
+  border-color: var(--color-gold-pale);
+  background-color: rgba(184, 154, 92, 0.06);
+}
+
+.fac-nav__link.is-active {
+  color: var(--color-white);
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+/* =============================================
+   3. INTRODUCTION SECTION
+   ============================================= */
+.fac-intro {
+  background-color: var(--color-ivory);
+  padding: var(--section-padding);
+}
+
+.fac-intro__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.fac-intro__label { display: block; margin-bottom: 0.5rem; }
+
+.fac-intro__body {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-charcoal-soft);
+  line-height: 1.8;
+  margin-top: 1.25rem;
+}
+
+.fac-intro__body + .fac-intro__body {
+  margin-top: 0.9rem;
+}
+
+.fac-intro__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.fac-intro__stat {
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--color-gold-pale);
+}
+
+.fac-intro__stat-value {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  line-height: 1;
+}
+
+.fac-intro__stat-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-soft);
+  font-weight: 500;
+  margin-top: 0.3rem;
+}
+
+/* =============================================
+   4. FACILITY SECTION — SPLIT LAYOUT BASE
+   ============================================= */
+.fac-section {
+  padding: var(--section-padding);
+  scroll-margin-top: 130px;  /* accounts for sticky nav */
+}
+
+.fac-section--ivory  { background-color: var(--color-ivory); }
+.fac-section--cream  { background-color: var(--color-ivory-mid); }
+.fac-section--dark   { background-color: var(--color-charcoal); }
+
+.fac-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.fac-split--reverse {
+  direction: rtl;
+}
+
+.fac-split--reverse > * {
+  direction: ltr;
+}
+
+/* Image panel */
+.fac-split__image-wrap {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.fac-split__image {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.fac-split__image-wrap:hover .fac-split__image {
+  transform: scale(1.04);
+}
+
+/* Gold accent frame behind image */
+.fac-split__image-accent {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 55%;
+  height: 55%;
+  border: 1px solid var(--color-gold-pale);
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.fac-split--reverse .fac-split__image-accent {
+  right: auto;
+  left: -1.5rem;
+}
+
+/* Content panel */
+.fac-split__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.fac-split__content .label { display: block; margin-bottom: 0.5rem; }
+
+.fac-split__body {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-charcoal-soft);
+  line-height: 1.8;
+  margin-top: 1.25rem;
+}
+
+.fac-split__body--light {
+  color: rgba(248, 244, 239, 0.70);
+}
+
+/* Highlights list */
+.fac-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-cream);
+}
+
+.fac-highlights--light {
+  border-top-color: rgba(255, 255, 255, 0.10);
+}
+
+.fac-highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--color-charcoal-soft);
+  line-height: 1.5;
+}
+
+.fac-highlight--light {
+  color: rgba(248, 244, 239, 0.75);
+}
+
+.fac-highlight::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.fac-split__cta {
+  margin-top: 2rem;
+  align-self: flex-start;
+}
+
+/* =============================================
+   5. FINE DINING SECTION
+   ============================================= */
+.fac-dining {
+  background-color: var(--color-charcoal);
+  position: relative;
+  overflow: hidden;
+}
+
+.fac-dining::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(184, 154, 92, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.fac-dining__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+/* Restaurant cards */
+.fac-restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.fac-restaurant-card {
+  border: 1px solid rgba(184, 154, 92, 0.18);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.025);
+  padding: 2rem 1.75rem;
+  transition:
+    border-color var(--transition-base),
+    background var(--transition-base),
+    transform var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.fac-restaurant-card:hover {
+  border-color: rgba(184, 154, 92, 0.42);
+  background: rgba(255, 255, 255, 0.045);
+  transform: translateY(-5px);
+}
+
+.fac-restaurant-card__bg {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.fac-restaurant-card__tag {
+  display: inline-block;
+  padding: 0.22rem 0.65rem;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  background-color: var(--color-gold);
+  font-family: var(--font-sans);
+  margin-bottom: 0.6rem;
+  border-radius: 2px;
+  align-self: flex-start;
+}
+
+.fac-restaurant-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-ivory);
+  line-height: 1.2;
+  margin-bottom: 0.65rem;
+}
+
+.fac-restaurant-card__text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(248, 244, 239, 0.60);
+  line-height: 1.7;
+  flex: 1;
+}
+
+/* =============================================
+   6. EVENTS SECTION
+   ============================================= */
+.fac-events {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    160deg,
+    hsl(220, 22%, 12%) 0%,
+    hsl(230, 20%, 16%) 50%,
+    hsl(235, 18%, 20%) 100%
+  );
+}
+
+.fac-events__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.fac-events__content .label { display: block; margin-bottom: 0.5rem; }
+
+.fac-events__body {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(248, 244, 239, 0.70);
+  line-height: 1.8;
+  margin-top: 1.25rem;
+}
+
+.fac-event-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.fac-event-feature {
+  padding: 1.25rem;
+  border: 1px solid rgba(184, 154, 92, 0.18);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.025);
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.fac-event-feature:hover {
+  border-color: rgba(184, 154, 92, 0.38);
+  transform: translateY(-3px);
+}
+
+.fac-event-feature__title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-ivory);
+  margin-bottom: 0.4rem;
+}
+
+.fac-event-feature__text {
+  font-size: 0.8375rem;
+  font-weight: 300;
+  color: rgba(248, 244, 239, 0.55);
+  line-height: 1.65;
+}
+
+/* Visual panel for events */
+.fac-events__visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fac-events__visual-panel {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+}
+
+.fac-events__visual-bg {
+  width: 100%;
+  height: 220px;
+}
+
+.fac-events__visual-label {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  font-family: var(--font-sans);
+}
+
+/* =============================================
+   7. BOOKING CTA — overrides for page context
+   ============================================= */
+.fac-cta {
+  position: relative;
+  padding: 7rem 0;
+  background: linear-gradient(
+    160deg,
+    hsl(36, 40%, 25%) 0%,
+    hsl(34, 30%, 18%) 45%,
+    hsl(32, 25%, 14%) 100%
+  );
+  overflow: hidden;
+  text-align: center;
+}
+
+.fac-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 25% 50%, rgba(184, 154, 92, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 50%, rgba(184, 154, 92, 0.07) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.fac-cta__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.fac-cta__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 400;
+  color: var(--color-ivory);
+  line-height: 1.12;
+  margin-bottom: 1rem;
+  margin-top: 0.75rem;
+}
+
+.fac-cta__title em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.fac-cta__body {
+  font-size: 1.0625rem;
+  font-weight: 300;
+  color: rgba(248, 244, 239, 0.68);
+  max-width: 46ch;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+
+.fac-cta__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* =============================================
+   8. GRADIENT FALLBACK BLOCKS (for no-image sections)
+   ============================================= */
+.grad-dining-1 {
+  background: linear-gradient(135deg, hsl(30, 22%, 18%) 0%, hsl(35, 28%, 24%) 50%, hsl(38, 32%, 30%) 100%);
+}
+
+.grad-dining-2 {
+  background: linear-gradient(135deg, hsl(0, 15%, 16%) 0%, hsl(10, 20%, 22%) 50%, hsl(20, 25%, 28%) 100%);
+}
+
+.grad-dining-3 {
+  background: linear-gradient(135deg, hsl(200, 22%, 14%) 0%, hsl(210, 28%, 20%) 50%, hsl(205, 25%, 26%) 100%);
+}
+
+.grad-events-1 {
+  background: linear-gradient(135deg, hsl(220, 25%, 12%) 0%, hsl(230, 30%, 20%) 50%, hsl(225, 25%, 28%) 100%);
+}
+
+.grad-events-2 {
+  background: linear-gradient(135deg, hsl(35, 30%, 15%) 0%, hsl(38, 35%, 22%) 50%, hsl(40, 30%, 28%) 100%);
+}
+
+/* =============================================
+   9. RESPONSIVE — TABLET (≤ 1024px)
+   ============================================= */
+@media (max-width: 1024px) {
+  .fac-intro__inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .fac-intro__stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .fac-split {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .fac-split--reverse {
+    direction: ltr;
+  }
+
+  .fac-split__image {
+    height: 380px;
+  }
+
+  .fac-split__image-accent {
+    display: none;
+  }
+
+  .fac-restaurant-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fac-events__inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .fac-event-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =============================================
+   10. RESPONSIVE — MOBILE (≤ 767px)
+   ============================================= */
+@media (max-width: 767px) {
+  .fac-hero {
+    height: 70vh;
+    min-height: 440px;
+  }
+
+  .fac-nav {
+    top: 60px;
+  }
+
+  .fac-nav__list {
+    gap: 0.15rem;
+    padding: 0 0.5rem;
+  }
+
+  .fac-nav__link {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.55rem;
+  }
+
+  .fac-restaurant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fac-event-features {
+    grid-template-columns: 1fr;
+  }
+
+  .fac-cta {
+    padding: 5rem 0;
+  }
+
+  .fac-cta__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fac-split__image {
+    height: 280px;
+  }
+}
