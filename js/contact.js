@@ -5,6 +5,7 @@
  * 2. Form field validations (Full name, Email, Phone, Subject, Message)
  * 3. Clear error rendering and accessibility states
  * 4. Polished frontend demo success view (no actual email sent)
+ * 5. Complete form reset when "Send Another Message" is clicked
  */
 
 (function () {
@@ -85,7 +86,7 @@
   }
 
   function validatePhone(phone) {
-    if (!phone) return true; // Optional if blank, but if provided must be valid
+    if (!phone) return true; // Phone is optional
     const cleaned = phone.replace(/[\s\-\(\)\.]/g, '');
     const re = /^\+?[0-9]{7,15}$/;
     return re.test(cleaned);
@@ -96,7 +97,7 @@
     let isValid = true;
     let firstInvalidInput = null;
 
-    // Full Name
+    // Full Name (Required, min 2 chars)
     const nameVal = contactName.value.trim();
     if (!nameVal) {
       showError(contactName, 'Full name is required.');
@@ -110,21 +111,21 @@
       clearError(contactName);
     }
 
-    // Email
+    // Email (Required, valid format)
     const emailVal = contactEmail.value.trim();
     if (!emailVal) {
       showError(contactEmail, 'Email address is required.');
       isValid = false;
       if (!firstInvalidInput) firstInvalidInput = contactEmail;
     } else if (!validateEmail(emailVal)) {
-      showError(contactEmail, 'Please enter a valid email address.');
+      showError(contactEmail, 'Please enter a valid email address (e.g. name@example.com).');
       isValid = false;
       if (!firstInvalidInput) firstInvalidInput = contactEmail;
     } else {
       clearError(contactEmail);
     }
 
-    // Phone (Optional, but if filled must be valid)
+    // Phone (Optional, but if provided must be valid)
     const phoneVal = contactPhone.value.trim();
     if (phoneVal && !validatePhone(phoneVal)) {
       showError(contactPhone, 'Please enter a valid telephone number (7 to 15 digits).');
@@ -134,17 +135,17 @@
       clearError(contactPhone);
     }
 
-    // Subject
+    // Subject (Required)
     const subjectVal = contactSubject.value.trim();
     if (!subjectVal) {
-      showError(contactSubject, 'Please select or enter an inquiry subject.');
+      showError(contactSubject, 'Please select an inquiry topic.');
       isValid = false;
       if (!firstInvalidInput) firstInvalidInput = contactSubject;
     } else {
       clearError(contactSubject);
     }
 
-    // Message
+    // Message (Required, min 10 chars)
     const msgVal = contactMessage.value.trim();
     if (!msgVal) {
       showError(contactMessage, 'Please write your message or inquiry.');
@@ -165,7 +166,7 @@
     return isValid;
   }
 
-  // --- 4. SUCCESS DEMO DISPLAY ---
+  // --- 4. SUCCESS DEMO DISPLAY & CLEAN RESET ---
   function showSuccess() {
     if (successGuestName) {
       successGuestName.textContent = contactName.value.trim();
@@ -181,30 +182,49 @@
   }
 
   function resetForm() {
+    // Explicitly reset all values to eliminate any unexpected lingering state
     contactForm.reset();
+    contactName.value = '';
+    contactEmail.value = '';
+    contactPhone.value = '';
+    contactSubject.value = '';
+    contactMessage.value = '';
+
+    // Clear all validation error states
+    [contactName, contactEmail, contactPhone, contactSubject, contactMessage].forEach(clearError);
+
+    // Toggle view back to form
     contactForm.style.display = 'block';
     contactSuccessCard.classList.remove('is-active');
 
-    [contactName, contactEmail, contactPhone, contactSubject, contactMessage].forEach(clearError);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Smooth scroll to form top and focus first input
+    contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    contactName.focus();
   }
 
   // --- 5. INITIALIZATION ---
   document.addEventListener('DOMContentLoaded', function () {
     initNavbar();
 
-    // Blur listeners for active inline cleanup
-    [contactName, contactEmail, contactPhone, contactSubject, contactMessage].forEach(function (input) {
-      input.addEventListener('blur', function () {
-        if (input.value.trim()) {
-          clearError(input);
-        }
-      });
+    // Live error clearing on input and blur
+    [contactName, contactEmail, contactPhone, contactMessage].forEach(function (input) {
       input.addEventListener('input', function () {
         if (input.classList.contains('is-invalid') && input.value.trim()) {
           clearError(input);
         }
       });
+      input.addEventListener('blur', function () {
+        if (input.value.trim()) {
+          clearError(input);
+        }
+      });
+    });
+
+    // Subject select change listener
+    contactSubject.addEventListener('change', function () {
+      if (contactSubject.value.trim()) {
+        clearError(contactSubject);
+      }
     });
 
     // Form submission

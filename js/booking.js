@@ -3,10 +3,10 @@
  * Handles:
  * 1. Navbar scroll states and mobile drawer toggle
  * 2. URL search parameters (?package=romance | wellness | adventure)
- * 3. Date constraints & validation (no past dates, checkout > checkin)
- * 4. Guest count constraints & validation
+ * 3. Date constraints & validation (no past dates, checkout > checkin, local timezone parsing)
+ * 4. Guest count constraints & validation (adults >= 1, children >= 0, capacity checks)
  * 5. Dynamic live booking summary & demo price calculation
- * 6. Accessible form validation with clear error feedback
+ * 6. Accessible form validation with clear real-time error feedback
  * 7. Polished demo confirmation modal
  */
 
@@ -132,7 +132,17 @@
     }
   }
 
-  // --- 2. DATE LOGIC & CONSTRAINTS ---
+  // --- 2. LOCAL DATE LOGIC & CONSTRAINTS ---
+  function parseLocalDate(dateStr) {
+    if (!dateStr) return null;
+    const parts = dateStr.split('-');
+    if (parts.length !== 3) return null;
+    const y = parseInt(parts[0], 10);
+    const m = parseInt(parts[1], 10) - 1;
+    const d = parseInt(parts[2], 10);
+    return new Date(y, m, d, 0, 0, 0, 0);
+  }
+
   function formatDateToISO(date) {
     const y = date.getFullYear();
     const m = String(date.getMonth() + 1).padStart(2, '0');
@@ -141,13 +151,14 @@
   }
 
   function addDays(date, days) {
-    const result = new Date(date);
+    const result = new Date(date.getTime());
     result.setDate(result.getDate() + days);
     return result;
   }
 
   function initDates() {
     const today = new Date();
+    today.setHours(0, 0, 0, 0);
     const tomorrow = addDays(today, 1);
     const threeDaysLater = addDays(today, 4);
 
@@ -165,7 +176,9 @@
 
     // Listeners for date adjustments
     checkInInput.addEventListener('change', handleCheckInChange);
+    checkInInput.addEventListener('input', handleCheckInChange);
     checkOutInput.addEventListener('change', handleCheckOutChange);
+    checkOutInput.addEventListener('input', handleCheckOutChange);
   }
 
   function handleCheckInChange() {
@@ -174,15 +187,17 @@
 
     if (!checkInInput.value) {
       showError(checkInInput, 'Please select a valid check-in date.');
+      updateSummary();
       return;
     }
 
-    const checkInDate = new Date(checkInInput.value);
+    const checkInDate = parseLocalDate(checkInInput.value);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
     if (checkInDate < today) {
       showError(checkInInput, 'Check-in date cannot be in the past.');
+      updateSummary();
       return;
     }
 
@@ -191,8 +206,9 @@
     const minCheckOutISO = formatDateToISO(minCheckOut);
     checkOutInput.min = minCheckOutISO;
 
-    // If checkout is now <= checkin, bump checkout forward automatically
-    if (!checkOutInput.value || new Date(checkOutInput.value) <= checkInDate) {
+    // If checkout is <= checkin, bump checkout forward automatically
+    const currentCheckOut = parseLocalDate(checkOutInput.value);
+    if (!currentCheckOut || currentCheckOut <= checkInDate) {
       checkOutInput.value = minCheckOutISO;
     }
 
@@ -204,15 +220,17 @@
 
     if (!checkOutInput.value) {
       showError(checkOutInput, 'Please select a valid check-out date.');
+      updateSummary();
       return;
     }
 
     if (checkInInput.value) {
-      const checkInDate = new Date(checkInInput.value);
-      const checkOutDate = new Date(checkOutInput.value);
+      const checkInDate = parseLocalDate(checkInInput.value);
+      const checkOutDate = parseLocalDate(checkOutInput.value);
 
       if (checkOutDate <= checkInDate) {
         showError(checkOutInput, 'Check-out date must be later than check-in date.');
+        updateSummary();
         return;
       }
     }
@@ -240,8 +258,10 @@
 
       displayPackageHighlight(key);
     } else {
-      // Default initial room selection
-      roomCategorySelect.value = 'deluxe';
+      // Default to Deluxe if nothing selected yet
+      if (!roomCategorySelect.value) {
+        roomCategorySelect.value = 'deluxe';
+      }
       hidePackageHighlight();
     }
   }
@@ -271,38 +291,53 @@
 
   function updateSummary() {
     const selectedRoomKey = roomCategorySelect.value;
-    const room = ROOM_CATALOG[selectedRoomKey] || ROOM_CATALOG.deluxe;
+    const room = ROOM_CATALOG[selectedRoomKey];
 
     // Room info
-    summaryRoomName.textContent = room.name;
-    summaryRoomImg.src = room.image;
-    summaryRoomImg.alt = room.name;
-    summaryRatePerNight.textContent = `${formatCurrency(room.rate)} / night`;
+    if (room) {
+      summaryRoomName.textContent = room.name;
+      summaryRoomImg.src = room.image;
+      summaryRoomImg.alt = room.name;
+      summaryRatePerNight.textContent = `${formatCurrency(room.rate)} / night`;
+    } else {
+      summaryRoomName.textContent = 'Select Room Category';
+      summaryRoomImg.src = 'assets/images/hero-fallback.jpg';
+      summaryRoomImg.alt = 'Auraveil Resort & Spa';
+      summaryRatePerNight.textContent = '—';
+    }
 
     // Dates & Nights
     let nights = 0;
-    if (checkInInput.value && checkOutInput.value) {
-      const start = new Date(checkInInput.value);
-      const end = new Date(checkOutInput.value);
-      const diffTime = end.getTime() - start.getTime();
-      nights = Math.max(0, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
-    }
+    const inDate = parseLocalDate(checkInInput.value);
+    const outDate = parseLocalDate(checkOutInput.value);
 
-    if (nights > 0 && checkInInput.value && checkOutInput.value) {
-      const inDate = new Date(checkInInput.value).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-      const outDate = new Date(checkOutInput.value).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-      summaryDates.textContent = `${inDate} — ${outDate}`;
+    if (inDate && outDate && outDate > inDate) {
+      const diffTime = outDate.getTime() - inDate.getTime();
+      nights = Math.round(diffTime / (1000 * 60 * 60 * 24));
+      const inFormatted = inDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      const outFormatted = outDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      summaryDates.textContent = `${inFormatted} — ${outFormatted}`;
       summaryNights.textContent = `${nights} ${nights === 1 ? 'Night' : 'Nights'}`;
+    } else if (inDate && outDate && outDate <= inDate) {
+      summaryDates.textContent = 'Check-out must be after check-in';
+      summaryNights.textContent = 'Invalid duration';
     } else {
-      summaryDates.textContent = 'Dates Pending';
+      summaryDates.textContent = 'Select dates';
       summaryNights.textContent = '—';
     }
 
     // Guests
-    const adults = parseInt(adultsInput.value, 10) || 1;
-    const children = parseInt(childrenInput.value, 10) || 0;
-    const guestStr = `${adults} ${adults === 1 ? 'Adult' : 'Adults'}` + (children > 0 ? `, ${children} ${children === 1 ? 'Child' : 'Children'}` : '');
-    summaryGuests.textContent = guestStr;
+    const rawAdults = parseInt(adultsInput.value, 10);
+    const rawChildren = parseInt(childrenInput.value, 10);
+    const adults = (!isNaN(rawAdults) && rawAdults >= 1) ? rawAdults : null;
+    const children = (!isNaN(rawChildren) && rawChildren >= 0) ? rawChildren : 0;
+
+    if (adults !== null) {
+      const guestStr = `${adults} ${adults === 1 ? 'Adult' : 'Adults'}` + (children > 0 ? `, ${children} ${children === 1 ? 'Child' : 'Children'}` : '');
+      summaryGuests.textContent = guestStr;
+    } else {
+      summaryGuests.textContent = 'Specify guests';
+    }
 
     // Package
     const selectedPkgKey = packageSelect.value;
@@ -316,13 +351,13 @@
     }
 
     // Pricing calculation
-    if (nights > 0) {
+    if (room && nights > 0) {
       const baseTotal = room.rate * nights;
       summarySubtotal.textContent = formatCurrency(baseTotal);
       summaryTotal.textContent = formatCurrency(baseTotal);
     } else {
-      summarySubtotal.textContent = formatCurrency(room.rate);
-      summaryTotal.textContent = formatCurrency(room.rate);
+      summarySubtotal.textContent = '—';
+      summaryTotal.textContent = '—';
     }
   }
 
@@ -351,7 +386,6 @@
   }
 
   function validatePhone(phone) {
-    // Allows optional +, digits, spaces, hyphens, brackets, min 7 digits
     const cleaned = phone.replace(/[\s\-\(\)\.]/g, '');
     const re = /^\+?[0-9]{7,15}$/;
     return re.test(cleaned);
@@ -362,7 +396,7 @@
     let isValid = true;
     let firstInvalidInput = null;
 
-    // Full Name
+    // 1. Full Name (Required, min 2 chars)
     const nameVal = guestName.value.trim();
     if (!nameVal) {
       showError(guestName, 'Full name is required.');
@@ -376,7 +410,7 @@
       clearError(guestName);
     }
 
-    // Email
+    // 2. Email (Required, valid format)
     const emailVal = guestEmail.value.trim();
     if (!emailVal) {
       showError(guestEmail, 'Email address is required.');
@@ -390,7 +424,7 @@
       clearError(guestEmail);
     }
 
-    // Phone
+    // 3. Phone (Required, valid format)
     const phoneVal = guestPhone.value.trim();
     if (!phoneVal) {
       showError(guestPhone, 'Phone number is required.');
@@ -404,13 +438,13 @@
       clearError(guestPhone);
     }
 
-    // Check-in Date
+    // 4. Check-in Date (Required, cannot be past)
     if (!checkInInput.value) {
       showError(checkInInput, 'Please choose a check-in date.');
       isValid = false;
       if (!firstInvalidInput) firstInvalidInput = checkInInput;
     } else {
-      const checkInDate = new Date(checkInInput.value);
+      const checkInDate = parseLocalDate(checkInInput.value);
       const today = new Date();
       today.setHours(0, 0, 0, 0);
       if (checkInDate < today) {
@@ -422,14 +456,14 @@
       }
     }
 
-    // Check-out Date
+    // 5. Check-out Date (Required, must be later than check-in)
     if (!checkOutInput.value) {
       showError(checkOutInput, 'Please choose a check-out date.');
       isValid = false;
       if (!firstInvalidInput) firstInvalidInput = checkOutInput;
     } else if (checkInInput.value) {
-      const checkInDate = new Date(checkInInput.value);
-      const checkOutDate = new Date(checkOutInput.value);
+      const checkInDate = parseLocalDate(checkInInput.value);
+      const checkOutDate = parseLocalDate(checkOutInput.value);
       if (checkOutDate <= checkInDate) {
         showError(checkOutInput, 'Check-out date must be later than check-in date.');
         isValid = false;
@@ -439,10 +473,11 @@
       }
     }
 
-    // Adults Count
-    const adults = parseInt(adultsInput.value, 10);
-    if (isNaN(adults) || adults < 1) {
-      showError(adultsInput, 'At least 1 adult is required.');
+    // 6. Adults Count (Required, positive integer >= 1)
+    const adultsVal = adultsInput.value.trim();
+    const adults = parseInt(adultsVal, 10);
+    if (!adultsVal || isNaN(adults) || adults < 1) {
+      showError(adultsInput, 'At least 1 adult guest is required.');
       isValid = false;
       if (!firstInvalidInput) firstInvalidInput = adultsInput;
     } else if (adults > 10) {
@@ -453,17 +488,22 @@
       clearError(adultsInput);
     }
 
-    // Children Count
-    const children = parseInt(childrenInput.value, 10);
-    if (isNaN(children) || children < 0) {
-      showError(childrenInput, 'Children count cannot be negative.');
+    // 7. Children Count (Required integer >= 0, cannot be negative)
+    const childrenVal = childrenInput.value.trim();
+    const children = parseInt(childrenVal, 10);
+    if (childrenVal === '' || isNaN(children) || children < 0) {
+      showError(childrenInput, 'Children count cannot be negative or invalid (enter 0 or more).');
+      isValid = false;
+      if (!firstInvalidInput) firstInvalidInput = childrenInput;
+    } else if (children > 6) {
+      showError(childrenInput, 'For reservations of more than 6 children, please contact our concierge.');
       isValid = false;
       if (!firstInvalidInput) firstInvalidInput = childrenInput;
     } else {
       clearError(childrenInput);
     }
 
-    // Room Category Selection
+    // 8. Room Category Selection (Required)
     if (!roomCategorySelect.value || !ROOM_CATALOG[roomCategorySelect.value]) {
       showError(roomCategorySelect, 'Please select a room category.');
       isValid = false;
@@ -472,12 +512,12 @@
       clearError(roomCategorySelect);
     }
 
-    // Capacity Check
-    if (roomCategorySelect.value && ROOM_CATALOG[roomCategorySelect.value]) {
+    // 9. Suite Capacity Check
+    if (roomCategorySelect.value && ROOM_CATALOG[roomCategorySelect.value] && !isNaN(adults) && adults >= 1 && !isNaN(children) && children >= 0) {
       const room = ROOM_CATALOG[roomCategorySelect.value];
-      const totalGuests = (parseInt(adultsInput.value, 10) || 0) + (parseInt(childrenInput.value, 10) || 0);
+      const totalGuests = adults + children;
       if (totalGuests > room.maxGuests) {
-        showError(roomCategorySelect, `${room.name} accommodates up to ${room.maxGuests} guests. Consider multiple suites or the Penthouse Collection.`);
+        showError(roomCategorySelect, `${room.name} accommodates up to ${room.maxGuests} guests (currently ${totalGuests} selected). Please adjust guests or choose the Penthouse Collection.`);
         isValid = false;
         if (!firstInvalidInput) firstInvalidInput = roomCategorySelect;
       }
@@ -495,7 +535,10 @@
     const randomRef = 'AV-DEMO-' + Math.floor(100000 + Math.random() * 900000);
     const roomKey = roomCategorySelect.value;
     const room = ROOM_CATALOG[roomKey] || ROOM_CATALOG.deluxe;
-    const nights = Math.max(1, Math.ceil((new Date(checkOutInput.value) - new Date(checkInInput.value)) / (1000 * 60 * 60 * 24)));
+    
+    const inDate = parseLocalDate(checkInInput.value);
+    const outDate = parseLocalDate(checkOutInput.value);
+    const nights = Math.max(1, Math.round((outDate - inDate) / (1000 * 60 * 60 * 24)));
     const totalEst = formatCurrency(room.rate * nights);
 
     confirmRefId.textContent = randomRef;
@@ -535,7 +578,7 @@
     parseQueryParams();
     updateSummary();
 
-    // Live update listeners
+    // Live update & error clearing listeners
     roomCategorySelect.addEventListener('change', function () {
       clearError(roomCategorySelect);
       updateSummary();
@@ -547,16 +590,23 @@
 
     adultsInput.addEventListener('input', function () {
       clearError(adultsInput);
+      clearError(roomCategorySelect);
       updateSummary();
     });
 
     childrenInput.addEventListener('input', function () {
       clearError(childrenInput);
+      clearError(roomCategorySelect);
       updateSummary();
     });
 
-    // Blur validation for inputs
+    // Instant error clearing on input typing
     [guestName, guestEmail, guestPhone].forEach(function (input) {
+      input.addEventListener('input', function () {
+        if (input.classList.contains('is-invalid') && input.value.trim()) {
+          clearError(input);
+        }
+      });
       input.addEventListener('blur', function () {
         if (input.value.trim()) {
           clearError(input);
