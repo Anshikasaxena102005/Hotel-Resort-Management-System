@@ -2,40 +2,122 @@
  * AURAVEIL RESORT & SPA — Booking Module JavaScript
  * Handles:
  * 1. Navbar scroll states and mobile drawer toggle
- * 2. URL search parameters (?package=romance | wellness | adventure)
- * 3. Date constraints & validation (no past dates, checkout > checkin, local timezone parsing)
- * 4. Guest count constraints & validation (adults >= 1, children >= 0, capacity checks)
- * 5. Dynamic live booking summary & demo price calculation
- * 6. Accessible form validation with clear real-time error feedback
- * 7. Polished demo confirmation modal
+ * 2. URL search parameters (?room=... & ?package=...)
+ * 3. 8 individual room catalog entries mapped to canonical Rooms module slugs
+ * 4. Date constraints & validation (no past dates, checkout > checkin, local timezone parsing)
+ * 5. Guest count constraints & validation (adults >= 1, children >= 0, capacity checks)
+ * 6. Dynamic live booking summary & demo price calculation (room.rate * nights)
+ * 7. Accessible form validation with clear real-time error feedback
+ * 8. Polished demo confirmation modal
  */
 
 (function () {
   'use strict';
 
-  // --- ROOM DATA & PRICING (From Project Specifications) ---
+  // --- 8 INDIVIDUAL ROOMS CATALOG (Source of truth: Rooms module) ---
   const ROOM_CATALOG = {
-    deluxe: {
+    'deluxe-suite': {
+      id: 'deluxe-suite',
       name: 'Deluxe Garden Suite',
       rate: 28500,
       image: 'assets/images/room-deluxe-suite.jpg',
       maxGuests: 3,
-      desc: 'Marble floors, king canopy bed, private terrace opening onto gardens.'
+      desc: 'Marble floors, a signature king canopy bed, and private stone terrace opening onto manicured gardens.'
     },
-    villa: {
+    'premier-ocean-suite': {
+      id: 'premier-ocean-suite',
+      name: 'Premier Ocean Suite',
+      rate: 36000,
+      image: 'assets/images/room-premier-ocean-suite.jpg',
+      maxGuests: 3,
+      desc: 'Elevated sea views with an open-plan lounge, sun-drenched private balcony, and freestanding soaking tub.'
+    },
+    'heritage-courtyard-suite': {
+      id: 'heritage-courtyard-suite',
+      name: 'Heritage Courtyard Suite',
+      rate: 32000,
+      image: 'assets/images/room-heritage-suite.jpg',
+      maxGuests: 3,
+      desc: 'Inspired by Indo-Portuguese architecture with arched verandas, terracotta tiles, and a shaded private courtyard.'
+    },
+    'garden-villa': {
+      id: 'garden-villa',
       name: 'Tropical Garden Villa',
       rate: 58000,
       image: 'assets/images/room-garden-villa.jpg',
       maxGuests: 4,
-      desc: 'Stone bathing pavilion, hand-carved canopy bed, fragrant walled garden.'
+      desc: 'A secluded botanical sanctuary enclosed by limestone walls with alfresco stone soaking tub and private sun deck.'
     },
-    penthouse: {
-      name: 'Penthouse Collection',
+    'private-pool-villa': {
+      id: 'private-pool-villa',
+      name: 'Private Pool Villa',
+      rate: 72000,
+      image: 'assets/images/room-pool-villa.jpg',
+      maxGuests: 4,
+      desc: 'Ultimate seclusion featuring your own turquoise plunge pool, shaded poolside cabana, and outdoor rain shower.'
+    },
+    'royal-beachfront-villa': {
+      id: 'royal-beachfront-villa',
+      name: 'Royal Beachfront Villa',
+      rate: 84000,
+      image: 'assets/images/room-beachfront-villa.jpg',
+      maxGuests: 5,
+      desc: 'Steps from pristine sands with direct private beach access, dual master bedrooms, and an expansive timber deck.'
+    },
+    'presidential-penthouse': {
+      id: 'presidential-penthouse',
+      name: 'Presidential Penthouse',
       rate: 95000,
       image: 'assets/images/room-penthouse.jpg',
-      maxGuests: 6,
-      desc: '320° panoramic ocean views, private plunge pool, butler & chef service.'
+      maxGuests: 5,
+      desc: '320° panoramic ocean views, private rooftop plunge pool, dedicated elevator, and personalized chef service.'
+    },
+    'royal-horizon-penthouse': {
+      id: 'royal-horizon-penthouse',
+      name: 'Royal Horizon Penthouse',
+      rate: 125000,
+      image: 'assets/images/room-royal-horizon-penthouse.jpg',
+      maxGuests: 7,
+      desc: 'The grandest residence in the resort spanning 320 m² with three master bedrooms, infinity sky pool, and private cellar.'
     }
+  };
+
+  // Canonical slug aliases for resilient navigation
+  const ROOM_ALIASES = {
+    'deluxe-suite': 'deluxe-suite',
+    'premier-ocean-suite': 'premier-ocean-suite',
+    'heritage-courtyard-suite': 'heritage-courtyard-suite',
+    'garden-villa': 'garden-villa',
+    'private-pool-villa': 'private-pool-villa',
+    'royal-beachfront-villa': 'royal-beachfront-villa',
+    'presidential-penthouse': 'presidential-penthouse',
+    'royal-horizon-penthouse': 'royal-horizon-penthouse',
+
+    // Compatible shorthand & legacy aliases
+    'deluxe': 'deluxe-suite',
+    'deluxe-room': 'deluxe-suite',
+    'deluxe-garden-suite': 'deluxe-suite',
+    'garden-suite': 'deluxe-suite',
+
+    'ocean-suite': 'premier-ocean-suite',
+    'premier-suite': 'premier-ocean-suite',
+
+    'heritage-suite': 'heritage-courtyard-suite',
+    'courtyard-suite': 'heritage-courtyard-suite',
+
+    'villa': 'garden-villa',
+    'tropical-garden-villa': 'garden-villa',
+
+    'pool-villa': 'private-pool-villa',
+
+    'beachfront-villa': 'royal-beachfront-villa',
+
+    'penthouse': 'presidential-penthouse',
+    'penthouse-collection': 'presidential-penthouse',
+    'luxury-suite': 'presidential-penthouse',
+
+    'horizon-penthouse': 'royal-horizon-penthouse',
+    'grand-penthouse': 'royal-horizon-penthouse'
   };
 
   const PACKAGES = {
@@ -54,35 +136,6 @@
       tag: 'Adventure Package',
       description: 'Private reef snorkeling, mangrove kayak safari & sunset treetop cocktails.'
     }
-  };
-
-  // --- ROOM SLUG MAPPING (Links from Rooms Page & Canonical Slugs) ---
-  const ROOM_SLUG_MAP = {
-    // Rooms page IDs from data/rooms.json & html/rooms.html
-    'deluxe-room': 'deluxe',
-    'premium-room': 'villa',
-    'executive-suite': 'villa',
-    'luxury-suite': 'penthouse',
-
-    // Specific slugs from integration requests & examples
-    'premier-ocean-suite': 'villa',
-    'ocean-suite': 'villa',
-    'premier-suite': 'villa',
-
-    // Direct booking category keys
-    'deluxe': 'deluxe',
-    'villa': 'villa',
-    'penthouse': 'penthouse',
-
-    // Canonical & display title variants
-    'deluxe-garden-suite': 'deluxe',
-    'deluxe-suite': 'deluxe',
-    'garden-suite': 'deluxe',
-    'tropical-garden-villa': 'villa',
-    'garden-villa': 'villa',
-    'penthouse-collection': 'penthouse',
-    'luxury-penthouse': 'penthouse',
-    'presidential-suite': 'penthouse'
   };
 
   // --- DOM ELEMENTS ---
@@ -272,20 +325,14 @@
     if (!slug) return null;
     const cleanSlug = String(slug).trim().toLowerCase();
 
-    // 1. Direct dictionary match
-    if (ROOM_SLUG_MAP[cleanSlug]) {
-      return ROOM_SLUG_MAP[cleanSlug];
+    // 1. Direct match in ROOM_CATALOG
+    if (ROOM_CATALOG[cleanSlug]) {
+      return cleanSlug;
     }
 
-    // 2. Resilient keyword fallback matching
-    if (cleanSlug.includes('penthouse') || cleanSlug.includes('luxury')) {
-      return 'penthouse';
-    }
-    if (cleanSlug.includes('villa') || cleanSlug.includes('executive') || cleanSlug.includes('premium') || cleanSlug.includes('premier') || cleanSlug.includes('ocean')) {
-      return 'villa';
-    }
-    if (cleanSlug.includes('deluxe') || cleanSlug.includes('garden')) {
-      return 'deluxe';
+    // 2. Direct match in ROOM_ALIASES
+    if (ROOM_ALIASES[cleanSlug]) {
+      return ROOM_ALIASES[cleanSlug];
     }
 
     return null;
@@ -315,11 +362,11 @@
       // Apply package-based room recommendation if no explicit valid room was provided
       if (!selectedRoomKey) {
         if (pkgKey === 'romance') {
-          selectedRoomKey = 'villa';
+          selectedRoomKey = 'garden-villa';
         } else if (pkgKey === 'wellness') {
-          selectedRoomKey = 'deluxe';
+          selectedRoomKey = 'deluxe-suite';
         } else if (pkgKey === 'adventure') {
-          selectedRoomKey = 'penthouse';
+          selectedRoomKey = 'presidential-penthouse';
         }
       }
     } else {
@@ -327,12 +374,12 @@
       hidePackageHighlight();
     }
 
-    // 3. Set room category: explicit mapped room -> package recommendation -> safe default ('deluxe')
+    // 3. Set room category: explicit mapped room -> package recommendation -> safe default ('deluxe-suite')
     if (selectedRoomKey && ROOM_CATALOG[selectedRoomKey]) {
       roomCategorySelect.value = selectedRoomKey;
     } else {
       // Safe default behavior
-      roomCategorySelect.value = 'deluxe';
+      roomCategorySelect.value = 'deluxe-suite';
     }
 
     // 4. Update the live booking summary immediately
@@ -423,7 +470,7 @@
       hidePackageHighlight();
     }
 
-    // Pricing calculation
+    // Pricing calculation: Selected room's exact nightly rate * Number of nights
     if (room && nights > 0) {
       const baseTotal = room.rate * nights;
       summarySubtotal.textContent = formatCurrency(baseTotal);
@@ -590,7 +637,7 @@
       const room = ROOM_CATALOG[roomCategorySelect.value];
       const totalGuests = adults + children;
       if (totalGuests > room.maxGuests) {
-        showError(roomCategorySelect, `${room.name} accommodates up to ${room.maxGuests} guests (currently ${totalGuests} selected). Please adjust guests or choose the Penthouse Collection.`);
+        showError(roomCategorySelect, `${room.name} accommodates up to ${room.maxGuests} guests (currently ${totalGuests} selected). Please adjust guests or select a larger residence.`);
         isValid = false;
         if (!firstInvalidInput) firstInvalidInput = roomCategorySelect;
       }
@@ -607,7 +654,7 @@
   function showConfirmation() {
     const randomRef = 'AV-DEMO-' + Math.floor(100000 + Math.random() * 900000);
     const roomKey = roomCategorySelect.value;
-    const room = ROOM_CATALOG[roomKey] || ROOM_CATALOG.deluxe;
+    const room = ROOM_CATALOG[roomKey] || ROOM_CATALOG['deluxe-suite'];
     
     const inDate = parseLocalDate(checkInInput.value);
     const outDate = parseLocalDate(checkOutInput.value);
@@ -637,7 +684,7 @@
     closeConfirmation();
     bookingForm.reset();
     initDates();
-    roomCategorySelect.value = 'deluxe';
+    roomCategorySelect.value = 'deluxe-suite';
     packageSelect.value = 'none';
     hidePackageHighlight();
     updateSummary();
