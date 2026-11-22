@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Services — Auraveil Resort &amp; Spa</title>
+  <meta name="description" content="Auraveil Resort &amp; Spa — bespoke services including curated excursions, luxury weddings, 24-hour concierge, and personalised guest experiences." />
+  <meta name="keywords" content="luxury resort services, excursions, weddings, concierge, personalised experience, Auraveil" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Services — Auraveil Resort &amp; Spa" />
+  <meta property="og:description" content="Experiences beyond expectations — excursions, weddings, concierge, and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/room-garden-villa.jpg" />
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Shared stylesheet first, then page stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/services.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVBAR — identical markup from index.html
+       ============================================================ -->
+  <header class="navbar navbar--transparent" id="navbar" role="banner">
+    <div class="container">
+      <nav class="navbar__inner" aria-label="Primary navigation">
+
+        <!-- Logo -->
+        <a href="index.html" class="navbar__logo" aria-label="Auraveil Resort &amp; Spa — Home">
+          <span class="navbar__logo-name">Auraveil</span>
+          <span class="navbar__logo-tagline">Resort &amp; Spa</span>
+        </a>
+
+        <!-- Mobile toggle -->
+        <button
+          class="navbar__toggle"
+          id="nav-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Nav links -->
+        <ul class="navbar__nav" id="nav-menu" role="list">
+          <li><a href="index.html"      class="navbar__link">Home</a></li>
+          <li><a href="rooms.html"      class="navbar__link">Rooms</a></li>
+          <li><a href="facilities.html" class="navbar__link">Facilities</a></li>
+          <li><a href="booking.html"    class="navbar__link">Booking</a></li>
+          <li class="navbar__cta">
+            <a href="booking.html" class="btn btn--primary" id="nav-book-btn">Book Your Stay</a>
+          </li>
+        </ul>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       A. HERO
+       ============================================================ -->
+  <section class="svc-hero" aria-label="Services hero — Auraveil Resort &amp; Spa">
+
+    <img
+      class="svc-hero__bg"
+      src="assets/images/room-garden-villa.jpg"
+      alt="Tropical garden villa at Auraveil Resort &amp; Spa — stone bathing pavilion surrounded by lush tropical gardens"
+      loading="eager"
+      aria-hidden="true"
+    />
+
+    <div class="svc-hero__overlay" aria-hidden="true"></div>
+
+    <div class="svc-hero__content">
+      <p class="svc-hero__eyebrow">Bespoke Experiences · Personal &amp; Purposeful</p>
+
+      <h1 class="svc-hero__title">
+        Experiences Beyond<br /><em>Expectations</em>
+      </h1>
+
+      <p class="svc-hero__desc">
+        From guided reef excursions to wedding ceremonies beneath the stars — every service at Auraveil is designed to exceed what you imagined possible.
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       B. EXCURSIONS   id="excursions"
+       ============================================================ -->
+  <section class="svc-excursions" id="excursions" aria-labelledby="excursions-heading">
+    <div class="container">
+
+      <div class="svc-section-header">
+        <span class="label">Curated Adventures</span>
+        <h2 class="section-heading" id="excursions-heading">
+          Resort Excursions
+        </h2>
+        <div class="heading-rule" aria-hidden="true"></div>
+        <p class="section-subtext" style="margin-inline:auto; text-align:center; margin-top:1.25rem;">
+          Step beyond the resort and discover the living world around us — guided by experts, shaped around your pace.
+        </p>
+      </div>
+
+      <div class="svc-excursion-grid" role="list">
+
+        <!-- Card 1: Reef Snorkelling -->
+        <article class="svc-excursion-card reveal" role="listitem" aria-labelledby="exc-reef-title">
+          <div class="svc-excursion-card__visual">
+            <img src="assets/images/excursion-reef.jpg" alt="Crystal-clear tropical reef waters teeming with colourful marine life — Private Reef Snorkelling at Auraveil" loading="lazy" width="420" height="220" />
+          </div>
+          <div class="svc-excursion-card__body">
+            <span class="svc-excursion-card__tag">Marine</span>
+            <h3 class="svc-excursion-card__title" id="exc-reef-title">Private Reef Snorkelling</h3>
+            <p class="svc-excursion-card__text">
+              Guided by our resident marine biologist, explore the vibrant coral ecosystems of the protected bay. Equipment, boat transfers, and a floating champagne lunch are all included.
+            </p>
+
+            <button
+              class="svc-excursion-card__toggle"
+              aria-expanded="false"
+              aria-controls="exc-reef-details"
+              id="exc-reef-toggle"
+            >
+              <span>Explore Details</span>
+              <svg class="svc-excursion-card__toggle-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <line x1="9" y1="3" x2="9" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="3" y1="9" x2="15" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="svc-excursion-card__details" id="exc-reef-details" role="region" aria-labelledby="exc-reef-toggle">
+              <div class="svc-excursion-card__details-inner">
+                <p>Duration: Half day · Departs 8:30 am</p>
+                <ul class="svc-excursion-card__details-list">
+                  <li>Premium snorkelling equipment included</li>
+                  <li>Marine biologist guide throughout</li>
+                  <li>Private boat, max 6 guests</li>
+                  <li>Floating champagne lunch on the water</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Jungle Canopy Walk -->
+        <article class="svc-excursion-card reveal reveal--delay-1" role="listitem" aria-labelledby="exc-jungle-title">
+          <div class="svc-excursion-card__visual">
+            <img src="assets/images/excursion-jungle.jpg" alt="Ancient jungle canopy walkway bathed in dappled golden light — Jungle Canopy Walk at Auraveil" loading="lazy" width="420" height="220" />
+          </div>
+          <div class="svc-excursion-card__body">
+            <span class="svc-excursion-card__tag">Nature</span>
+            <h3 class="svc-excursion-card__title" id="exc-jungle-title">Jungle Canopy Walk</h3>
+            <p class="svc-excursion-card__text">
+              Traverse suspended walkways through the ancient jungle canopy with a naturalist guide. Encounter rare bird species, ancient trees, and the profound stillness of an undisturbed ecosystem.
+            </p>
+
+            <button
+              class="svc-excursion-card__toggle"
+              aria-expanded="false"
+              aria-controls="exc-jungle-details"
+              id="exc-jungle-toggle"
+            >
+              <span>Explore Details</span>
+              <svg class="svc-excursion-card__toggle-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <line x1="9" y1="3" x2="9" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="3" y1="9" x2="15" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="svc-excursion-card__details" id="exc-jungle-details" role="region" aria-labelledby="exc-jungle-toggle">
+              <div class="svc-excursion-card__details-inner">
+                <p>Duration: 3 hours · Departs 6:00 am or 4:00 pm</p>
+                <ul class="svc-excursion-card__details-list">
+                  <li>Expert naturalist guide</li>
+                  <li>Safety harness and equipment provided</li>
+                  <li>Sunrise or golden-hour departure options</li>
+                  <li>Post-walk jungle breakfast included</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Kayak Safari -->
+        <article class="svc-excursion-card reveal reveal--delay-2" role="listitem" aria-labelledby="exc-kayak-title">
+          <div class="svc-excursion-card__visual">
+            <img src="assets/images/excursion-kayak.jpg" alt="Private kayak gliding silently through mangrove waterways at golden hour — Kayak Safari at Auraveil" loading="lazy" width="420" height="220" />
+          </div>
+          <div class="svc-excursion-card__body">
+            <span class="svc-excursion-card__tag">Water</span>
+            <h3 class="svc-excursion-card__title" id="exc-kayak-title">Private Kayak Safari</h3>
+            <p class="svc-excursion-card__text">
+              Glide silently through mangrove waterways and sea caves only accessible by kayak. This private guided experience concludes with sunset cocktails on a secluded sandbar.
+            </p>
+
+            <button
+              class="svc-excursion-card__toggle"
+              aria-expanded="false"
+              aria-controls="exc-kayak-details"
+              id="exc-kayak-toggle"
+            >
+              <span>Explore Details</span>
+              <svg class="svc-excursion-card__toggle-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <line x1="9" y1="3" x2="9" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="3" y1="9" x2="15" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="svc-excursion-card__details" id="exc-kayak-details" role="region" aria-labelledby="exc-kayak-toggle">
+              <div class="svc-excursion-card__details-inner">
+                <p>Duration: 4 hours · Afternoon &amp; sunset slot</p>
+                <ul class="svc-excursion-card__details-list">
+                  <li>Premium sea kayak equipment</li>
+                  <li>Expert guide, max 4 guests</li>
+                  <li>Sandbar cocktail hour at sunset</li>
+                  <li>Return transfer by resort boat</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div style="text-align:center; margin-top:3rem;">
+        <a href="booking.html" class="btn btn--outline" id="excursions-enquire-btn">Enquire About Excursions</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       C. WEDDINGS   id="weddings"
+       ============================================================ -->
+  <section class="svc-weddings" id="weddings" aria-labelledby="weddings-heading">
+    <div class="container">
+      <div class="svc-weddings__inner">
+
+        <!-- Content -->
+        <div class="reveal">
+          <span class="label">Weddings &amp; Celebrations</span>
+          <h2 class="section-heading" id="weddings-heading">
+            Your Love Story,<br /><em>Our Stage</em>
+          </h2>
+          <div class="heading-rule" aria-hidden="true"></div>
+
+          <p class="svc-weddings__body">
+            Auraveil has long been the chosen sanctuary for love's most extraordinary moments. Our wedding team is among the most experienced in India's luxury hospitality landscape, crafting celebrations that are as unique as the couples who choose us.
+          </p>
+          <p class="svc-weddings__body">
+            From the first enquiry to the final toast, every detail — the floral arrangements, the cuisine, the music, the lighting — is composed with absolute care. We handle everything so you can be entirely present in your moment.
+          </p>
+
+          <ul class="svc-weddings__highlights" aria-label="Wedding service highlights">
+            <li class="svc-weddings__highlight">Dedicated wedding director assigned exclusively to you</li>
+            <li class="svc-weddings__highlight">In-house floral studio and bespoke décor craftsmanship</li>
+            <li class="svc-weddings__highlight">Michelin-guided cuisine menus personalised to your vision</li>
+            <li class="svc-weddings__highlight">Choice of ceremony location — grand ballroom, lawns, or beachfront</li>
+            <li class="svc-weddings__highlight">Honeymoon suite and curated post-wedding experiences included</li>
+          </ul>
+
+          <a href="booking.html" class="btn btn--primary svc-weddings__cta" id="weddings-enquire-btn">Begin Your Planning</a>
+        </div>
+
+        <!-- Visual collage -->
+        <div class="svc-weddings__visual reveal reveal--delay-1" aria-hidden="true">
+          <div class="svc-weddings__visual-img svc-weddings__visual-img--tall">
+            <img
+              src="assets/images/room-garden-villa.jpg"
+              alt="Tropical garden villa at Auraveil — romantic open-air stone bathing pavilion"
+              loading="lazy"
+              width="300"
+              height="460"
+            />
+          </div>
+          <div class="svc-weddings__visual-img">
+            <img
+              src="assets/images/facility-spa.jpg"
+              alt="Auraveil Veda Spa candlelit treatment pavilion — perfect for pre-wedding wellness"
+              loading="lazy"
+              width="300"
+              height="220"
+            />
+          </div>
+          <div class="svc-weddings__visual-img">
+            <img
+              src="assets/images/room-deluxe-suite.jpg"
+              alt="Auraveil Deluxe Suite — honeymoon suite interior with tropical garden view"
+              loading="lazy"
+              width="300"
+              height="220"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       D. CONCIERGE SERVICES
+       ============================================================ -->
+  <section class="svc-concierge" aria-labelledby="concierge-heading">
+    <div class="container">
+      <div class="svc-concierge__inner">
+
+        <div class="svc-concierge__header">
+          <span class="label">Around the Clock</span>
+          <h2 class="section-heading section-heading--light" id="concierge-heading">
+            Concierge Services
+          </h2>
+          <div class="heading-rule" aria-hidden="true" style="background:var(--color-gold);"></div>
+          <p class="section-subtext section-subtext--light" style="margin-inline:auto; text-align:center; margin-top:1.25rem;">
+            Our concierge team operates around the clock, available at a moment's notice to anticipate, arrange, and elevate every aspect of your stay.
+          </p>
+        </div>
+
+        <div class="svc-concierge__grid" role="list">
+
+          <!-- Card 1 -->
+          <article class="svc-concierge-card reveal" role="listitem" aria-labelledby="conc-transfers-title">
+            <div class="svc-concierge-card__icon" aria-hidden="true">
+              <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="21" cy="21" r="19" stroke="#d4b97a" stroke-width="1.2"/>
+                <path d="M12 26 L21 10 L30 26 Z" stroke="#d4b97a" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
+                <line x1="21" y1="10" x2="21" y2="26" stroke="#d4b97a" stroke-width="1" stroke-dasharray="2 2"/>
+              </svg>
+            </div>
+            <h3 class="svc-concierge-card__title" id="conc-transfers-title">Airport &amp; Helipad Transfers</h3>
+            <p class="svc-concierge-card__text">
+              Seamless arrivals and departures in our fleet of private vehicles and helicopter, coordinated precisely to your itinerary.
+            </p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="svc-concierge-card reveal reveal--delay-1" role="listitem" aria-labelledby="conc-dining-title">
+            <div class="svc-concierge-card__icon" aria-hidden="true">
+              <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="15" y1="10" x2="15" y2="32" stroke="#d4b97a" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M12 10 L12 20 Q15 24 18 20 L18 10" stroke="#d4b97a" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="27" y1="10" x2="27" y2="32" stroke="#d4b97a" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M24 10 Q27 16 30 10" stroke="#d4b97a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="svc-concierge-card__title" id="conc-dining-title">In-Villa Dining</h3>
+            <p class="svc-concierge-card__text">
+              Your suite becomes your private dining room. Our chefs craft personalised menus for in-villa breakfasts, candlelit dinners, and midnight indulgences.
+            </p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="svc-concierge-card reveal reveal--delay-2" role="listitem" aria-labelledby="conc-wellness-title">
+            <div class="svc-concierge-card__icon" aria-hidden="true">
+              <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 37 C21 37 7 28 7 17 C7 10.4 13.3 5 21 5 C28.7 5 35 10.4 35 17 C35 28 21 37 21 37 Z" stroke="#d4b97a" stroke-width="1.2" fill="none"/>
+                <line x1="21" y1="37" x2="21" y2="17" stroke="#d4b97a" stroke-width="1" stroke-dasharray="2 2"/>
+              </svg>
+            </div>
+            <h3 class="svc-concierge-card__title" id="conc-wellness-title">Wellness Scheduling</h3>
+            <p class="svc-concierge-card__text">
+              From daily yoga sessions to personalised spa journeys and nutritional programmes — your wellbeing schedule is arranged seamlessly on your behalf.
+            </p>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="svc-concierge-card reveal reveal--delay-3" role="listitem" aria-labelledby="conc-special-title">
+            <div class="svc-concierge-card__icon" aria-hidden="true">
+              <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 5 L24.5 15.5 H36 L26.8 22.2 L30 33 L21 26.5 L12 33 L15.2 22.2 L6 15.5 H17.5 Z" stroke="#d4b97a" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="svc-concierge-card__title" id="conc-special-title">Special Occasion Curation</h3>
+            <p class="svc-concierge-card__text">
+              Anniversaries, birthdays, proposals — our team orchestrates every detail of your celebration, from private beach setups to surprise suite décor.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       E. PERSONALIZED EXPERIENCES
+       ============================================================ -->
+  <section class="svc-personal" aria-labelledby="personal-heading">
+    <div class="container">
+
+      <div class="svc-personal__header">
+        <span class="label">Tailored to You</span>
+        <h2 class="section-heading" id="personal-heading">
+          Personalised Experiences
+        </h2>
+        <div class="heading-rule" aria-hidden="true"></div>
+        <p class="section-subtext" style="margin-inline:auto; text-align:center; margin-top:1.25rem;">
+          No two guests are alike. These experiences begin as a blueprint and are refined entirely around your preferences.
+        </p>
+      </div>
+
+      <div class="svc-personal__grid" role="list">
+
+        <!-- Card 1 -->
+        <article
+          class="svc-personal-card"
+          role="listitem"
+          aria-labelledby="pers-aqua-title"
+          tabindex="0"
+          id="pers-card-aqua"
+        >
+          <div class="svc-personal-card__bg svc-personal-card__bg--pool" role="img" aria-label="Private aquatic sunset experience at Auraveil"></div>
+          <div class="svc-personal-card__overlay" aria-hidden="true"></div>
+          <div class="svc-personal-card__body">
+            <span class="svc-personal-card__tag">Aquatic</span>
+            <h3 class="svc-personal-card__title" id="pers-aqua-title">Sunset on<br />Private Waters</h3>
+            <p class="svc-personal-card__text">
+              A private boat, chilled champagne, and the sun melting into the ocean — entirely curated around your preferred timing, pace, and company.
+            </p>
+            <a href="booking.html" class="btn btn--primary" id="pers-aqua-btn" style="font-size:0.6rem; padding:0.7rem 1.6rem;">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article
+          class="svc-personal-card"
+          role="listitem"
+          aria-labelledby="pers-garden-title"
+          tabindex="0"
+          id="pers-card-garden"
+        >
+          <div class="svc-personal-card__bg svc-personal-card__bg--garden" role="img" aria-label="Private garden nature immersion experience at Auraveil"></div>
+          <div class="svc-personal-card__overlay" aria-hidden="true"></div>
+          <div class="svc-personal-card__body">
+            <span class="svc-personal-card__tag">Nature</span>
+            <h3 class="svc-personal-card__title" id="pers-garden-title">Dawn Nature<br />Immersion</h3>
+            <p class="svc-personal-card__text">
+              A guided dawn walk through the resort's private nature reserve, followed by a sunrise meditation session and hand-poured single-origin coffee.
+            </p>
+            <a href="booking.html" class="btn btn--primary" id="pers-garden-btn" style="font-size:0.6rem; padding:0.7rem 1.6rem;">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article
+          class="svc-personal-card"
+          role="listitem"
+          aria-labelledby="pers-dining-title"
+          tabindex="0"
+          id="pers-card-dining"
+        >
+          <div class="svc-personal-card__bg svc-personal-card__bg--dining" role="img" aria-label="Private chef dining experience at Auraveil"></div>
+          <div class="svc-personal-card__overlay" aria-hidden="true"></div>
+          <div class="svc-personal-card__body">
+            <span class="svc-personal-card__tag">Culinary</span>
+            <h3 class="svc-personal-card__title" id="pers-dining-title">Private Chef<br />Dinner</h3>
+            <p class="svc-personal-card__text">
+              Your executive chef, your menu, your setting. A completely private dining experience designed around your palate, your occasion, and your vision.
+            </p>
+            <a href="booking.html" class="btn btn--primary" id="pers-dining-btn" style="font-size:0.6rem; padding:0.7rem 1.6rem;">Enquire Now</a>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       F. BOOKING CTA
+       ============================================================ -->
+  <section class="svc-cta" aria-labelledby="svc-cta-heading">
+    <div class="container">
+      <div class="svc-cta__inner">
+        <span class="label" style="display:block; margin-bottom:0.5rem;">Begin Your Experience</span>
+        <h2 class="svc-cta__title" id="svc-cta-heading">
+          Ready to Experience<br /><em>Auraveil?</em>
+        </h2>
+        <p class="svc-cta__body">
+          Every service, every experience, every moment is shaped around you. Let our team begin crafting your perfect stay today.
+        </p>
+        <div class="svc-cta__buttons">
+          <a href="booking.html"    class="btn btn--primary"       id="svc-cta-book-btn">Reserve Your Suite</a>
+          <a href="facilities.html" class="btn btn--outline-light" id="svc-cta-fac-btn">Explore Facilities</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER — identical markup from index.html
+       ============================================================ -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer__top">
+
+        <!-- Brand column -->
+        <div class="footer__brand">
+          <span class="footer__brand-name">Auraveil</span>
+          <span class="footer__brand-tagline">Resort &amp; Spa</span>
+          <p class="footer__brand-desc">
+            Where unhurried luxury meets the wild beauty of nature. Every detail composed with intention, every moment offered with grace.
+          </p>
+
+          <nav class="footer__socials" aria-label="Social media links">
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on Instagram" id="social-instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on Facebook" id="social-facebook">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on Twitter / X" id="social-twitter">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on YouTube" id="social-youtube">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="currentColor" fill="none"/>
+              </svg>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Quick links -->
+        <nav aria-label="Quick links">
+          <h3 class="footer__col-title">Navigate</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html"      class="footer__link" id="footer-home">Home</a></li>
+            <li><a href="rooms.html"      class="footer__link" id="footer-rooms">Rooms &amp; Suites</a></li>
+            <li><a href="facilities.html" class="footer__link" id="footer-facilities">Facilities</a></li>
+            <li><a href="services.html"   class="footer__link" id="footer-services">Services</a></li>
+            <li><a href="contact.html"    class="footer__link" id="footer-contact">Contact</a></li>
+            <li><a href="booking.html"    class="footer__link" id="footer-booking">Reservations</a></li>
+          </ul>
+        </nav>
+
+        <!-- Experiences -->
+        <nav aria-label="Experiences">
+          <h3 class="footer__col-title">Experiences</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="facilities.html#spa"      class="footer__link" id="footer-spa">Veda Spa</a></li>
+            <li><a href="facilities.html#pool"     class="footer__link" id="footer-pool">Infinity Pool</a></li>
+            <li><a href="facilities.html#dining"   class="footer__link" id="footer-dining">Fine Dining</a></li>
+            <li><a href="facilities.html#events"   class="footer__link" id="footer-events">Events</a></li>
+            <li><a href="services.html#excursions" class="footer__link" id="footer-excursions">Excursions</a></li>
+            <li><a href="services.html#weddings"   class="footer__link" id="footer-weddings">Weddings</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contact -->
+        <address style="font-style: normal;">
+          <h3 class="footer__col-title">Find Us</h3>
+          <p class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            Auraveil Resort &amp; Spa<br />
+            Coastal Heritage Road,<br />
+            Goa — 403 001, India
+          </p>
+          <p class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            <a href="tel:+91-832-300-0000" class="footer__link" id="footer-phone">+91 832 300 0000</a>
+          </p>
+          <p class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            <a href="mailto:reservations@auraveil.com" class="footer__link" id="footer-email">reservations@auraveil.com</a>
+          </p>
+          <p class="footer__contact-item" style="margin-top: 0.5rem;">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            Reservations open 24 hours
+          </p>
+        </address>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <p>&copy; 2024 Auraveil Resort &amp; Spa. All rights reserved.</p>
+        <nav class="footer__legal" aria-label="Legal links">
+          <a href="#" id="footer-privacy">Privacy Policy</a>
+          <a href="#" id="footer-terms">Terms of Service</a>
+          <a href="#" id="footer-cookies">Cookie Policy</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- JavaScript — deferred -->
+  <script src="js/services.js" defer></script>
+
+</body>
+</html>

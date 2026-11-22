@@ -1,0 +1,734 @@
+/*
+   AURAVEIL RESORT & SPA — Services Page Stylesheet
+   Branch: feature/facilities-services
+   Loaded after css/style.css — inherits all design tokens
+*/
+
+/* =============================================
+   1. PAGE HERO — SERVICES
+   ============================================= */
+.svc-hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 520px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-charcoal);
+}
+
+.svc-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: 0;
+}
+
+.svc-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 12, 11, 0.42) 0%,
+    rgba(13, 12, 11, 0.62) 50%,
+    rgba(13, 12, 11, 0.78) 100%
+  );
+  z-index: 1;
+}
+
+.svc-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-inline: 1.5rem;
+  max-width: 860px;
+  animation: heroEntrance 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.svc-hero__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s ease forwards;
+}
+
+.svc-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-ivory);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.65s ease forwards;
+}
+
+.svc-hero__title em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.svc-hero__desc {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 300;
+  color: rgba(248, 244, 239, 0.78);
+  max-width: 50ch;
+  margin-inline: auto;
+  line-height: 1.75;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.9s ease forwards;
+}
+
+/* =============================================
+   2. EXCURSIONS SECTION
+   ============================================= */
+.svc-excursions {
+  background-color: var(--color-ivory);
+  padding: var(--section-padding);
+  scroll-margin-top: 80px;
+}
+
+.svc-section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.svc-section-header .label { display: block; margin-bottom: 0.5rem; }
+
+/* Excursion cards grid */
+.svc-excursion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.svc-excursion-card {
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.svc-excursion-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.svc-excursion-card__visual {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.svc-excursion-card__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.svc-excursion-card:hover .svc-excursion-card__visual img {
+  transform: scale(1.07);
+}
+
+.svc-excursion-card__visual-bg {
+  width: 100%;
+  height: 100%;
+}
+
+.svc-excursion-card__body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.svc-excursion-card__tag {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.svc-excursion-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  line-height: 1.2;
+  margin-bottom: 0.65rem;
+}
+
+.svc-excursion-card__text {
+  font-size: 0.9375rem;
+  color: var(--color-charcoal-soft);
+  font-weight: 300;
+  line-height: 1.7;
+  flex: 1;
+}
+
+/* Expandable details */
+.svc-excursion-card__toggle {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-cream);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 0;
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  width: 100%;
+  text-align: left;
+  transition: color var(--transition-fast);
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.svc-excursion-card__toggle:hover {
+  color: var(--color-gold-dark);
+}
+
+.svc-excursion-card__toggle-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+
+.svc-excursion-card__toggle[aria-expanded="true"] .svc-excursion-card__toggle-icon {
+  transform: rotate(45deg);
+}
+
+.svc-excursion-card__details {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+  opacity: 0;
+}
+
+.svc-excursion-card__details.is-open {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.svc-excursion-card__details-inner {
+  padding-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--color-charcoal-soft);
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.svc-excursion-card__details-list {
+  list-style: none;
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.svc-excursion-card__details-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.svc-excursion-card__details-list li::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 1px;
+  background: var(--color-gold);
+  flex-shrink: 0;
+}
+
+/* =============================================
+   3. WEDDINGS SECTION
+   ============================================= */
+.svc-weddings {
+  background-color: var(--color-ivory-mid);
+  padding: var(--section-padding);
+  scroll-margin-top: 80px;
+}
+
+.svc-weddings__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.svc-weddings__content .label { display: block; margin-bottom: 0.5rem; }
+
+.svc-weddings__body {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-charcoal-soft);
+  line-height: 1.8;
+  margin-top: 1.25rem;
+}
+
+.svc-weddings__body + .svc-weddings__body {
+  margin-top: 0.9rem;
+}
+
+.svc-weddings__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-cream);
+}
+
+.svc-weddings__highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--color-charcoal-soft);
+}
+
+.svc-weddings__highlight::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.svc-weddings__cta { margin-top: 2rem; }
+
+/* Wedding visual collage */
+.svc-weddings__visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.svc-weddings__visual-img {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.svc-weddings__visual-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.svc-weddings__visual-img:hover img {
+  transform: scale(1.05);
+}
+
+.svc-weddings__visual-img--tall {
+  grid-row: span 2;
+}
+
+.svc-weddings__visual-img--tall img {
+  height: 460px;
+}
+
+/* =============================================
+   4. CONCIERGE SECTION
+   ============================================= */
+.svc-concierge {
+  background-color: var(--color-charcoal);
+  padding: var(--section-padding);
+  position: relative;
+  overflow: hidden;
+}
+
+.svc-concierge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 30%, rgba(184, 154, 92, 0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.svc-concierge__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.svc-concierge__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.svc-concierge__header .label { display: block; margin-bottom: 0.5rem; }
+
+.svc-concierge__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.svc-concierge-card {
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(184, 154, 92, 0.18);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.025);
+  transition:
+    border-color var(--transition-base),
+    background var(--transition-base),
+    transform var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.svc-concierge-card:hover {
+  border-color: rgba(184, 154, 92, 0.42);
+  background: rgba(255, 255, 255, 0.045);
+  transform: translateY(-5px);
+}
+
+.svc-concierge-card__icon {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+.svc-concierge-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-ivory);
+  margin-bottom: 0.65rem;
+  line-height: 1.25;
+}
+
+.svc-concierge-card__text {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: rgba(248, 244, 239, 0.58);
+  line-height: 1.7;
+}
+
+/* =============================================
+   5. PERSONALIZED EXPERIENCES SECTION
+   ============================================= */
+.svc-personal {
+  background-color: var(--color-ivory);
+  padding: var(--section-padding);
+}
+
+.svc-personal__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.svc-personal__header .label { display: block; margin-bottom: 0.5rem; }
+
+.svc-personal__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Interactive experience cards */
+.svc-personal-card {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  min-height: 440px;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.svc-personal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.svc-personal-card__bg {
+  position: absolute;
+  inset: 0;
+  transition: transform var(--transition-slow);
+}
+
+.svc-personal-card:hover .svc-personal-card__bg {
+  transform: scale(1.06);
+}
+
+.svc-personal-card__bg--pool {
+  background-image:
+    linear-gradient(to bottom, rgba(13,12,11,0.08) 0%, rgba(13,12,11,0.40) 100%),
+    url('../assets/images/personal-pool.jpg');
+  background-size: auto, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-color: hsl(200, 35%, 14%);
+}
+
+.svc-personal-card__bg--garden {
+  background-image:
+    linear-gradient(to bottom, rgba(13,12,11,0.08) 0%, rgba(13,12,11,0.40) 100%),
+    url('../assets/images/personal-garden.jpg');
+  background-size: auto, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-color: hsl(140, 25%, 14%);
+}
+
+.svc-personal-card__bg--dining {
+  background-image:
+    linear-gradient(to bottom, rgba(13,12,11,0.08) 0%, rgba(13,12,11,0.40) 100%),
+    url('../assets/images/personal-dining.jpg');
+  background-size: auto, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-color: hsl(30, 28%, 14%);
+}
+
+.svc-personal-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13, 12, 11, 0.88) 0%, rgba(13, 12, 11, 0.20) 60%, transparent 100%);
+}
+
+.svc-personal-card__body {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  width: 100%;
+}
+
+.svc-personal-card__tag {
+  display: inline-block;
+  padding: 0.22rem 0.65rem;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  background-color: var(--color-gold);
+  font-family: var(--font-sans);
+  margin-bottom: 0.65rem;
+  border-radius: 2px;
+}
+
+.svc-personal-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 500;
+  color: var(--color-ivory);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.svc-personal-card__text {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: rgba(248, 244, 239, 0.70);
+  margin-bottom: 1.25rem;
+  line-height: 1.65;
+}
+
+/* Active / selected card state */
+.svc-personal-card.is-selected {
+  box-shadow: 0 0 0 2px var(--color-gold);
+}
+
+.svc-personal-card.is-selected .svc-personal-card__overlay {
+  background: linear-gradient(to top, rgba(13, 12, 11, 0.92) 0%, rgba(13, 12, 11, 0.30) 60%, transparent 100%);
+}
+
+/* =============================================
+   6. BOOKING CTA
+   ============================================= */
+.svc-cta {
+  position: relative;
+  padding: 7rem 0;
+  background: linear-gradient(
+    160deg,
+    hsl(36, 40%, 25%) 0%,
+    hsl(34, 30%, 18%) 45%,
+    hsl(32, 25%, 14%) 100%
+  );
+  overflow: hidden;
+  text-align: center;
+}
+
+.svc-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 25% 50%, rgba(184, 154, 92, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 50%, rgba(184, 154, 92, 0.07) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.svc-cta__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.svc-cta__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 400;
+  color: var(--color-ivory);
+  line-height: 1.12;
+  margin-bottom: 1rem;
+  margin-top: 0.75rem;
+}
+
+.svc-cta__title em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.svc-cta__body {
+  font-size: 1.0625rem;
+  font-weight: 300;
+  color: rgba(248, 244, 239, 0.68);
+  max-width: 46ch;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+
+.svc-cta__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* =============================================
+   7. GRADIENT HELPERS (now photo backgrounds)
+   ============================================= */
+.grad-excursion-1 {
+  background-image:
+    linear-gradient(to bottom, rgba(13,12,11,0.08) 0%, rgba(13,12,11,0.32) 100%),
+    url('../assets/images/excursion-reef.jpg');
+  background-size: auto, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-color: hsl(200, 35%, 15%);
+}
+
+.grad-excursion-2 {
+  background-image:
+    linear-gradient(to bottom, rgba(13,12,11,0.08) 0%, rgba(13,12,11,0.32) 100%),
+    url('../assets/images/excursion-jungle.jpg');
+  background-size: auto, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-color: hsl(140, 25%, 14%);
+}
+
+.grad-excursion-3 {
+  background-image:
+    linear-gradient(to bottom, rgba(13,12,11,0.08) 0%, rgba(13,12,11,0.32) 100%),
+    url('../assets/images/excursion-kayak.jpg');
+  background-size: auto, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-color: hsl(30, 28%, 15%);
+}
+
+/* =============================================
+   8. RESPONSIVE — TABLET (≤ 1024px)
+   ============================================= */
+@media (max-width: 1024px) {
+  .svc-excursion-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .svc-weddings__inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .svc-weddings__visual {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .svc-weddings__visual-img--tall { grid-row: auto; }
+  .svc-weddings__visual-img--tall img { height: 220px; }
+
+  .svc-concierge__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .svc-personal__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =============================================
+   9. RESPONSIVE — MOBILE (≤ 767px)
+   ============================================= */
+@media (max-width: 767px) {
+  .svc-hero {
+    height: 70vh;
+    min-height: 440px;
+  }
+
+  .svc-excursion-grid,
+  .svc-concierge__grid,
+  .svc-personal__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-weddings__visual {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .svc-cta {
+    padding: 5rem 0;
+  }
+
+  .svc-cta__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .svc-personal-card {
+    min-height: 360px;
+  }
+}
