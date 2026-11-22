@@ -1,0 +1,491 @@
+﻿/* 
+   AURAVEIL RESORT & SPA — Contact Module Stylesheet
+   Page-specific styles for contact.html
+   Colors: Ivory, Cream, Charcoal, Gold
+   Typography: Cormorant Garamond, Jost
+*/
+
+/* 1. HERO SECTION */
+.contact-hero {
+  position: relative;
+  min-height: 48vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8rem 1.5rem 4rem;
+}
+
+.contact-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.contact-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.contact-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 12, 11, 0.45) 0%,
+    rgba(13, 12, 11, 0.72) 65%,
+    rgba(13, 12, 11, 0.90) 100%
+  );
+}
+
+.contact-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.contact-hero__content .label {
+  color: var(--color-gold-light);
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.25em;
+  font-size: 0.7rem;
+}
+
+.contact-hero__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 400;
+  color: var(--color-ivory);
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.contact-hero__subtext {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-ivory-mid);
+  line-height: 1.8;
+  max-width: 620px;
+  margin: 1.25rem auto 0;
+}
+
+/* 2. MAIN SECTION LAYOUT */
+.contact-section {
+  padding: 5rem 0 6.5rem;
+  background-color: var(--color-ivory);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+/* 3. CONTACT INFORMATION CARDS */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info__header {
+  margin-bottom: 0.5rem;
+}
+
+.contact-info__title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-charcoal);
+  margin-bottom: 0.5rem;
+}
+
+.contact-info__desc {
+  font-size: 0.9375rem;
+  color: var(--color-charcoal-soft);
+  line-height: 1.7;
+}
+
+.contact-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-cream);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gold-pale);
+}
+
+.contact-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(184, 154, 92, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold-dark);
+  flex-shrink: 0;
+}
+
+.contact-card__body {
+  flex-grow: 1;
+}
+
+.contact-card__label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.contact-card__val {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-charcoal);
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.contact-card__val a {
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+.contact-card__val a:hover {
+  color: var(--color-gold);
+}
+
+.contact-card__sub {
+  font-size: 0.8125rem;
+  color: var(--color-charcoal-soft);
+}
+
+/* Map / Location Graphic Banner */
+.contact-map-banner {
+  background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-charcoal-mid) 100%);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  color: var(--color-ivory);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-map-banner::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(184, 154, 92, 0.1);
+  pointer-events: none;
+}
+
+.contact-map-banner__title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--color-gold-light);
+  margin-bottom: 0.4rem;
+}
+
+.contact-map-banner__desc {
+  font-size: 0.8125rem;
+  color: var(--color-ivory-mid);
+  line-height: 1.6;
+}
+
+/* 4. CONTACT FORM CARD */
+.contact-form-wrap {
+  background: var(--color-ivory-light);
+  border: 1px solid var(--color-cream);
+  border-radius: var(--radius-md);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.contact-form-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-cream);
+}
+
+.contact-form-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--color-charcoal);
+  margin-bottom: 0.35rem;
+}
+
+.contact-form-desc {
+  font-size: 0.875rem;
+  color: var(--color-charcoal-soft);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-row--full {
+  grid-template-columns: 1fr;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-mid);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-label .required-star {
+  color: var(--color-gold-dark);
+  font-weight: 700;
+}
+
+.form-control {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  color: var(--color-charcoal);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-cream);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  width: 100%;
+}
+
+select.form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a6e35' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.form-control:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(184, 154, 92, 0.15);
+}
+
+.form-control.is-invalid {
+  border-color: #b54747;
+  background-color: #fff9f9;
+}
+
+.form-error {
+  font-size: 0.72rem;
+  color: #b54747;
+  margin-top: 0.35rem;
+  min-height: 1rem;
+  line-height: 1.3;
+}
+
+.btn--full {
+  width: 100%;
+  text-align: center;
+  padding: 1.1rem 2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  margin-top: 0.75rem;
+  cursor: pointer;
+}
+
+/* 5. SUCCESS CONFIRMATION DISPLAY (DEMO) */
+.contact-success-card {
+  display: none;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  animation: successEntrance 0.4s ease forwards;
+}
+
+@keyframes successEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-success-card.is-active {
+  display: block;
+}
+
+.contact-success-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: rgba(184, 154, 92, 0.12);
+  border: 1px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold-dark);
+}
+
+.contact-success-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+  font-weight: 500;
+  color: var(--color-charcoal);
+  margin: 0 auto 0.75rem;
+  line-height: 1.25;
+  text-align: center;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.contact-success-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+  background: rgba(184, 154, 92, 0.12);
+  border: 1px solid var(--color-gold-pale);
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.65rem;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (min-width: 600px) {
+  .contact-success-title {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+.contact-success-desc {
+  font-size: 0.9375rem;
+  color: var(--color-charcoal-soft);
+  max-width: 480px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+}
+
+.contact-success-demo-alert {
+  background: rgba(184, 154, 92, 0.1);
+  border: 1px solid var(--color-gold-pale);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  font-size: 0.78rem;
+  color: var(--color-charcoal);
+  line-height: 1.5;
+}
+
+/* 6. RESPONSIVE BREAKPOINTS */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .contact-hero {
+    min-height: 40vh;
+    padding-top: 7rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-form-wrap {
+    padding: 2rem 1.25rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .contact-hero__heading {
+    font-size: 2.2rem;
+  }
+  
+  .contact-card {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-wrap {
+    padding: 1.75rem 1rem;
+  }
+  
+  .contact-success-card {
+    padding: 2rem 0.75rem;
+  }
+  
+  .contact-card {
+    padding: 1.15rem 1rem;
+    gap: 0.85rem;
+  }
+  
+  .contact-card__val {
+    font-size: 1.1rem;
+  }
+  
+  .contact-card__val a {
+    word-break: break-all;
+  }
+}

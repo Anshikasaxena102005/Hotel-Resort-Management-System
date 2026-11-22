@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Get in Touch — Auraveil Resort &amp; Spa</title>
+  <meta name="description" content="Contact the concierge team at Auraveil Resort & Spa. We are here 24 hours daily to assist with reservations, dining inquiries, private transfers, and bespoke celebrations in Goa." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Get in Touch — Auraveil Resort &amp; Spa" />
+  <meta property="og:description" content="Connect with Auraveil Resort & Spa. Bespoke hospitality and unhurried luxury." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/facility-spa.jpg" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Shared & Module Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+
+  <!-- Script (Deferred) -->
+  <script src="js/contact.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER & NAVIGATION (Verbatim from Auraveil Design System) -->
+  <header class="navbar navbar--transparent" id="navbar" role="banner">
+    <div class="container">
+      <nav class="navbar__inner" aria-label="Primary navigation">
+
+        <!-- Logo -->
+        <a href="index.html" class="navbar__logo" aria-label="Auraveil Resort &amp; Spa — Home">
+          <span class="navbar__logo-name">Auraveil</span>
+          <span class="navbar__logo-tagline">Resort &amp; Spa</span>
+        </a>
+
+        <!-- Mobile toggle -->
+        <button
+          class="navbar__toggle"
+          id="nav-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Nav links -->
+        <ul class="navbar__nav" id="nav-menu" role="list">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="rooms.html" class="navbar__link">Rooms</a></li>
+          <li><a href="facilities.html" class="navbar__link">Facilities</a></li>
+          <li><a href="contact.html" class="navbar__link active" aria-current="page">Contact</a></li>
+          <li><a href="booking.html" class="navbar__link">Booking</a></li>
+          <li class="navbar__cta">
+            <a href="booking.html" class="btn btn--primary" id="nav-book-btn">Book Your Stay</a>
+          </li>
+        </ul>
+
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- SECTION A: HERO -->
+    <section class="contact-hero" id="contact-hero" aria-labelledby="contact-hero-heading">
+      <div class="contact-hero__bg" aria-hidden="true">
+        <img
+          src="assets/images/facility-spa.jpg"
+          alt="Serene wellness spa pavilion at Auraveil Resort"
+          class="contact-hero__img"
+        />
+        <div class="contact-hero__overlay"></div>
+      </div>
+      <div class="container">
+        <div class="contact-hero__content">
+          <span class="label">Concierge &amp; Inquiries</span>
+          <h1 class="contact-hero__heading" id="contact-hero-heading">Get in Touch</h1>
+          <div class="heading-rule" aria-hidden="true"></div>
+          <p class="contact-hero__subtext">
+            Whether planning an intimate escape, arranging bespoke transfers, or orchestrating a private celebration, our guest experience hosts stand ready to assist your every aspiration.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION B & C: CONTACT INFORMATION & CONTACT FORM -->
+    <section class="contact-section" aria-label="Contact Details and Inquiry Form">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- SECTION B: CONTACT INFORMATION -->
+          <div class="contact-info">
+            <div class="contact-info__header">
+              <span class="label" style="display:block; margin-bottom:0.5rem;">Direct Channels</span>
+              <h2 class="contact-info__title">We Are Here For You</h2>
+              <p class="contact-info__desc">
+                Our hospitality ambassadors curate every inquiry with care. Reach out directly or complete our bespoke inquiry form.
+              </p>
+            </div>
+
+            <div class="contact-cards-list">
+              <!-- Location Card -->
+              <article class="contact-card">
+                <div class="contact-card__icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contact-card__body">
+                  <span class="contact-card__label">Resort Sanctuary</span>
+                  <p class="contact-card__val">
+                    Auraveil Resort &amp; Spa<br />
+                    Coastal Heritage Road,<br />
+                    Goa — 403 001, India
+                  </p>
+                  <p class="contact-card__sub">Overlooking the Azure Arabian Sea coastline</p>
+                </div>
+              </article>
+
+              <!-- Phone Card -->
+              <article class="contact-card">
+                <div class="contact-card__icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div class="contact-card__body">
+                  <span class="contact-card__label">Telephone Concierge</span>
+                  <p class="contact-card__val">
+                    <a href="tel:+91-832-300-0000" id="contact-phone-link">+91 832 300 0000</a>
+                  </p>
+                  <p class="contact-card__sub">International &amp; domestic toll reservations</p>
+                </div>
+              </article>
+
+              <!-- Email Card -->
+              <article class="contact-card">
+                <div class="contact-card__icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-card__body">
+                  <span class="contact-card__label">Electronic Mail</span>
+                  <p class="contact-card__val">
+                    <a href="mailto:reservations@auraveil.com" id="contact-email-link">reservations@auraveil.com</a>
+                  </p>
+                  <p class="contact-card__sub">Guaranteed response within four business hours</p>
+                </div>
+              </article>
+
+              <!-- Hours Banner -->
+              <div class="contact-map-banner">
+                <h3 class="contact-map-banner__title">Concierge &amp; Reservations Desk</h3>
+                <p class="contact-map-banner__desc">
+                  Reservations open 24 hours daily. Private chauffeur and airport transfer requests may be scheduled with 12 hours prior notice.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION C: CONTACT FORM -->
+          <div class="contact-form-wrap">
+
+            <div class="contact-form-header">
+              <span class="label" style="display:block; margin-bottom:0.25rem;">Direct Message</span>
+              <h2 class="contact-form-title">Send Us An Inquiry</h2>
+              <p class="contact-form-desc">
+                Fill out the form below and our Guest Experience Host will respond promptly.
+              </p>
+            </div>
+
+            <!-- The Form -->
+            <form id="contact-form" novalidate aria-label="Auraveil Contact Inquiry Form">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">
+                    Full Name <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="fullName"
+                    class="form-control"
+                    placeholder="e.g. Sebastian Cruz"
+                    autocomplete="name"
+                    required
+                  />
+                  <span class="form-error" id="contact-name-error" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">
+                    Email Address <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    class="form-control"
+                    placeholder="sebastian@example.com"
+                    autocomplete="email"
+                    required
+                  />
+                  <span class="form-error" id="contact-email-error" role="alert" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-phone" class="form-label">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="contact-phone"
+                    name="phone"
+                    class="form-control"
+                    placeholder="+91 98765 00000"
+                    autocomplete="tel"
+                  />
+                  <span class="form-error" id="contact-phone-error" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-subject" class="form-label">
+                    Subject <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <select id="contact-subject" name="subject" class="form-control" required>
+                    <option value="">Select a Topic</option>
+                    <option value="Reservations & Suites">Reservations &amp; Suites</option>
+                    <option value="Private Dining & Culinary">Private Dining &amp; Culinary</option>
+                    <option value="Spa & Wellness Journeys">Spa &amp; Wellness Journeys</option>
+                    <option value="Weddings & Celebrations">Weddings &amp; Celebrations</option>
+                    <option value="Private Chauffeur & Transfers">Private Chauffeur &amp; Transfers</option>
+                    <option value="General Concierge Inquiry">General Concierge Inquiry</option>
+                  </select>
+                  <span class="form-error" id="contact-subject-error" role="alert" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-row form-row--full">
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">
+                    Your Message <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    class="form-control"
+                    placeholder="How may our hosts craft your ideal stay or celebration? Please share dates, preferences, or special requirements..."
+                    rows="5"
+                    required
+                  ></textarea>
+                  <span class="form-error" id="contact-message-error" role="alert" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full" id="contact-submit-btn">
+                Send Message
+              </button>
+
+              <p style="font-size: 0.72rem; color: var(--color-charcoal-soft); text-align: center; margin-top: 1rem;">
+                * This is a frontend demonstration. No actual email or transmission occurs.
+              </p>
+            </form>
+
+            <!-- SECTION D: FRONTEND DEMO SUCCESS CARD -->
+            <div id="contact-success-card" class="contact-success-card" role="region" aria-live="polite">
+              <div class="contact-success-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+
+              <h3 class="contact-success-title">
+                Inquiry Received
+                <span class="contact-success-subtitle">(Demo Mode)</span>
+              </h3>
+              <p class="contact-success-desc">
+                Thank you, <strong id="success-guest-name">Guest</strong>. Your message regarding "<span id="success-subject" style="color:var(--color-gold-dark);">General Inquiry</span>" has been validated and staged.
+              </p>
+
+              <div class="contact-success-demo-alert">
+                <strong>Notice:</strong> This is a client-side prototype for Auraveil Resort &amp; Spa. No actual email has been dispatched and no backend server was contacted.
+              </div>
+
+              <button type="button" class="btn btn--outline" id="reset-contact-btn" style="padding:0.75rem 1.8rem; font-size:0.68rem;">
+                Send Another Message
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (Exact structure & classes copied from index.html) -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer__top">
+
+        <!-- Brand column -->
+        <div class="footer__brand">
+          <span class="footer__brand-name">Auraveil</span>
+          <span class="footer__brand-tagline">Resort &amp; Spa</span>
+          <p class="footer__brand-desc">
+            Where unhurried luxury meets the wild beauty of nature. Every detail composed with intention, every moment offered with grace.
+          </p>
+
+          <!-- Social links -->
+          <nav class="footer__socials" aria-label="Social media links">
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on Instagram" id="social-instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on Facebook" id="social-facebook">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on Twitter / X" id="social-twitter">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Follow Auraveil on YouTube" id="social-youtube">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="currentColor" fill="none"/>
+              </svg>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Quick links -->
+        <nav aria-label="Quick links">
+          <h3 class="footer__col-title">Navigate</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html" class="footer__link" id="footer-home">Home</a></li>
+            <li><a href="rooms.html" class="footer__link" id="footer-rooms">Rooms &amp; Suites</a></li>
+            <li><a href="facilities.html" class="footer__link" id="footer-facilities">Facilities</a></li>
+            <li><a href="services.html" class="footer__link" id="footer-services">Services</a></li>
+            <li><a href="contact.html" class="footer__link" id="footer-contact">Contact</a></li>
+            <li><a href="booking.html" class="footer__link" id="footer-booking">Reservations</a></li>
+          </ul>
+        </nav>
+
+        <!-- Experiences -->
+        <nav aria-label="Experiences">
+          <h3 class="footer__col-title">Experiences</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="facilities.html#spa" class="footer__link" id="footer-spa">Veda Spa</a></li>
+            <li><a href="facilities.html#pool" class="footer__link" id="footer-pool">Infinity Pool</a></li>
+            <li><a href="facilities.html#dining" class="footer__link" id="footer-dining">Fine Dining</a></li>
+            <li><a href="facilities.html#events" class="footer__link" id="footer-events">Events</a></li>
+            <li><a href="services.html#excursions" class="footer__link" id="footer-excursions">Excursions</a></li>
+            <li><a href="services.html#weddings" class="footer__link" id="footer-weddings">Weddings</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contact (Identical to Homepage Footer) -->
+        <address style="font-style: normal;">
+          <h3 class="footer__col-title">Find Us</h3>
+          <p class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            Auraveil Resort &amp; Spa<br />
+            Coastal Heritage Road,<br />
+            Goa — 403 001, India
+          </p>
+          <p class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            <a href="tel:+91-832-300-0000" class="footer__link" id="footer-phone">+91 832 300 0000</a>
+          </p>
+          <p class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            <a href="mailto:reservations@auraveil.com" class="footer__link" id="footer-email">reservations@auraveil.com</a>
+          </p>
+          <p class="footer__contact-item" style="margin-top: 0.5rem;">
+            <span class="footer__contact-icon" aria-hidden="true">&#9679;</span>
+            Reservations open 24 hours
+          </p>
+        </address>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <p>&copy; 2024 Auraveil Resort &amp; Spa. All rights reserved.</p>
+        <nav class="footer__legal" aria-label="Legal links">
+          <a href="#" id="footer-privacy">Privacy Policy</a>
+          <a href="#" id="footer-terms">Terms of Service</a>
+          <a href="#" id="footer-cookies">Cookie Policy</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
