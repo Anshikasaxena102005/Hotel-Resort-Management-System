@@ -194,6 +194,8 @@
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition-base), box-shadow var(--transition-base), opacity 0.3s ease;
   position: relative;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .room-card.is-hidden {
