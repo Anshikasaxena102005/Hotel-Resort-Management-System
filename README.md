@@ -1,73 +1,86 @@
-# Hotel & Resort Management System
+# Auraveil Resort & Spa
 
-A web-based Hotel & Resort Management System developed as a college mini-project. The project aims to provide users with an attractive and user-friendly interface to explore resort accommodations, facilities, services, and booking options.
+A premium, responsive **Hotel & Resort Management System** developed as a collaborative college mini-project. Auraveil Resort & Spa provides an elegant web experience where visitors can explore accommodations, discover resort facilities and services, and interact with booking and contact interfaces.
 
 ## Project Overview
 
-The system is designed around a premium resort experience, with separate modules developed by team members. It focuses on intuitive navigation, responsive UI, and interactive website functionality.
+Auraveil Resort & Spa is designed to demonstrate a modern resort website with an attractive user interface, intuitive navigation, and interactive frontend functionality.
 
-## Modules
+The project is divided into multiple modules, developed collaboratively by team members using HTML, CSS, and JavaScript.
 
-- **Homepage / Dashboard:** Resort introduction, hero section, navigation, and overview of the experience.
-- **Rooms & Accommodations:** Displays room categories and accommodation details.
-- **Facilities:** Showcases resort amenities and available facilities.
-- **Services & Contact:** Provides service information and contact details.
-- **Booking & Enquiry:** Provides the booking and enquiry interface.
+## Features & Modules
+
+- **Homepage:** Resort introduction, hero section, navigation, and overview.
+- **Rooms & Accommodations:** Explore available room categories and accommodation details.
+- **Facilities:** Discover resort amenities and facilities.
+- **Services:** Explore the services and experiences offered by the resort.
+- **Booking:** Interactive booking form with room selection, booking summary, and demo confirmation.
+- **Contact:** Contact form with input validation and frontend success feedback.
 
 ## Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript
-- Git and GitHub
+- Git & GitHub
 - Visual Studio Code
-- Live Server for local development
-
-*Note: Additional technologies may be used in individual modules.*
-
-## Team Contributions
-
-| Team Member | Responsibility |
-|---|---|
-| Team Lead | Homepage / Dashboard and project coordination |
-| Anshika Singh | Rooms and Facilities |
-| Anushka Agrawal | Services and Contact |
-| Anushka Bansal | Booking and Enquiry |
-
-## How to Run the Project
-
-1. Clone or download the repository.
-2. Open the project folder in Visual Studio Code.
-3. Switch to the required feature branch if the module is maintained separately.
-4. Open the relevant HTML file.
-5. Right-click the HTML file and select **Open with Live Server**.
-6. View the page in your browser.
+- Live Server
 
 ## Project Structure
 
 ```text
 Hotel-Resort-Management-System/
+│
 ├── assets/
+├── auraveil-resort/
 ├── css/
 ├── data/
 ├── html/
 ├── js/
 ├── mock-data/
-├── auraveil-resort/
+│
 ├── index.html
+├── rooms.html
+├── facilities.html
+├── services.html
+├── booking.html
+├── contact.html
+│
 └── README.md
 ```
 
-*The exact files and folders may vary by branch.*
+## How to Run the Project
 
-## Version Control
+1. Clone the repository:
 
-The project uses Git for version control and GitHub for collaboration. Features are developed on separate branches to support parallel development and organized integration.
+   ```bash
+   git clone https://github.com/Anshikasaxena102005/Hotel-Resort-Management-System.git
+   ```
 
-## Project Status
+2. Open the project folder in Visual Studio Code.
+3. Open the root `index.html` file.
+4. Right-click and select **Open with Live Server**.
+5. Explore the website through the navigation menu.
 
-Academic mini-project — under development.
+## Team Contributions
+
+| Team Member | Responsibility |
+|---|---|
+| Anshika Saxena | Team Lead, Homepage / Dashboard |
+| Anushka Agarwal | Rooms & Accommodations |
+| Anushka Bansal | Facilities & Services |
+| Anshika Singh | Booking & Contact |
+
+## Version Control & Collaboration
+
+Git and GitHub are used for collaborative development and version control. Each module is developed on a separate feature branch and integrated into the `dev` branch through pull requests.
+
+## Project Scope & Status
+
+**Status:** Academic mini-project — Frontend implementation.
+
+The current project demonstrates frontend functionality. Booking confirmations and contact form responses are demo interactions; real booking processing, payment integration, email delivery, and backend/database connectivity are not implemented.
 
 ## Acknowledgement
 
-Developed collaboratively as part of an academic mini-project.
+Developed collaboratively as part of an academic mini-project. Special thanks to all team members for their contributions and collaboration.
