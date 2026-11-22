@@ -56,6 +56,35 @@
     }
   };
 
+  // --- ROOM SLUG MAPPING (Links from Rooms Page & Canonical Slugs) ---
+  const ROOM_SLUG_MAP = {
+    // Rooms page IDs from data/rooms.json & html/rooms.html
+    'deluxe-room': 'deluxe',
+    'premium-room': 'villa',
+    'executive-suite': 'villa',
+    'luxury-suite': 'penthouse',
+
+    // Specific slugs from integration requests & examples
+    'premier-ocean-suite': 'villa',
+    'ocean-suite': 'villa',
+    'premier-suite': 'villa',
+
+    // Direct booking category keys
+    'deluxe': 'deluxe',
+    'villa': 'villa',
+    'penthouse': 'penthouse',
+
+    // Canonical & display title variants
+    'deluxe-garden-suite': 'deluxe',
+    'deluxe-suite': 'deluxe',
+    'garden-suite': 'deluxe',
+    'tropical-garden-villa': 'villa',
+    'garden-villa': 'villa',
+    'penthouse-collection': 'penthouse',
+    'luxury-penthouse': 'penthouse',
+    'presidential-suite': 'penthouse'
+  };
+
   // --- DOM ELEMENTS ---
   const navbar = document.getElementById('navbar');
   const navToggle = document.getElementById('nav-toggle');
@@ -238,32 +267,76 @@
     updateSummary();
   }
 
-  // --- 3. URL QUERY PARAMETER HANDLING ---
+  // --- 3. URL QUERY PARAMETER HANDLING (room & package) ---
+  function mapRoomSlug(slug) {
+    if (!slug) return null;
+    const cleanSlug = String(slug).trim().toLowerCase();
+
+    // 1. Direct dictionary match
+    if (ROOM_SLUG_MAP[cleanSlug]) {
+      return ROOM_SLUG_MAP[cleanSlug];
+    }
+
+    // 2. Resilient keyword fallback matching
+    if (cleanSlug.includes('penthouse') || cleanSlug.includes('luxury')) {
+      return 'penthouse';
+    }
+    if (cleanSlug.includes('villa') || cleanSlug.includes('executive') || cleanSlug.includes('premium') || cleanSlug.includes('premier') || cleanSlug.includes('ocean')) {
+      return 'villa';
+    }
+    if (cleanSlug.includes('deluxe') || cleanSlug.includes('garden')) {
+      return 'deluxe';
+    }
+
+    return null;
+  }
+
   function parseQueryParams() {
     const params = new URLSearchParams(window.location.search);
+    const roomParam = params.get('room');
     const packageParam = params.get('package');
 
+    let selectedRoomKey = null;
+
+    // 1. Check room query parameter
+    if (roomParam) {
+      const mapped = mapRoomSlug(roomParam);
+      if (mapped && ROOM_CATALOG[mapped]) {
+        selectedRoomKey = mapped;
+      }
+    }
+
+    // 2. Check package query parameter
     if (packageParam && PACKAGES[packageParam.toLowerCase()]) {
-      const key = packageParam.toLowerCase();
-      packageSelect.value = key;
+      const pkgKey = packageParam.toLowerCase();
+      packageSelect.value = pkgKey;
+      displayPackageHighlight(pkgKey);
 
-      // Recommended default rooms based on package theme
-      if (key === 'romance') {
-        roomCategorySelect.value = 'villa';
-      } else if (key === 'wellness') {
-        roomCategorySelect.value = 'deluxe';
-      } else if (key === 'adventure') {
-        roomCategorySelect.value = 'penthouse';
+      // Apply package-based room recommendation if no explicit valid room was provided
+      if (!selectedRoomKey) {
+        if (pkgKey === 'romance') {
+          selectedRoomKey = 'villa';
+        } else if (pkgKey === 'wellness') {
+          selectedRoomKey = 'deluxe';
+        } else if (pkgKey === 'adventure') {
+          selectedRoomKey = 'penthouse';
+        }
       }
-
-      displayPackageHighlight(key);
     } else {
-      // Default to Deluxe if nothing selected yet
-      if (!roomCategorySelect.value) {
-        roomCategorySelect.value = 'deluxe';
-      }
+      packageSelect.value = 'none';
       hidePackageHighlight();
     }
+
+    // 3. Set room category: explicit mapped room -> package recommendation -> safe default ('deluxe')
+    if (selectedRoomKey && ROOM_CATALOG[selectedRoomKey]) {
+      roomCategorySelect.value = selectedRoomKey;
+    } else {
+      // Safe default behavior
+      roomCategorySelect.value = 'deluxe';
+    }
+
+    // 4. Update the live booking summary immediately
+    updateSummary();
   }
 
   function displayPackageHighlight(pkgKey) {
